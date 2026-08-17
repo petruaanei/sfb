@@ -3,37 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Proiect</title>
+  <title>Acasă - Site Proiect</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <nav>
-      <div class="logo">SiteProiect</div>
+      <a href="index.html" class="logo">
+        <!-- ADAUGĂ AICI LOGO-UL: pune fișierul în folderul images/ cu numele logo.png -->
+        <img src="images/logo.png" alt="Logo firmă" class="logo-img">
+      </a>
       <ul class="nav-links">
-        <li><a href="#acasa">Acasă</a></li>
-        <li><a href="#despre">Despre</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html" class="active">Acasă</a></li>
+        <li><a href="produse.html">Produse</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="despre.html">Despre noi</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section id="acasa" class="hero">
-      <h1>Bine ați venit</h1>
-      <p>Acesta este un site în lucru, făcut de doi colegi.</p>
-      <button id="testBtn">Apasă-mă</button>
-    </section>
+      <div class="slideshow">
+        <div class="slides">
+          <!-- ADAUGĂ AICI IMAGINILE DE PREZENTARE: images/slide-1.jpg, slide-2.jpg, slide-3.jpg (poți adăuga oricâte, copiind blocul .slide) -->
+          <div class="slide active">
+            <img src="images/slide-1.jpg" alt="Imagine 1">
+          </div>
+          <div class="slide">
+            <img src="images/slide-2.jpg" alt="Imagine 2">
+          </div>
+          <div class="slide">
+            <img src="images/slide-3.jpg" alt="Imagine 3">
+          </div>
+        </div>
 
-    <section id="despre">
-      <h2>Despre noi</h2>
-      <p>Aici scrieți despre proiect.</p>
-    </section>
+        <button class="slide-btn prev" id="prevBtn" aria-label="Slide anterior">&#10094;</button>
+        <button class="slide-btn next" id="nextBtn" aria-label="Slide următor">&#10095;</button>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Aici puneți informații de contact.</p>
+        <div class="slide-dots" id="slideDots"></div>
+      </div>
     </section>
   </main>
 

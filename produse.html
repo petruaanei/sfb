@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produse - Site Proiect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Logo firmă" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="produse.html" class="active">Produse</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="despre.html">Despre noi</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="produse">
+      <h1>Produsele noastre</h1>
+      <p class="produse-subtitle">Alege o categorie</p>
+
+      <nav class="categorii-nav">
+        <a href="#accesorii">Accesorii</a>
+        <a href="#coroane">Coroane</a>
+        <a href="#felinare">Felinare</a>
+        <a href="#imbracaminte">Îmbrăcăminte</a>
+        <a href="#lenjerii">Lenjerii</a>
+        <a href="#prosoape">Prosoape</a>
+        <a href="#sicrie">Sicrie</a>
+        <a href="#vesela">Veselă</a>
+      </nav>
+
+      <!-- Cardurile de produse sunt generate automat din products.js -->
+      <section id="accesorii" class="categorie">
+        <h2>Accesorii</h2>
+        <div class="produse-grid" data-categorie="accesorii"></div>
+      </section>
+
+      <section id="coroane" class="categorie">
+        <h2>Coroane</h2>
+        <div class="produse-grid" data-categorie="coroane"></div>
+      </section>
+
+      <section id="felinare" class="categorie">
+        <h2>Felinare</h2>
+        <div class="produse-grid" data-categorie="felinare"></div>
+      </section>
+
+      <section id="imbracaminte" class="categorie">
+        <h2>Îmbrăcăminte</h2>
+        <div class="produse-grid" data-categorie="imbracaminte"></div>
+      </section>
+
+      <section id="lenjerii" class="categorie">
+        <h2>Lenjerii</h2>
+        <div class="produse-grid" data-categorie="lenjerii"></div>
+      </section>
+
+      <section id="prosoape" class="categorie">
+        <h2>Prosoape</h2>
+        <div class="produse-grid" data-categorie="prosoape"></div>
+      </section>
+
+      <section id="sicrie" class="categorie">
+        <h2>Sicrie</h2>
+        <div class="produse-grid" data-categorie="sicrie"></div>
+      </section>
+
+      <section id="vesela" class="categorie">
+        <h2>Veselă</h2>
+        <div class="produse-grid" data-categorie="vesela"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Site Proiect. Toate drepturile rezervate.</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

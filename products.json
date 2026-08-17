@@ -1,0 +1,15 @@
+[
+  {
+    "id": "prosop-1",
+    "categorie": "prosoape",
+    "nume": "Prosop",
+    "pret": "10.01 RON",
+    "material": "bumbac",
+    "dimensiuni": "30x30cm",
+    "descriere": "",
+    "imagini": [
+      "images/produse/prosoape/prosop-1/1.jpg",
+      "images/produse/prosoape/prosop-1/2.jpg"
+    ]
+  }
+]
