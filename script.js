@@ -2,7 +2,145 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlideshow();
   initCatalog();
   initProductDetail();
+  initCategoriiNav();
+  initPachete();
+  initCautareProduse();
 });
+
+/* ===== CĂUTARE PRODUSE ===== */
+function normalizeazaText(text) {
+  return (text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(new RegExp("[̀-ͯ]", "g"), "");
+}
+
+function initCautareProduse() {
+  const wrap = document.getElementById("produseSearch");
+  const toggle = document.getElementById("cautareToggle");
+  const input = document.getElementById("cautareProdus");
+  const rezultateBox = document.getElementById("cautareRezultate");
+  if (!wrap || !toggle || !input || !rezultateBox || typeof PRODUCTS === "undefined") return;
+
+  function deschideCautarea() {
+    wrap.classList.add("deschisa");
+    input.focus();
+  }
+
+  function inchideCautarea() {
+    if (input.value.trim()) return;
+    wrap.classList.remove("deschisa");
+    rezultateBox.classList.remove("active");
+  }
+
+  toggle.addEventListener("click", deschideCautarea);
+
+  function afiseazaRezultate() {
+    const termen = normalizeazaText(input.value.trim());
+    rezultateBox.innerHTML = "";
+
+    if (!termen) {
+      rezultateBox.classList.remove("active");
+      return;
+    }
+
+    const potriviri = PRODUCTS.filter(
+      (p) => p.stoc !== "epuizat" && normalizeazaText(p.nume).includes(termen)
+    ).slice(0, 8);
+
+    if (!potriviri.length) {
+      rezultateBox.innerHTML = `<div class="cautare-gol">Niciun produs găsit.</div>`;
+      rezultateBox.classList.add("active");
+      return;
+    }
+
+    potriviri.forEach((p) => {
+      const item = document.createElement("a");
+      item.className = "cautare-item";
+      item.href = `produs.html?id=${encodeURIComponent(p.id)}`;
+
+      const poza = p.imagini && p.imagini.length ? p.imagini[0] : "";
+      item.innerHTML = `
+        ${poza ? `<img src="${poza}" alt="">` : `<span class="cautare-item-fara-poza">🖼️</span>`}
+        <span>${p.nume}</span>
+      `;
+      rezultateBox.appendChild(item);
+    });
+
+    rezultateBox.classList.add("active");
+  }
+
+  input.addEventListener("input", afiseazaRezultate);
+  input.addEventListener("focus", afiseazaRezultate);
+
+  document.addEventListener("click", (e) => {
+    if (!wrap.contains(e.target)) {
+      rezultateBox.classList.remove("active");
+      inchideCautarea();
+    }
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      input.value = "";
+      input.blur();
+      rezultateBox.classList.remove("active");
+      inchideCautarea();
+    }
+    if (e.key === "Enter") {
+      const prim = rezultateBox.querySelector(".cautare-item");
+      if (prim) window.location.href = prim.getAttribute("href");
+    }
+  });
+}
+
+/* ===== PAGINA DE PACHETE FUNERARE ===== */
+function initPachete() {
+  const grid = document.getElementById("pacheteGrid");
+  if (!grid || typeof PACHETE === "undefined") return;
+
+  PACHETE.forEach((pachet) => {
+    const card = document.createElement("div");
+    card.className = "pachet-card" + (pachet.eticheta ? " pachet-recomandat" : "");
+
+    const eticheta = pachet.eticheta
+      ? `<div class="pachet-eticheta">${pachet.eticheta}</div>`
+      : "";
+
+    const itemi = (pachet.itemi || []).map((item) => `<li>${item}</li>`).join("");
+
+    card.innerHTML = `
+      ${eticheta}
+      <div class="pachet-info">
+        <h3>${pachet.nume}</h3>
+        ${pachet.pret ? `<p class="pachet-pret">${pachet.pret}</p>` : ""}
+        <ul class="pachet-lista">${itemi}</ul>
+        ${pachet.descriere ? `<p class="pachet-descriere">${pachet.descriere}</p>` : ""}
+        <a href="contact.html" class="btn-gold">Solicită detalii</a>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+/* ===== EVIDENȚIERE CATEGORIE SELECTATĂ (pagina de produse) ===== */
+function initCategoriiNav() {
+  const linkuri = document.querySelectorAll(".categorii-nav a");
+  if (!linkuri.length) return;
+
+  function seteazaActiv(link) {
+    linkuri.forEach((a) => a.classList.remove("active"));
+    if (link) link.classList.add("active");
+  }
+
+  linkuri.forEach((link) => {
+    link.addEventListener("click", () => seteazaActiv(link));
+  });
+
+  const dinHash = [...linkuri].find((a) => a.getAttribute("href") === window.location.hash);
+  seteazaActiv(dinHash || linkuri[0]);
+}
 
 /* ===== SLIDESHOW PAGINA DE ACASĂ ===== */
 function initHeroSlideshow() {
@@ -192,14 +330,40 @@ function closeLightbox() {
   document.body.classList.remove("lightbox-open");
 }
 
+/* ===== SUBCATEGORII (pentru sicrie, prosoape, lenjerii, veselă) ===== */
+const SUBCATEGORII = {
+  sicrie: [
+    { id: "premium", eticheta: "Premium" },
+    { id: "clasic", eticheta: "Clasic" },
+  ],
+  prosoape: [
+    { id: "mici", eticheta: "Mici" },
+    { id: "medii", eticheta: "Medii" },
+    { id: "mari", eticheta: "Mari" },
+  ],
+  lenjerii: [
+    { id: "lenjerii-pat", eticheta: "Lenjerii de pat" },
+    { id: "plapumi", eticheta: "Plăpumi" },
+  ],
+  vesela: [
+    { id: "pahare", eticheta: "Pahare" },
+    { id: "cani", eticheta: "Căni" },
+    { id: "farfurii", eticheta: "Farfurii" },
+    { id: "boluri", eticheta: "Boluri" },
+    { id: "vas-iena", eticheta: "Vas Iena" },
+    { id: "oale", eticheta: "Oale" },
+  ],
+};
+
 /* ===== PAGINA DE PRODUSE (catalog pe categorii) ===== */
 function initCatalog() {
   const grids = document.querySelectorAll(".produse-grid[data-categorie]");
-  if (!grids.length || typeof PRODUCTS === "undefined") return;
+  const subWraps = document.querySelectorAll(".subcategorii-wrap[data-categorie]");
+  if ((!grids.length && !subWraps.length) || typeof PRODUCTS === "undefined") return;
 
   grids.forEach((grid) => {
     const categorie = grid.dataset.categorie;
-    const produse = PRODUCTS.filter((p) => p.categorie === categorie);
+    const produse = PRODUCTS.filter((p) => p.categorie === categorie && p.stoc !== "epuizat");
 
     if (!produse.length) {
       const gol = document.createElement("p");
@@ -213,6 +377,63 @@ function initCatalog() {
       grid.appendChild(createProductCard(produs));
     });
   });
+
+  subWraps.forEach((wrap) => {
+    const categorie = wrap.dataset.categorie;
+    const subcategorii = SUBCATEGORII[categorie] || [];
+    const produseCategorie = PRODUCTS.filter((p) => p.categorie === categorie && p.stoc !== "epuizat");
+    let auProduse = false;
+
+    function adaugaSectiune(titluText, produseSub) {
+      if (!produseSub.length) return;
+      auProduse = true;
+
+      const sectiune = document.createElement("div");
+      sectiune.className = "subcategorie";
+
+      const titlu = document.createElement("h3");
+      titlu.className = "subcategorie-titlu";
+      titlu.textContent = titluText;
+      sectiune.appendChild(titlu);
+
+      const grid = document.createElement("div");
+      grid.className = "produse-grid";
+      produseSub.forEach((p) => grid.appendChild(createProductCard(p)));
+      sectiune.appendChild(grid);
+
+      wrap.appendChild(sectiune);
+    }
+
+    subcategorii.forEach((sub) => {
+      adaugaSectiune(sub.eticheta, produseCategorie.filter((p) => p.subcategorie === sub.id));
+    });
+
+    adaugaSectiune(
+      "Altele",
+      produseCategorie.filter((p) => !subcategorii.some((s) => s.id === p.subcategorie))
+    );
+
+    if (!auProduse) {
+      const gol = document.createElement("p");
+      gol.className = "categorie-goala";
+      gol.textContent = "În curând, produse noi în această categorie.";
+      wrap.appendChild(gol);
+    }
+  });
+}
+
+const STOC_INFO = {
+  in_stoc: { clasa: "stoc-in-stoc", eticheta: "În stoc" },
+  limitat: { clasa: "stoc-limitat", eticheta: "Cantitate limitată" },
+  epuizat: { clasa: "stoc-epuizat", eticheta: "Stoc epuizat" },
+};
+
+function creazaBadgeStoc(stoc) {
+  const info = STOC_INFO[stoc] || STOC_INFO.in_stoc;
+  const badge = document.createElement("span");
+  badge.className = `stoc-badge ${info.clasa}`;
+  badge.textContent = info.eticheta;
+  return badge;
 }
 
 function createProductCard(produs) {
@@ -223,7 +444,9 @@ function createProductCard(produs) {
   link.href = `produs.html?id=${encodeURIComponent(produs.id)}`;
   link.className = "produs-link";
 
-  link.appendChild(buildGallery(produs.imagini, produs.nume));
+  const galerie = buildGallery(produs.imagini, produs.nume);
+  galerie.appendChild(creazaBadgeStoc(produs.stoc));
+  link.appendChild(galerie);
 
   const info = document.createElement("div");
   info.className = "produs-info";
@@ -259,9 +482,9 @@ function initProductDetail() {
   const id = params.get("id");
   const produs = PRODUCTS.find((p) => p.id === id);
 
-  if (!produs) {
+  if (!produs || produs.stoc === "epuizat") {
     container.innerHTML = `
-      <p class="produs-negasit">Produsul nu a fost găsit.</p>
+      <p class="produs-negasit">Acest produs nu este momentan disponibil.</p>
       <a href="produse.html" class="btn-gold">Înapoi la produse</a>
     `;
     return;
@@ -276,9 +499,12 @@ function initProductDetail() {
   const info = document.createElement("div");
   info.className = "produs-detail-info";
 
+  const stocInfo = STOC_INFO[produs.stoc] || STOC_INFO.in_stoc;
+
   info.innerHTML = `
     <a href="produse.html#${produs.categorie}" class="produs-detail-back">&#10094; Înapoi la ${produs.categorie}</a>
     <h1>${produs.nume}</h1>
+    <span class="stoc-badge ${stocInfo.clasa}">${stocInfo.eticheta}</span>
     ${produs.pret ? `<p class="produs-detail-pret">${produs.pret}</p>` : ""}
     <ul class="produs-detail-specs">
       ${produs.material ? `<li><strong>Material:</strong> ${produs.material}</li>` : ""}

@@ -16,9 +16,12 @@ PORT = 8123
 ROOT_DIR = Path(__file__).resolve().parent
 PRODUCTS_JSON = ROOT_DIR / "products.json"
 PRODUCTS_JS = ROOT_DIR / "products.js"
+PACKAGES_JSON = ROOT_DIR / "packages.json"
+PACKAGES_JS = ROOT_DIR / "packages.js"
 IMAGES_DIR = ROOT_DIR / "images" / "produse"
 
 CATEGORII = ["accesorii", "coroane", "felinare", "imbracaminte", "lenjerii", "prosoape", "sicrie", "vesela"]
+STOC_VALORI = ["in_stoc", "limitat", "epuizat"]
 
 MIME_TO_EXT = {
     "image/jpeg": ".jpg",
@@ -59,6 +62,26 @@ def save_products(products):
         f.write(js)
 
 
+def load_packages():
+    if not PACKAGES_JSON.exists():
+        return []
+    with open(PACKAGES_JSON, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_packages(packages):
+    with open(PACKAGES_JSON, "w", encoding="utf-8") as f:
+        json.dump(packages, f, ensure_ascii=False, indent=2)
+
+    js = (
+        "// Fișier generat automat de panoul de admin (admin.bat).\n"
+        "// Nu edita manual aici — deschide admin.bat și adaugă/editează pachetele de acolo.\n\n"
+        "const PACHETE = " + json.dumps(packages, ensure_ascii=False, indent=2) + ";\n"
+    )
+    with open(PACKAGES_JS, "w", encoding="utf-8") as f:
+        f.write(js)
+
+
 def unique_id(products, base):
     existing = {p["id"] for p in products}
     candidate = base
@@ -92,7 +115,7 @@ class AdminHandler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_POST(self):
-        if self.path != "/api/produse":
+        if self.path not in ("/api/produse", "/api/pachete"):
             self._send_json({"eroare": "Rută necunoscută"}, 404)
             return
 
@@ -105,6 +128,11 @@ class AdminHandler(SimpleHTTPRequestHandler):
             return
 
         action = payload.get("action")
+
+        if self.path == "/api/pachete":
+            self._handle_pachete(action, payload)
+            return
+
         products = load_products()
 
         try:
@@ -123,11 +151,58 @@ class AdminHandler(SimpleHTTPRequestHandler):
         except ValueError as e:
             self._send_json({"eroare": str(e)}, 400)
 
+    def _handle_pachete(self, action, payload):
+        packages = load_packages()
+        try:
+            if action == "create":
+                self._create_pachet(packages, payload)
+            elif action == "update":
+                self._update_pachet(packages, payload)
+            elif action == "delete_pachet":
+                self._delete_pachet(packages, payload)
+            else:
+                self._send_json({"eroare": "Acțiune necunoscută"}, 400)
+        except ValueError as e:
+            self._send_json({"eroare": str(e)}, 400)
+
     def _find(self, products, id_):
         for p in products:
             if p["id"] == id_:
                 return p
         raise ValueError("Produsul nu a fost găsit")
+
+    def _create_pachet(self, packages, payload):
+        nume = (payload.get("nume") or "").strip()
+        if not nume:
+            raise ValueError("Numele pachetului lipsește")
+
+        pachet = {
+            "id": unique_id(packages, slugify(nume)),
+            "nume": nume,
+            "pret": "",
+            "eticheta": "",
+            "itemi": [],
+            "descriere": "",
+        }
+        packages.append(pachet)
+        save_packages(packages)
+        self._send_json({"pachet": pachet})
+
+    def _update_pachet(self, packages, payload):
+        pachet = self._find(packages, payload.get("id"))
+        for camp in ("nume", "pret", "eticheta", "descriere"):
+            if camp in payload:
+                pachet[camp] = (payload[camp] or "").strip()
+        if "itemi" in payload and isinstance(payload["itemi"], list):
+            pachet["itemi"] = [str(x).strip() for x in payload["itemi"] if str(x).strip()]
+        save_packages(packages)
+        self._send_json({"pachet": pachet})
+
+    def _delete_pachet(self, packages, payload):
+        pachet = self._find(packages, payload.get("id"))
+        packages.remove(pachet)
+        save_packages(packages)
+        self._send_json({"ok": True})
 
     def _create(self, products, payload):
         categorie = payload.get("categorie", "")
@@ -146,6 +221,8 @@ class AdminHandler(SimpleHTTPRequestHandler):
             "material": "",
             "dimensiuni": "",
             "descriere": "",
+            "stoc": "in_stoc",
+            "subcategorie": "",
             "imagini": [],
         }
         products.append(produs)
@@ -155,9 +232,11 @@ class AdminHandler(SimpleHTTPRequestHandler):
 
     def _update(self, products, payload):
         produs = self._find(products, payload.get("id"))
-        for camp in ("nume", "pret", "material", "dimensiuni", "descriere"):
+        for camp in ("nume", "pret", "material", "dimensiuni", "descriere", "subcategorie"):
             if camp in payload:
                 produs[camp] = (payload[camp] or "").strip()
+        if "stoc" in payload and payload["stoc"] in STOC_VALORI:
+            produs["stoc"] = payload["stoc"]
         save_products(products)
         self._send_json({"produs": produs})
 
@@ -210,6 +289,8 @@ def deschide_browser():
 if __name__ == "__main__":
     if not PRODUCTS_JSON.exists():
         save_products([])
+    if not PACKAGES_JSON.exists():
+        save_packages([])
 
     handler = partial(AdminHandler, directory=str(ROOT_DIR))
 

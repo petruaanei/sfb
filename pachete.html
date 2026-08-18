@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produs - Site Proiect</title>
+  <title>Pachete funerare - Site Proiect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -23,15 +23,21 @@
       </a>
       <ul class="nav-links nav-links-right">
         <li><a href="servicii.html">Servicii</a></li>
-        <li><a href="produse.html" class="active">Produse</a></li>
-        <li><a href="pachete.html">Pachete funerare</a></li>
+        <li><a href="produse.html">Produse</a></li>
+        <li><a href="pachete.html" class="active">Pachete funerare</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="produs-detail" id="produsDetail">
-      <!-- Conținutul este generat automat din products.js, în funcție de ?id= din link -->
+    <section class="pachete-page">
+      <h1>Pachete funerare</h1>
+      <p class="produse-subtitle">Alegeți varianta potrivită nevoilor familiei — toate pachetele pot fi personalizate</p>
+
+      <!-- Cardurile de pachete sunt generate automat din packages.js -->
+      <div class="pachete-grid" id="pacheteGrid"></div>
+
+      <p class="pachete-nota">Numărul de prosoape și calitatea acestora diferă în funcție de pachetul ales. Toate pachetele pot fi personalizate la cerere.</p>
     </section>
   </main>
 
@@ -39,7 +45,7 @@
     <p>&copy; 2026 Servicii Funerare Băltătești. Toate drepturile rezervate.</p>
   </footer>
 
-  <script src="products.js"></script>
+  <script src="packages.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
