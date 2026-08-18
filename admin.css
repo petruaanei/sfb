@@ -125,6 +125,16 @@ main {
   font-size: 0.9rem;
 }
 
+.tile-arhivat {
+  opacity: 0.55;
+  border-style: dashed;
+  border-color: var(--red);
+}
+
+.tile-arhivat .tile-count {
+  color: var(--red);
+}
+
 .tile-nou {
   border-style: dashed;
   border-color: var(--gold);
@@ -263,6 +273,7 @@ main {
 }
 
 .detalii-form input,
+.detalii-form select,
 .detalii-form textarea {
   padding: 0.7rem;
   font-size: 1rem;
