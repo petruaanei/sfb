@@ -74,5 +74,20 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Necesar pentru panoul de administrare online: face ca linkul de invitație
+       primit pe email să deschidă formularul de setare a parolei. -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/cms/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

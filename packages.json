@@ -1,106 +1,108 @@
-[
-  {
-    "id": "fara-masa",
-    "nume": "Pachet Funerar Fără Masă",
-    "pret": "8500 RON",
-    "eticheta": "",
-    "itemi": [
-      "Sicriu, cruce, cruce de doliu și icoană",
-      "Transport funerar",
-      "22 prosoape față, 2 prosoape baie, 60 prosoape mici",
-      "Punte (12 bucăți)",
-      "Lumânări, cană și dulciuri de pom",
-      "Set pomeniri, parastas, colivă, fructe de pomeniri",
-      "Organizare completă a ceremoniei",
-      "Băieți care duc sicriul, aranjament floral"
-    ],
-    "descriere": "Include tot ce este necesar pentru o înmormântare desfășurată cu demnitate, fără masa de pomenire."
-  },
-  {
-    "id": "ajutor-inmormantare",
-    "nume": "Pachet Funerar Ajutor de Înmormântare",
-    "pret": "9180 RON",
-    "eticheta": "",
-    "itemi": [
-      "Preluarea persoanei decedate, toaletare și set haine",
-      "Sicriu, cruce, cruce de doliu și icoană",
-      "Transport funerar",
-      "22 prosoape față, 2 prosoape preot, 20 prosoape mici",
-      "Punte (12 bucăți)",
-      "Lumânări, cană și dulciuri de pom",
-      "Set pomeniri, parastas, colivă, fructe de pomeniri",
-      "Masă de pomenire pentru 40 de persoane",
-      "Organizare completă, băieți care duc sicriul, aranjament floral"
-    ],
-    "descriere": "Pachet complet, adaptat sumei acordate ca ajutor de înmormântare, cu preluare, toaletare și masă de pomenire incluse."
-  },
-  {
-    "id": "pachet-10000",
-    "nume": "Pachet Funerar 10.000",
-    "pret": "10000 RON",
-    "eticheta": "",
-    "itemi": [
-      "Sicriu (set), cruce, cruce de doliu și icoană",
-      "Transport funerar",
-      "22 prosoape față, 2 prosoape preot, 60 prosoape bisericești",
-      "Punte (12 bucăți)",
-      "Lumânări, cană și dulciuri de pom",
-      "Set pomeniri, parastas, colivă, fructe de pomeniri",
-      "Masă de pomenire pentru 60 de persoane, cu țuică și vin",
-      "Organizare completă, băieți care duc sicriul, aranjament floral"
-    ],
-    "descriere": "Un pachet echilibrat, cu masă de pomenire inclusă pentru un număr mediu de persoane."
-  },
-  {
-    "id": "pachet-12000",
-    "nume": "Pachet Funerar 12.000",
-    "pret": "12000 RON",
-    "eticheta": "",
-    "itemi": [
-      "Sicriu, cruce, cruce de doliu și icoană",
-      "Transport funerar",
-      "22 prosoape față, 2 prosoape baie, 60 prosoape mici",
-      "Punte (12 bucăți)",
-      "Lumânări, cană și dulciuri de pom",
-      "Set pomeniri, parastas, colivă, fructe de pomeniri",
-      "Masă de pomenire pentru 70 de persoane, cu țuică și vin",
-      "Organizare completă, băieți care duc sicriul, aranjament floral"
-    ],
-    "descriere": "Variantă completă, cu masă de pomenire pentru un număr mai mare de invitați."
-  },
-  {
-    "id": "pachet-14000",
-    "nume": "Pachet Funerar 14.000",
-    "pret": "14000 RON",
-    "eticheta": "",
-    "itemi": [
-      "Sicriu de calitate superioară, cruce, cruce de doliu și icoană",
-      "Transport funerar",
-      "22 prosoape față, 2 prosoape baie, 60 prosoape mici",
-      "Punte (12 bucăți, calitate superioară)",
-      "Lumânări, cană și dulciuri de pom",
-      "Set pomeniri, parastas, colivă, fructe de pomeniri",
-      "Masă de pomenire pentru 90 de persoane, cu țuică și vin",
-      "Organizare completă, băieți care duc sicriul, aranjament floral"
-    ],
-    "descriere": "Pachet de calitate superioară, cu masă de pomenire pentru un număr generos de invitați."
-  },
-  {
-    "id": "pachet-20000",
-    "nume": "Pachet Funerar 20.000",
-    "pret": "20000 RON",
-    "eticheta": "Cel mai complet",
-    "itemi": [
-      "Sicriu premium, cruce, cruce de doliu și icoană",
-      "Transport funerar",
-      "22 prosoape față, 2 prosoape baie, 80 prosoape mici",
-      "Punte (12 bucăți, calitate premium)",
-      "Lumânări, cană și dulciuri de pom",
-      "Set pomeniri, parastas, colivă, fructe de pomeniri",
-      "Masă de pomenire pentru 120 de persoane, cu țuică și vin",
-      "Organizare completă, băieți care duc sicriul, aranjament floral",
-      "Personal dedicat al firmei pe durata evenimentului"
-    ],
-    "descriere": "Cel mai complet pachet oferit, cu materiale premium și personal dedicat pentru orice detaliu al ceremoniei."
-  }
-]
+{
+  "pachete": [
+    {
+      "id": "fara-masa",
+      "nume": "Pachet Funerar Fără Masă",
+      "pret": "8500 RON",
+      "eticheta": "",
+      "itemi": [
+        "Sicriu, cruce, cruce de doliu și icoană",
+        "Transport funerar",
+        "22 prosoape față, 2 prosoape baie, 60 prosoape mici",
+        "Punte (12 bucăți)",
+        "Lumânări, cană și dulciuri de pom",
+        "Set pomeniri, parastas, colivă, fructe de pomeniri",
+        "Organizare completă a ceremoniei",
+        "Băieți care duc sicriul, aranjament floral"
+      ],
+      "descriere": "Include tot ce este necesar pentru o înmormântare desfășurată cu demnitate, fără masa de pomenire."
+    },
+    {
+      "id": "ajutor-inmormantare",
+      "nume": "Pachet Funerar Ajutor de Înmormântare",
+      "pret": "9180 RON",
+      "eticheta": "",
+      "itemi": [
+        "Preluarea persoanei decedate, toaletare și set haine",
+        "Sicriu, cruce, cruce de doliu și icoană",
+        "Transport funerar",
+        "22 prosoape față, 2 prosoape preot, 20 prosoape mici",
+        "Punte (12 bucăți)",
+        "Lumânări, cană și dulciuri de pom",
+        "Set pomeniri, parastas, colivă, fructe de pomeniri",
+        "Masă de pomenire pentru 40 de persoane",
+        "Organizare completă, băieți care duc sicriul, aranjament floral"
+      ],
+      "descriere": "Pachet complet, adaptat sumei acordate ca ajutor de înmormântare, cu preluare, toaletare și masă de pomenire incluse."
+    },
+    {
+      "id": "pachet-10000",
+      "nume": "Pachet Funerar 10.000",
+      "pret": "10000 RON",
+      "eticheta": "",
+      "itemi": [
+        "Sicriu (set), cruce, cruce de doliu și icoană",
+        "Transport funerar",
+        "22 prosoape față, 2 prosoape preot, 60 prosoape bisericești",
+        "Punte (12 bucăți)",
+        "Lumânări, cană și dulciuri de pom",
+        "Set pomeniri, parastas, colivă, fructe de pomeniri",
+        "Masă de pomenire pentru 60 de persoane, cu țuică și vin",
+        "Organizare completă, băieți care duc sicriul, aranjament floral"
+      ],
+      "descriere": "Un pachet echilibrat, cu masă de pomenire inclusă pentru un număr mediu de persoane."
+    },
+    {
+      "id": "pachet-12000",
+      "nume": "Pachet Funerar 12.000",
+      "pret": "12000 RON",
+      "eticheta": "",
+      "itemi": [
+        "Sicriu, cruce, cruce de doliu și icoană",
+        "Transport funerar",
+        "22 prosoape față, 2 prosoape baie, 60 prosoape mici",
+        "Punte (12 bucăți)",
+        "Lumânări, cană și dulciuri de pom",
+        "Set pomeniri, parastas, colivă, fructe de pomeniri",
+        "Masă de pomenire pentru 70 de persoane, cu țuică și vin",
+        "Organizare completă, băieți care duc sicriul, aranjament floral"
+      ],
+      "descriere": "Variantă completă, cu masă de pomenire pentru un număr mai mare de invitați."
+    },
+    {
+      "id": "pachet-14000",
+      "nume": "Pachet Funerar 14.000",
+      "pret": "14000 RON",
+      "eticheta": "",
+      "itemi": [
+        "Sicriu de calitate superioară, cruce, cruce de doliu și icoană",
+        "Transport funerar",
+        "22 prosoape față, 2 prosoape baie, 60 prosoape mici",
+        "Punte (12 bucăți, calitate superioară)",
+        "Lumânări, cană și dulciuri de pom",
+        "Set pomeniri, parastas, colivă, fructe de pomeniri",
+        "Masă de pomenire pentru 90 de persoane, cu țuică și vin",
+        "Organizare completă, băieți care duc sicriul, aranjament floral"
+      ],
+      "descriere": "Pachet de calitate superioară, cu masă de pomenire pentru un număr generos de invitați."
+    },
+    {
+      "id": "pachet-20000",
+      "nume": "Pachet Funerar 20.000",
+      "pret": "20000 RON",
+      "eticheta": "Cel mai complet",
+      "itemi": [
+        "Sicriu premium, cruce, cruce de doliu și icoană",
+        "Transport funerar",
+        "22 prosoape față, 2 prosoape baie, 80 prosoape mici",
+        "Punte (12 bucăți, calitate premium)",
+        "Lumânări, cană și dulciuri de pom",
+        "Set pomeniri, parastas, colivă, fructe de pomeniri",
+        "Masă de pomenire pentru 120 de persoane, cu țuică și vin",
+        "Organizare completă, băieți care duc sicriul, aranjament floral",
+        "Personal dedicat al firmei pe durata evenimentului"
+      ],
+      "descriere": "Cel mai complet pachet oferit, cu materiale premium și personal dedicat pentru orice detaliu al ceremoniei."
+    }
+  ]
+}

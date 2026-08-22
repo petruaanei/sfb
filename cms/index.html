@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Administrare — Servicii Funerare Băltătești</title>
+  <link rel="icon" href="../images/logo.png">
+  <style>
+    /* ecranul de așteptare, în tema site-ului */
+    body { margin: 0; background: #08080a; }
+    #incarcare {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1.2rem;
+      background: #08080a; color: #d9ac45; z-index: 9999;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 3px; text-transform: uppercase; font-size: 0.75rem;
+    }
+    #incarcare img { height: 90px; }
+  </style>
+</head>
+<body>
+  <div id="incarcare">
+    <img src="../images/logo.png" alt="">
+    <div>Se deschide panoul de administrare...</div>
+  </div>
+
+  <!-- autentificarea (invitație pe email, apoi email + parolă) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- panoul propriu-zis -->
+  <script src="https://unpkg.com/decap-cms@^3.1.10/dist/decap-cms.js"></script>
+
+  <script>
+    // ascunde ecranul de așteptare când panoul e gata
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        var e = document.getElementById("incarcare");
+        if (e) e.style.display = "none";
+      }, 1200);
+    });
+
+    // după ce se loghează, intră direct în panou
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/cms/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

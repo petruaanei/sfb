@@ -1,11 +1,42 @@
 // Marcaj de versiune — folosit de pagina de diagnostic ca să vedem
 // dacă browserul a încărcat ultima variantă a fișierului.
-const VERSIUNE_SCRIPT = "2026-08-22-a";
+const VERSIUNE_SCRIPT = "2026-08-22-b";
 
-document.addEventListener("DOMContentLoaded", () => {
+// Datele site-ului, citite din fișierele JSON la deschiderea paginii.
+// Sursa unică de adevăr: products.json și packages.json — aceleași fișiere
+// pe care le scriu atât panoul local (admin.bat), cât și panoul online.
+let PRODUCTS = [];
+let PACHETE = [];
+
+async function incarcaDate() {
+  const cuOraCurenta = (fisier) => `${fisier}?t=${Date.now()}`;
+
+  async function ia(fisier, cheie) {
+    try {
+      const res = await fetch(cuOraCurenta(fisier), { cache: "no-store" });
+      if (!res.ok) return [];
+      const date = await res.json();
+      // acceptă atât forma nouă {"cheie": [...]}, cât și o listă simplă
+      return Array.isArray(date) ? date : date[cheie] || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  [PRODUCTS, PACHETE] = await Promise.all([
+    ia("products.json", "produse"),
+    ia("packages.json", "pachete"),
+  ]);
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  // partea vizuală pornește imediat, nu așteaptă datele
   initHeader();
   initMeniuMobil();
   initHeroSlideshow();
+
+  await incarcaDate();
+
   initCatalog();
   initProductDetail();
   initCategoriiNav();

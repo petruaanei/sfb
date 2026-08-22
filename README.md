@@ -1,7 +1,15 @@
 # Servicii Funerare Băltătești — site + panou de administrare
 
-Site static (HTML / CSS / JavaScript, fără framework) plus un panou de administrare
-local prin care proprietarul adaugă produse și pachete **fără să atingă cod sau Git**.
+Site static (HTML / CSS / JavaScript, fără framework) cu **două panouri de
+administrare**, prin care proprietarul adaugă produse și pachete fără să atingă cod:
+
+- **Panou online** (`site.ro/cms`) — de pe orice tabletă, telefon sau calculator,
+  de oriunde, fără să fie pornit vreun calculator. *Varianta principală.*
+- **Panou local** (`admin.bat`) — rulează pe un calculator Windows, ca variantă
+  de rezervă și pentru dezvoltator.
+
+Ambele scriu în aceleași fișiere (`products.json`, `packages.json`), deci pot fi
+folosite alternativ fără probleme.
 
 ---
 
@@ -9,6 +17,7 @@ local prin care proprietarul adaugă produse și pachete **fără să atingă co
 
 - [Structura proiectului](#structura-proiectului)
 - [Cum funcționează administrarea](#cum-funcționează-administrarea)
+- [Punerea online (o singură dată)](#punerea-online-o-singură-dată) ← *de făcut primul*
 - [Instalare pe calculatorul proprietarului](#instalare-pe-calculatorul-proprietarului) ← *partea importantă*
 - [Instrucțiuni de lăsat proprietarului](#instrucțiuni-de-lăsat-proprietarului)
 - [Pentru dezvoltator](#pentru-dezvoltator)
@@ -27,8 +36,9 @@ local prin care proprietarul adaugă produse și pachete **fără să atingă co
 | `servicii.html`, `despre.html`, `contact.html` | Pagini de prezentare |
 | `style.css` | Stilul întregului site |
 | `script.js` | Logica site-ului (slideshow, galerii, filtre, căutare, meniu mobil) |
-| `products.json` / `products.js` | **Datele produselor** — generate de panoul de admin |
-| `packages.json` / `packages.js` | **Datele pachetelor** — generate de panoul de admin |
+| `products.json` | **Datele produselor** — sursa unică, citită direct de site |
+| `packages.json` | **Datele pachetelor** — sursa unică, citită direct de site |
+| `cms/` | Panoul de administrare online (Decap CMS) |
 | `images/` | Toate pozele (logo, slideshow, produse, servicii) |
 | `admin.bat` | **Pornește panoul de administrare** (dublu-click) |
 | `test-pe-telefon.bat` | Pornește site-ul pentru testare, inclusiv de pe telefon |
@@ -37,25 +47,80 @@ local prin care proprietarul adaugă produse și pachete **fără să atingă co
 | `admin_server.py` | Serverul local al panoului (Python) |
 | `admin.html` / `admin.css` / `admin.js` | Interfața panoului de administrare |
 
-> **Nu edita manual** `products.js` și `packages.js` — sunt regenerate automat
-> de panoul de admin la fiecare salvare și modificările manuale se pierd.
+> `products.json` și `packages.json` sunt **sursa unică de adevăr**. Le scriu
+> ambele panouri și le citește site-ul direct, la deschiderea paginii.
 
 ---
 
 ## Cum funcționează administrarea
 
-1. Proprietarul deschide `admin.bat` → pornește un server local (doar pe `127.0.0.1`,
-   nu e accesibil din exterior) și se deschide singur panoul în browser.
-2. Adaugă/editează produse și pachete, urcă poze prin drag & drop.
-   Serverul scrie pozele în `images/produse/<categorie>/<id-produs>/` și
-   actualizează `products.json` + `products.js`.
-3. Apasă butonul **„Publică pe site"** → se face automat `git add`, `commit` și `push`.
-   Proprietarul nu vede și nu trebuie să știe nimic despre Git.
+Site-ul citește produsele direct din `products.json` și `packages.json`.
+Cine modifică aceste fișiere schimbă site-ul — și există două căi.
 
-**Se publică doar conținutul**: `products.json`, `products.js`, `packages.json`,
-`packages.js` și folderul `images/`. Modificările la cod (HTML/CSS/JS) **nu** sunt
-trimise de proprietar din greșeală — lista e definită în `admin_server.py`, la
-constanta `CAI_CONTINUT`.
+### A. Panoul online — `site.ro/cms` *(varianta principală)*
+
+Proprietarul intră de pe orice dispozitiv, se loghează cu email și parolă,
+adaugă produse și urcă poze direct din galeria tabletei. La apăsarea pe
+**Publish**, modificarea se salvează automat în GitHub, iar Netlify
+republică site-ul în aproximativ un minut.
+
+Nu are nevoie de calculator pornit, de Python, de Git și nici măcar de a fi acasă.
+
+### B. Panoul local — `admin.bat` *(rezervă)*
+
+Rulează pe un calculator Windows, pe `127.0.0.1` (inaccesibil din exterior).
+Adaugă produse, urcă poze, apoi apasă **„Publică pe site"**, care face automat
+`git add`, `commit` și `push`.
+
+**Se publică doar conținutul**: `products.json`, `packages.json` și folderul
+`images/`. Modificările la cod (HTML/CSS/JS) **nu** pot fi trimise din greșeală —
+lista e definită în `admin_server.py`, la constanta `CAI_CONTINUT`.
+
+---
+
+## Punerea online (o singură dată)
+
+> De făcut de către dezvoltator. Durează ~30 de minute. Totul este gratuit.
+
+### Pasul 1 — Creează site-ul pe Netlify
+
+1. Intră pe <https://app.netlify.com> și loghează-te cu contul de GitHub
+2. **Add new site → Import an existing project → GitHub**
+3. Alege repository-ul `sfb`
+4. Lasă setările goale (nu există build):
+   - *Branch to deploy*: `main`
+   - *Build command*: **gol**
+   - *Publish directory*: **gol** (sau `.`)
+5. **Deploy site**
+
+Site-ul primește o adresă de forma `nume-aleator.netlify.app`. O poți schimba din
+*Site configuration → Change site name*, sau poți lega un domeniu propriu
+(ex. `serviciifunerarebaltatesti.ro`) din *Domain management*.
+
+### Pasul 2 — Pornește autentificarea
+
+1. În Netlify: *Site configuration → Identity* → **Enable Identity**
+2. La *Registration preferences*, alege **Invite only**
+   (altfel oricine s-ar putea înregistra singur)
+3. Tot acolo, la *Services → Git Gateway*, apasă **Enable Git Gateway**
+   (asta îi permite panoului să salveze în GitHub, fără ca proprietarul să aibă cont)
+
+### Pasul 3 — Invită proprietarul
+
+1. Tab-ul **Identity → Invite users**
+2. Scrie `adrianciudin9@gmail.com` → *Send*
+3. El primește un email, apasă pe link, își alege singur o parolă
+
+### Pasul 4 — Verifică
+
+1. Intră pe `https://adresa-site.netlify.app/cms/`
+2. Loghează-te
+3. Modifică un produs de test → **Publish**
+4. După ~1 minut, verifică pe site că modificarea a apărut
+
+> **Atenție la regula de protecție a branch-ului `main`.**
+> Dacă în GitHub există o regulă care cere Pull Request, Git Gateway nu va putea
+> salva. Scoate regula din *GitHub → Settings → Rules*, sau adaugă o excepție.
 
 ---
 
@@ -167,9 +232,41 @@ Redenumește scurtătura în **„Administrare site"**.
 
 ## Instrucțiuni de lăsat proprietarului
 
-> Poți printa secțiunea asta și să i-o lași lângă calculator.
+> Poți printa secțiunea asta și să i-o lași.
 
-### Ca să adaugi produse
+### Ca să adaugi produse — de pe tabletă, telefon sau calculator
+
+1. Deschide în browser: **`adresa-site.ro/cms`**
+   *(salvează pagina la favorite sau pune-o pe ecranul principal)*
+2. Loghează-te cu emailul și parola ta
+3. Apasă **Produse** (sau **Pachete funerare**), apoi **Lista de produse**
+4. Ca să adaugi ceva nou, apasă **Add Produs** jos de tot
+5. Completează câmpurile:
+   - **Nume produs** — cum vrei să apară pe site
+   - **Identificator** — un nume scurt, fără spații și fără diacritice
+     (exemplu: `prosop-mare`). Se scrie o singură dată, nu îl mai schimba.
+   - **Categorie** și, dacă e cazul, **Subcategorie**
+   - **Preț**, **Stoc**, **Material**, **Dimensiuni**, **Descriere**
+   - **Poze** — apasă *Add Poză* și alege din galerie; poți pune mai multe
+6. Apasă **Publish → Publish now** (sus)
+7. După aproximativ un minut, produsul apare pe site
+
+### Sfaturi
+
+- Cel mai bine arată pozele **pătrate**
+- Poți pune mai multe poze pentru un produs — pe site apar săgeți de răsfoire
+- Poza se vede întotdeauna întreagă, nu e tăiată
+- Dacă greșești ceva, intri din nou pe produs, corectezi și apeși iar **Publish**
+
+### Despre stoc
+
+- **În stoc** / **Cantitate limitată** — produsul apare pe site
+- **Stoc epuizat** — produsul **dispare de pe site**, dar rămâne salvat cu tot
+  cu poze. Când îl pui la loc pe „În stoc", reapare instant, fără să reintroduci nimic.
+
+---
+
+### Varianta de rezervă — de pe calculatorul cu programul instalat
 
 1. Dublu-click pe **„Administrare site"** de pe desktop
 2. Se deschide singur în browser. Lasă fereastra neagră deschisă cât timp lucrezi.
@@ -185,18 +282,6 @@ Redenumește scurtătura în **„Administrare site"**.
 - **Galben** — ai modificări care nu sunt încă pe site → apasă „Publică pe site"
 - **Verde** — site-ul este la zi, nu ai nimic de făcut
 - **Roșu** — ceva nu a mers; citește mesajul sau sună persoana care se ocupă de site
-
-### Despre stoc
-
-- **În stoc** / **Cantitate limitată** — produsul apare pe site
-- **Stoc epuizat** — produsul **dispare de pe site**, dar pozele și detaliile rămân salvate.
-  Când îl pui la loc pe „În stoc", reapare instant, fără să reintroduci nimic.
-
-### Sfaturi pentru poze
-
-- Cel mai bine arată pozele **pătrate** (ex. 1024x1024 px)
-- Poți pune mai multe poze pentru un produs — apar săgeți de răsfoire
-- Poza se vede întotdeauna întreagă, nu e tăiată
 
 ---
 
@@ -275,12 +360,13 @@ Dacă scrie că panoul rulează deja, închide ferestrele negre deschise și în
 Publicarea trimite pe branch-ul din `BRANCH_PUBLICARE`. Verifică să fie exact
 branch-ul din care se face deploy-ul (`main`, `gh-pages` etc.).
 
-**Am editat manual `products.js` și s-au pierdut modificările**
-Normal — e generat automat. Editează din panoul de admin.
+**Am editat manual un produs în fișier și nu se vede corect**
+Editează din panoul online (`/cms`) sau din cel local — validează structura automat.
+Dacă tot editezi manual, păstrează forma `{"produse": [ ... ]}`.
 
 **Produsele noi nu apar pe site (mai ales pe telefon)**
 Aproape sigur e cache-ul browserului, nu o problemă de salvare.
 Verifică întâi în `products.json` că produsul chiar există.
 La testare locală folosește `test-pe-telefon.bat` (trimite „no-cache").
-Pe site-ul live, ai grijă ca găzduirea să nu cache-uiască `products.js` mult timp —
-Netlify și Vercel sunt corecte implicit; pe GitHub Pages pot trece ~10 minute.
+Pe site-ul live nu apare problema: `products.json` e cerut cu marcaj de timp,
+deci browserul ia mereu ultima versiune.

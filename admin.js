@@ -130,8 +130,16 @@ function initPublicare() {
 }
 
 async function incarcaSiRandeaza() {
-  PRODUSE = await fetch("products.json?t=" + Date.now()).then((r) => r.json());
-  PACHETE = await fetch("packages.json?t=" + Date.now()).then((r) => r.json());
+  // fișierele au forma {"produse": [...]} / {"pachete": [...]}
+  // (acceptăm și o listă simplă, pentru compatibilitate)
+  async function ia(fisier, cheie) {
+    const date = await fetch(`${fisier}?t=${Date.now()}`).then((r) => r.json());
+    return Array.isArray(date) ? date : date[cheie] || [];
+  }
+
+  PRODUSE = await ia("products.json", "produse");
+  PACHETE = await ia("packages.json", "pachete");
+
   randeaza();
   if (window.verificaStareaPublicare) window.verificaStareaPublicare();
 }

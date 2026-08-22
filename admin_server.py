@@ -17,9 +17,7 @@ from pathlib import Path
 PORT = 8123
 ROOT_DIR = Path(__file__).resolve().parent
 PRODUCTS_JSON = ROOT_DIR / "products.json"
-PRODUCTS_JS = ROOT_DIR / "products.js"
 PACKAGES_JSON = ROOT_DIR / "packages.json"
-PACKAGES_JS = ROOT_DIR / "packages.js"
 IMAGES_DIR = ROOT_DIR / "images" / "produse"
 
 # ---- PUBLICARE PE SITE (pentru dezvoltator) -------------------------------
@@ -27,9 +25,7 @@ IMAGES_DIR = ROOT_DIR / "images" / "produse"
 # Astfel, lucrul neterminat la cod NU ajunge niciodată publicat din greșeală.
 CAI_CONTINUT = [
     "products.json",
-    "products.js",
     "packages.json",
-    "packages.js",
     "images",
 ]
 
@@ -61,44 +57,37 @@ def slugify(text):
     return text or "produs"
 
 
-def load_products():
-    if not PRODUCTS_JSON.exists():
+def _citeste(cale, cheie):
+    """Citește lista dintr-un fișier de forma {"cheie": [...]}."""
+    if not cale.exists():
         return []
-    with open(PRODUCTS_JSON, "r", encoding="utf-8") as f:
-        return json.load(f)
+    with open(cale, "r", encoding="utf-8") as f:
+        date = json.load(f)
+    # acceptă și forma veche (listă simplă), ca să nu se piardă date
+    if isinstance(date, list):
+        return date
+    return date.get(cheie, [])
+
+
+def _scrie(cale, cheie, lista):
+    with open(cale, "w", encoding="utf-8") as f:
+        json.dump({cheie: lista}, f, ensure_ascii=False, indent=2)
+
+
+def load_products():
+    return _citeste(PRODUCTS_JSON, "produse")
 
 
 def save_products(products):
-    with open(PRODUCTS_JSON, "w", encoding="utf-8") as f:
-        json.dump(products, f, ensure_ascii=False, indent=2)
-
-    js = (
-        "// Fișier generat automat de panoul de admin (admin.bat).\n"
-        "// Nu edita manual aici — deschide admin.bat și adaugă/editează produsele de acolo.\n\n"
-        "const PRODUCTS = " + json.dumps(products, ensure_ascii=False, indent=2) + ";\n"
-    )
-    with open(PRODUCTS_JS, "w", encoding="utf-8") as f:
-        f.write(js)
+    _scrie(PRODUCTS_JSON, "produse", products)
 
 
 def load_packages():
-    if not PACKAGES_JSON.exists():
-        return []
-    with open(PACKAGES_JSON, "r", encoding="utf-8") as f:
-        return json.load(f)
+    return _citeste(PACKAGES_JSON, "pachete")
 
 
 def save_packages(packages):
-    with open(PACKAGES_JSON, "w", encoding="utf-8") as f:
-        json.dump(packages, f, ensure_ascii=False, indent=2)
-
-    js = (
-        "// Fișier generat automat de panoul de admin (admin.bat).\n"
-        "// Nu edita manual aici — deschide admin.bat și adaugă/editează pachetele de acolo.\n\n"
-        "const PACHETE = " + json.dumps(packages, ensure_ascii=False, indent=2) + ";\n"
-    )
-    with open(PACKAGES_JS, "w", encoding="utf-8") as f:
-        f.write(js)
+    _scrie(PACKAGES_JSON, "pachete", packages)
 
 
 def ruleaza_git(*argumente, timeout=180):

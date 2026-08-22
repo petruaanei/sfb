@@ -19,7 +19,6 @@
   <h1>Diagnostic — ce vede acest dispozitiv</h1>
   <div id="rez">Se verifică...</div>
 
-  <script src="products.js"></script>
   <script src="script.js"></script>
   <script>
     const erori = [];
@@ -37,7 +36,7 @@
       out += rand("Adresa folosită", window.location.origin);
 
       const areProducts = typeof PRODUCTS !== "undefined";
-      out += rand("products.js încărcat", areProducts ? "DA" : "NU", areProducts);
+      out += rand("products.json încărcat", areProducts ? "DA" : "NU", areProducts);
 
       if (areProducts) {
         out += rand("Număr de produse găsite", PRODUCTS.length, PRODUCTS.length === 9);
