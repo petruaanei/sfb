@@ -12,7 +12,9 @@ const PRODUCTS = [
     "descriere": "",
     "stoc": "in_stoc",
     "subcategorie": "",
-    "imagini": []
+    "imagini": [
+      "images/produse/imbracaminte/costum/1.png"
+    ]
   },
   {
     "id": "prosop-mare",
@@ -77,30 +79,6 @@ const PRODUCTS = [
     ]
   },
   {
-    "id": "doli",
-    "categorie": "accesorii",
-    "nume": "doliu",
-    "pret": "10 RON",
-    "material": "",
-    "dimensiuni": "",
-    "descriere": "",
-    "stoc": "limitat",
-    "subcategorie": "",
-    "imagini": []
-  },
-  {
-    "id": "fata-de-masa",
-    "categorie": "accesorii",
-    "nume": "fata de masa",
-    "pret": "20 RON",
-    "material": "",
-    "dimensiuni": "",
-    "descriere": "",
-    "stoc": "in_stoc",
-    "subcategorie": "",
-    "imagini": []
-  },
-  {
     "id": "sicriu",
     "categorie": "sicrie",
     "nume": "Sicriu",
@@ -110,7 +88,9 @@ const PRODUCTS = [
     "descriere": "",
     "stoc": "limitat",
     "subcategorie": "clasic",
-    "imagini": []
+    "imagini": [
+      "images/produse/sicrie/sicriu/1.jpg"
+    ]
   },
   {
     "id": "coroana",
@@ -122,6 +102,22 @@ const PRODUCTS = [
     "descriere": "",
     "stoc": "limitat",
     "subcategorie": "",
-    "imagini": []
+    "imagini": [
+      "images/produse/coroane/coroana/1.jpg"
+    ]
+  },
+  {
+    "id": "accesoriu",
+    "categorie": "accesorii",
+    "nume": "accesoriu",
+    "pret": "0.01 RON",
+    "material": "Stejar",
+    "dimensiuni": "",
+    "descriere": "tudor",
+    "stoc": "in_stoc",
+    "subcategorie": "",
+    "imagini": [
+      "images/produse/accesorii/accesoriu/1.jpg"
+    ]
   }
 ];
