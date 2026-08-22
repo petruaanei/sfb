@@ -16,41 +16,50 @@
       <ul class="nav-links nav-links-left">
         <li><a href="index.html">Acasă</a></li>
         <li><a href="despre.html">Despre noi</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
       </ul>
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="Logo firmă" class="logo-img">
       </a>
       <ul class="nav-links nav-links-right">
-        <li><a href="servicii.html">Servicii</a></li>
         <li><a href="produse.html" class="active">Produse</a></li>
         <li><a href="pachete.html">Pachete funerare</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="produse">
+      <div class="produse-filtre" id="produseFiltre">
+      <div class="filtre-rand">
       <nav class="categorii-nav">
-        <a href="#accesorii">Accesorii</a>
-        <a href="#coroane">Coroane</a>
-        <a href="#felinare">Felinare</a>
-        <a href="#imbracaminte">Îmbrăcăminte</a>
-        <a href="#lenjerii">Lenjerii</a>
-        <a href="#prosoape">Prosoape</a>
-        <a href="#sicrie">Sicrie</a>
-        <a href="#vesela">Veselă</a>
-        <div class="produse-search" id="produseSearch">
-          <button type="button" class="cautare-toggle" id="cautareToggle" aria-label="Caută un produs">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="11" cy="11" r="7"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-          <input type="text" id="cautareProdus" placeholder="Caută un produs după nume..." autocomplete="off">
-          <div class="cautare-rezultate" id="cautareRezultate"></div>
-        </div>
+        <button type="button" class="categorie-btn" data-categorie="toate">Toate</button>
+        <button type="button" class="categorie-btn" data-categorie="accesorii">Accesorii</button>
+        <button type="button" class="categorie-btn" data-categorie="coroane">Coroane</button>
+        <button type="button" class="categorie-btn" data-categorie="felinare">Felinare</button>
+        <button type="button" class="categorie-btn" data-categorie="imbracaminte">Îmbrăcăminte</button>
+        <button type="button" class="categorie-btn" data-categorie="lenjerii">Lenjerii</button>
+        <button type="button" class="categorie-btn" data-categorie="prosoape">Prosoape</button>
+        <button type="button" class="categorie-btn" data-categorie="sicrie">Sicrie</button>
+        <button type="button" class="categorie-btn" data-categorie="vesela">Veselă</button>
       </nav>
+
+      <div class="produse-search" id="produseSearch">
+        <button type="button" class="cautare-toggle" id="cautareToggle" aria-label="Caută un produs">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <input type="text" id="cautareProdus" placeholder="Caută un produs după nume..." autocomplete="off">
+        <div class="cautare-rezultate" id="cautareRezultate"></div>
+      </div>
+      </div>
+
+      <!-- Subcategoriile apar aici automat, când alegi o categorie care are subcategorii -->
+      <div class="subcategorii-nav" id="subcategoriiNav"></div>
+      </div>
 
       <!-- Cardurile de produse sunt generate automat din products.js -->
       <section id="accesorii" class="categorie">
