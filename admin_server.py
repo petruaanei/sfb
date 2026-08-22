@@ -6,8 +6,10 @@ import base64
 import json
 import re
 import shutil
+import subprocess
 import threading
 import webbrowser
+from datetime import datetime
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 from pathlib import Path
@@ -19,6 +21,22 @@ PRODUCTS_JS = ROOT_DIR / "products.js"
 PACKAGES_JSON = ROOT_DIR / "packages.json"
 PACKAGES_JS = ROOT_DIR / "packages.js"
 IMAGES_DIR = ROOT_DIR / "images" / "produse"
+
+# ---- PUBLICARE PE SITE (pentru dezvoltator) -------------------------------
+# Doar aceste căi sunt trimise pe site când se apasă butonul "Publică".
+# Astfel, lucrul neterminat la cod NU ajunge niciodată publicat din greșeală.
+CAI_CONTINUT = [
+    "products.json",
+    "products.js",
+    "packages.json",
+    "packages.js",
+    "images",
+]
+
+# Lasă None ca să publice pe branch-ul curent.
+# Pune numele branch-ului de publicare (ex. "main") dacă vrei să meargă mereu acolo.
+BRANCH_PUBLICARE = None
+# --------------------------------------------------------------------------
 
 CATEGORII = ["accesorii", "coroane", "felinare", "imbracaminte", "lenjerii", "prosoape", "sicrie", "vesela"]
 STOC_VALORI = ["in_stoc", "limitat", "epuizat"]
@@ -82,6 +100,89 @@ def save_packages(packages):
         f.write(js)
 
 
+def ruleaza_git(*argumente, timeout=180):
+    """Rulează o comandă git în folderul site-ului și întoarce rezultatul."""
+    return subprocess.run(
+        ["git", *argumente],
+        cwd=str(ROOT_DIR),
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        timeout=timeout,
+    )
+
+
+def modificari_nepublicate():
+    """Câte fișiere de conținut sunt modificate față de site-ul publicat."""
+    rezultat = ruleaza_git("status", "--porcelain", "--", *CAI_CONTINUT)
+    if rezultat.returncode != 0:
+        return None
+    return len([linie for linie in rezultat.stdout.splitlines() if linie.strip()])
+
+
+def publica_pe_site():
+    """Trimite modificările de conținut pe site. Întoarce (reusit, mesaj)."""
+    try:
+        verificare = ruleaza_git("rev-parse", "--is-inside-work-tree")
+    except FileNotFoundError:
+        return False, (
+            "Git nu este instalat pe acest calculator. "
+            "Roagă persoana care se ocupă de site să îl instaleze și să îl configureze."
+        )
+    except subprocess.TimeoutExpired:
+        return False, "Operațiunea a durat prea mult. Verifică conexiunea la internet."
+
+    if verificare.returncode != 0:
+        return False, "Folderul site-ului nu este pregătit pentru publicare."
+
+    if ruleaza_git("remote", "get-url", "origin").returncode != 0:
+        return False, (
+            "Nu este configurată destinația site-ului. "
+            "Roagă persoana care se ocupă de site să o configureze o singură dată."
+        )
+
+    adaugare = ruleaza_git("add", "--", *CAI_CONTINUT)
+    if adaugare.returncode != 0:
+        return False, f"Nu s-au putut pregăti modificările:\n{adaugare.stderr.strip()}"
+
+    # dacă nu e nimic nou pregătit, nu are rost să continuăm
+    if ruleaza_git("diff", "--cached", "--quiet", "--", *CAI_CONTINUT).returncode == 0:
+        return True, "Nu sunt modificări noi de publicat — site-ul este deja la zi."
+
+    acum = datetime.now().strftime("%d.%m.%Y %H:%M")
+    commit = ruleaza_git("commit", "-m", f"Actualizare produse ({acum})")
+    if commit.returncode != 0:
+        return False, f"Nu s-au putut salva modificările:\n{commit.stderr.strip() or commit.stdout.strip()}"
+
+    branch = BRANCH_PUBLICARE
+    if not branch:
+        ramura = ruleaza_git("rev-parse", "--abbrev-ref", "HEAD")
+        branch = ramura.stdout.strip() or "HEAD"
+
+    push = ruleaza_git("push", "origin", branch)
+    if push.returncode == 0:
+        return True, "Site-ul a fost actualizat cu succes!"
+
+    # dacă altcineva a publicat între timp, aducem modificările lui și reîncercăm o dată
+    sincronizare = ruleaza_git("pull", "--rebase", "origin", branch)
+    if sincronizare.returncode != 0:
+        ruleaza_git("rebase", "--abort")
+        return False, (
+            "Modificările au fost salvate local, dar nu au putut fi trimise pe site.\n"
+            "Roagă persoana care se ocupă de site să verifice."
+        )
+
+    push = ruleaza_git("push", "origin", branch)
+    if push.returncode == 0:
+        return True, "Site-ul a fost actualizat cu succes!"
+
+    return False, (
+        "Modificările au fost salvate local, dar nu au putut fi trimise pe site.\n"
+        "Verifică dacă ai internet, apoi încearcă din nou."
+    )
+
+
 def unique_id(products, base):
     existing = {p["id"] for p in products}
     candidate = base
@@ -115,7 +216,7 @@ class AdminHandler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_POST(self):
-        if self.path not in ("/api/produse", "/api/pachete"):
+        if self.path not in ("/api/produse", "/api/pachete", "/api/publica"):
             self._send_json({"eroare": "Rută necunoscută"}, 404)
             return
 
@@ -128,6 +229,10 @@ class AdminHandler(SimpleHTTPRequestHandler):
             return
 
         action = payload.get("action")
+
+        if self.path == "/api/publica":
+            self._handle_publicare(action)
+            return
 
         if self.path == "/api/pachete":
             self._handle_pachete(action, payload)
@@ -150,6 +255,29 @@ class AdminHandler(SimpleHTTPRequestHandler):
                 self._send_json({"eroare": "Acțiune necunoscută"}, 400)
         except ValueError as e:
             self._send_json({"eroare": str(e)}, 400)
+
+    def _handle_publicare(self, action):
+        if action == "status":
+            try:
+                numar = modificari_nepublicate()
+            except FileNotFoundError:
+                numar = None
+            except subprocess.TimeoutExpired:
+                numar = None
+            self._send_json({"nepublicate": numar})
+            return
+
+        if action == "publica":
+            try:
+                reusit, mesaj = publica_pe_site()
+            except subprocess.TimeoutExpired:
+                reusit, mesaj = False, "Operațiunea a durat prea mult. Verifică internetul și încearcă din nou."
+            except Exception as e:
+                reusit, mesaj = False, f"A apărut o problemă neașteptată: {e}"
+            self._send_json({"ok": reusit, "mesaj": mesaj}, 200 if reusit else 400)
+            return
+
+        self._send_json({"eroare": "Acțiune necunoscută"}, 400)
 
     def _handle_pachete(self, action, payload):
         packages = load_packages()
