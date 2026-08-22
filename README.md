@@ -33,6 +33,7 @@ local prin care proprietarul adaugă produse și pachete **fără să atingă co
 | `admin.bat` | **Pornește panoul de administrare** (dublu-click) |
 | `test-pe-telefon.bat` | Pornește site-ul pentru testare, inclusiv de pe telefon |
 | `test_server.py` | Serverul de testare (fără cache, accesibil în rețeaua locală) |
+| `diagnostic.html` | Pagină de verificare: ce date și ce versiune de script a încărcat dispozitivul |
 | `admin_server.py` | Serverul local al panoului (Python) |
 | `admin.html` / `admin.css` / `admin.js` | Interfața panoului de administrare |
 
@@ -197,14 +198,24 @@ Dublu-click pe **`test-pe-telefon.bat`** (sau `py test_server.py`).
 
 Fereastra afișează direct ambele adrese:
 ```
-Pe acest calculator:  http://localhost:8000
-Pe telefon:           http://192.168.x.x:8000
+Pe acest calculator:  http://localhost:8010
+Pe telefon:           http://192.168.x.x:8010
 ```
 Telefonul trebuie să fie pe același Wi-Fi.
 
 > Folosește acest server, **nu** `py -m http.server`. Cel simplu nu trimite
 > instrucțiuni de cache, iar telefoanele rețin fișierele `.js` vechi — produsele
 > nou adăugate par să nu apară, deși sunt salvate corect.
+
+Dacă totuși un browser rămâne blocat pe o versiune veche, pornește pe alt port:
+```
+py test_server.py 8011
+```
+Fiind o adresă nouă, browserul o tratează ca pe un site nou și încarcă totul curat.
+
+Pentru verificare rapidă, `diagnostic.html` arată ce a încărcat efectiv dispozitivul
+(câte produse, ce versiune de `script.js`, eventuale erori JavaScript):
+`http://192.168.x.x:8010/diagnostic.html`
 
 ### Panoul de admin
 

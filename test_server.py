@@ -14,9 +14,9 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-# Se poate da alt port ca argument:  py test_server.py 8010
-# (util dacă browserul de pe telefon a memorat fișiere vechi de pe portul obișnuit)
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 8000
+# Se poate da alt port ca argument:  py test_server.py 8011
+# (util dacă browserul de pe telefon a memorat fișiere vechi de pe portul curent)
+PORT = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 8010
 ROOT_DIR = Path(__file__).resolve().parent
 
 
