@@ -31,6 +31,8 @@ local prin care proprietarul adaugă produse și pachete **fără să atingă co
 | `packages.json` / `packages.js` | **Datele pachetelor** — generate de panoul de admin |
 | `images/` | Toate pozele (logo, slideshow, produse, servicii) |
 | `admin.bat` | **Pornește panoul de administrare** (dublu-click) |
+| `test-pe-telefon.bat` | Pornește site-ul pentru testare, inclusiv de pe telefon |
+| `test_server.py` | Serverul de testare (fără cache, accesibil în rețeaua locală) |
 | `admin_server.py` | Serverul local al panoului (Python) |
 | `admin.html` / `admin.css` / `admin.js` | Interfața panoului de administrare |
 
@@ -189,20 +191,20 @@ Redenumește scurtătura în **„Administrare site"**.
 
 ## Pentru dezvoltator
 
-### Rulare locală a site-ului
+### Rulare locală + testare pe telefon
 
-```
-py -m http.server 8000
-```
-Apoi <http://localhost:8000>
+Dublu-click pe **`test-pe-telefon.bat`** (sau `py test_server.py`).
 
-### Testare pe telefon (același Wi-Fi)
+Fereastra afișează direct ambele adrese:
+```
+Pe acest calculator:  http://localhost:8000
+Pe telefon:           http://192.168.x.x:8000
+```
+Telefonul trebuie să fie pe același Wi-Fi.
 
-```
-py -m http.server 8000 --bind 0.0.0.0
-```
-Apoi, pe telefon: `http://<IP-ul-calculatorului>:8000`
-(IP-ul se află cu `ipconfig`)
+> Folosește acest server, **nu** `py -m http.server`. Cel simplu nu trimite
+> instrucțiuni de cache, iar telefoanele rețin fișierele `.js` vechi — produsele
+> nou adăugate par să nu apară, deși sunt salvate corect.
 
 ### Panoul de admin
 
@@ -254,3 +256,10 @@ branch-ul din care se face deploy-ul (`main`, `gh-pages` etc.).
 
 **Am editat manual `products.js` și s-au pierdut modificările**
 Normal — e generat automat. Editează din panoul de admin.
+
+**Produsele noi nu apar pe site (mai ales pe telefon)**
+Aproape sigur e cache-ul browserului, nu o problemă de salvare.
+Verifică întâi în `products.json` că produsul chiar există.
+La testare locală folosește `test-pe-telefon.bat` (trimite „no-cache").
+Pe site-ul live, ai grijă ca găzduirea să nu cache-uiască `products.js` mult timp —
+Netlify și Vercel sunt corecte implicit; pe GitHub Pages pot trece ~10 minute.
