@@ -75,5 +75,17 @@ const PRODUCTS = [
       "images/produse/prosoape/prosop-mare-2/1.jpg",
       "images/produse/prosoape/prosop-mare-2/2.jpg"
     ]
+  },
+  {
+    "id": "costum-2",
+    "categorie": "accesorii",
+    "nume": "costum",
+    "pret": "",
+    "material": "",
+    "dimensiuni": "",
+    "descriere": "",
+    "stoc": "in_stoc",
+    "subcategorie": "",
+    "imagini": []
   }
 ];
