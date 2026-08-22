@@ -159,6 +159,20 @@
       ],
       "id": "test1",
       "nume": "test"
+    },
+    {
+      "material": "pisic",
+      "dimensiuni": "",
+      "descriere": "",
+      "pret": "100RON",
+      "stoc": "in_stoc",
+      "categorie": "accesorii",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/incarcate/img_0757.jpeg"
+      ],
+      "id": "suki1",
+      "nume": "suki"
     }
   ]
 }
