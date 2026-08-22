@@ -161,19 +161,28 @@ function randeaza() {
   if (stare.view === "pachet") return randeazaPachet(stare.id);
 }
 
+/* ===== ICONIȚE (linii subțiri, în ton cu site-ul) ===== */
+const ICONITE = {
+  cutie: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>`,
+  pachet: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="8" width="18" height="13"/><path d="M3 12h18M12 8v13"/><path d="M12 8s-1-5-4-5-2 5 4 5zM12 8s1-5 4-5 2 5-4 5z"/></svg>`,
+  dosar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 6h6l2 2.5h10V19H3z"/></svg>`,
+  imagine: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="5" width="18" height="14"/><circle cx="8.5" cy="10" r="1.4"/><path d="m3 17 5-4.5 4 3.5 3-2.5 6 4.5"/></svg>`,
+  plus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 5v14M5 12h14"/></svg>`,
+};
+
 /* ===== ECRAN 0: ACASĂ (alegere Produse / Pachete) ===== */
 function randeazaAcasa() {
   app.innerHTML = `
     <h2 class="admin-titlu">Ce vrei să administrezi?</h2>
     <div class="tile-grid">
       <div class="tile" id="mergiProduse">
-        <div class="tile-icon">📦</div>
-        <div>Produse</div>
+        <div class="tile-marcaj">${ICONITE.cutie}</div>
+        <div class="tile-nume">Produse</div>
         <div class="tile-count">${PRODUSE.length} produse</div>
       </div>
       <div class="tile" id="mergiPachete">
-        <div class="tile-icon">🎁</div>
-        <div>Pachete funerare</div>
+        <div class="tile-marcaj">${ICONITE.pachet}</div>
+        <div class="tile-nume">Pachete funerare</div>
         <div class="tile-count">${PACHETE.length} pachete</div>
       </div>
     </div>
@@ -190,8 +199,8 @@ function randeazaCategorii() {
     const poza = produseCategorie.find((p) => p.imagini.length)?.imagini[0];
     return `
       <div class="tile" data-cat="${cat}">
-        ${poza ? `<img class="tile-img" src="${poza}" alt="">` : `<div class="tile-icon">🗂️</div>`}
-        <div>${ETICHETE_CATEGORII[cat]}</div>
+        ${poza ? `<img class="tile-img" src="${poza}" alt="">` : `<div class="tile-marcaj">${ICONITE.dosar}</div>`}
+        <div class="tile-nume">${ETICHETE_CATEGORII[cat]}</div>
         <div class="tile-count">${produseCategorie.length} produse</div>
       </div>
     `;
@@ -221,9 +230,9 @@ function randeazaCategorie(categorie) {
         ${
           p.imagini.length
             ? `<img class="tile-img" src="${p.imagini[0]}" alt="">`
-            : `<div class="tile-icon">🖼️</div>`
+            : `<div class="tile-marcaj">${ICONITE.imagine}</div>`
         }
-        <div>${p.nume}</div>
+        <div class="tile-nume">${p.nume}</div>
         <div class="tile-count">${p.stoc === "epuizat" ? "Arhivat — nu apare pe site" : `${p.imagini.length} poze`}</div>
       </div>
     `
@@ -236,7 +245,7 @@ function randeazaCategorie(categorie) {
     <div class="tile-grid">
       ${tiles}
       <div class="form-nou" id="formNou">
-        <div style="font-size:1.4rem; color: var(--gold); text-align:center;">+ Produs nou</div>
+        <div class="form-nou-titlu">Produs nou</div>
         <input type="text" id="numeProdusNou" placeholder="Numele produsului">
         <button class="buton buton-salveaza" id="creeazaProdus">Creează</button>
       </div>
@@ -286,7 +295,8 @@ function randeazaProdus(categorie, id) {
     <div class="imagini-grid">
       ${poze}
       <div class="drop-zone" id="dropZone">
-        <span id="dropZoneText">➕ Trage poze aici<br>sau apasă ca să alegi</span>
+        ${ICONITE.plus}
+        <span id="dropZoneText">Trage poze aici<br>sau apasă ca să alegi</span>
         <input type="file" id="fileInput" accept="image/*" multiple hidden>
       </div>
     </div>
@@ -333,9 +343,9 @@ function randeazaProdus(categorie, id) {
       <label>Descriere
         <textarea id="campDescriere" placeholder="Descriere scurtă">${escapeHtml(produs.descriere)}</textarea>
       </label>
-      <button class="buton buton-salveaza" id="salveazaProdus">💾 Salvează modificările</button>
+      <button class="buton buton-salveaza" id="salveazaProdus">Salvează modificările</button>
       <a class="produs-vezi-site" href="produs.html?id=${encodeURIComponent(produs.id)}" target="_blank">Vezi produsul pe site ↗</a>
-      <button class="buton buton-sterge" id="stergeProdus">🗑 Șterge produsul</button>
+      <button class="buton buton-sterge" id="stergeProdus">Șterge produsul</button>
     </div>
   `;
 
@@ -412,7 +422,7 @@ function randeazaPachete() {
   const tiles = PACHETE.map(
     (p) => `
       <div class="tile" data-id="${p.id}">
-        <div class="tile-icon">🎁</div>
+        <div class="tile-marcaj">${ICONITE.pachet}</div>
         <div>${p.nume}</div>
         <div class="tile-count">${p.pret || "fără preț"}</div>
       </div>
@@ -479,9 +489,9 @@ function randeazaPachet(id) {
       <label>Descriere
         <textarea id="campDescriere" placeholder="Descriere scurtă">${escapeHtml(pachet.descriere)}</textarea>
       </label>
-      <button class="buton buton-salveaza" id="salveazaPachet">💾 Salvează modificările</button>
+      <button class="buton buton-salveaza" id="salveazaPachet">Salvează modificările</button>
       <a class="produs-vezi-site" href="pachete.html" target="_blank">Vezi pachetele pe site ↗</a>
-      <button class="buton buton-sterge" id="stergePachet">🗑 Șterge pachetul</button>
+      <button class="buton buton-sterge" id="stergePachet">Șterge pachetul</button>
     </div>
   `;
 
