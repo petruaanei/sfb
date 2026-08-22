@@ -1,3 +1,7 @@
+// Marcaj de versiune — folosit de pagina de diagnostic ca să vedem
+// dacă browserul a încărcat ultima variantă a fișierului.
+const VERSIUNE_SCRIPT = "2026-08-22-a";
+
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
   initMeniuMobil();
