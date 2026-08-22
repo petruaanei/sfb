@@ -1,150 +1,163 @@
 {
   "produse": [
     {
-      "id": "costum",
-      "categorie": "imbracaminte",
-      "nume": "costum",
-      "pret": "233.92 RON",
       "material": "",
       "dimensiuni": "",
       "descriere": "",
+      "pret": "233.92 RON",
       "stoc": "in_stoc",
+      "categorie": "imbracaminte",
       "subcategorie": "",
       "imagini": [
         "images/produse/imbracaminte/costum/1.png"
-      ]
+      ],
+      "id": "costum",
+      "nume": "costum"
     },
     {
-      "id": "prosop-mare",
-      "categorie": "prosoape",
-      "nume": "Prosop Mare",
-      "pret": "20 RON",
       "material": "Bumbac 100%",
       "dimensiuni": "70x140cm",
       "descriere": "",
+      "pret": "20 RON",
       "stoc": "in_stoc",
+      "categorie": "prosoape",
       "subcategorie": "mari",
       "imagini": [
         "images/produse/prosoape/prosop-mare/1.jpg",
         "images/produse/prosoape/prosop-mare/2.jpg"
-      ]
+      ],
+      "id": "prosop-mare",
+      "nume": "Prosop Mare"
     },
     {
-      "id": "prosop-mic",
-      "categorie": "prosoape",
-      "nume": "Prosop Mic",
-      "pret": "10 RON",
       "material": "Bumbac 100%",
       "dimensiuni": "30x30cm",
       "descriere": "",
+      "pret": "10 RON",
       "stoc": "in_stoc",
+      "categorie": "prosoape",
       "subcategorie": "mici",
       "imagini": [
         "images/produse/prosoape/prosop-mic/1.jpg",
         "images/produse/prosoape/prosop-mic/2.jpg"
-      ]
+      ],
+      "id": "prosop-mic",
+      "nume": "Prosop Mic"
     },
     {
-      "id": "sicriu-premium",
-      "categorie": "sicrie",
-      "nume": "Sicriu Premium",
-      "pret": "1000 RON",
       "material": "Stejar",
       "dimensiuni": "50x200cm",
       "descriere": "",
+      "pret": "1000 RON",
       "stoc": "in_stoc",
+      "categorie": "sicrie",
       "subcategorie": "premium",
       "imagini": [
         "images/produse/sicrie/sicriu-premium/1.jpg",
         "images/produse/sicrie/sicriu-premium/2.jpg",
         "images/produse/sicrie/sicriu-premium/3.jpg",
         "images/produse/sicrie/sicriu-premium/4.jpg"
-      ]
+      ],
+      "id": "sicriu-premium",
+      "nume": "Sicriu Premium"
     },
     {
-      "id": "prosop-mare-2",
-      "categorie": "prosoape",
-      "nume": "Prosop Mare 2",
-      "pret": "25 RON",
       "material": "Bumbac 100%",
       "dimensiuni": "70x140cm",
       "descriere": "",
+      "pret": "25 RON",
       "stoc": "in_stoc",
+      "categorie": "prosoape",
       "subcategorie": "mari",
       "imagini": [
         "images/produse/prosoape/prosop-mare-2/1.jpg",
         "images/produse/prosoape/prosop-mare-2/2.jpg"
-      ]
+      ],
+      "id": "prosop-mare-2",
+      "nume": "Prosop Mare 2"
     },
     {
-      "id": "sicriu",
-      "categorie": "sicrie",
-      "nume": "Sicriu",
-      "pret": "",
       "material": "",
       "dimensiuni": "",
       "descriere": "",
+      "pret": "",
       "stoc": "limitat",
+      "categorie": "sicrie",
       "subcategorie": "clasic",
       "imagini": [
         "images/produse/sicrie/sicriu/1.jpg"
-      ]
+      ],
+      "id": "sicriu",
+      "nume": "Sicriu"
     },
     {
-      "id": "coroana",
-      "categorie": "coroane",
-      "nume": "Coroana",
-      "pret": "150 RON",
       "material": "",
       "dimensiuni": "",
       "descriere": "",
+      "pret": "150 RON",
       "stoc": "limitat",
+      "categorie": "coroane",
       "subcategorie": "",
       "imagini": [
         "images/produse/coroane/coroana/1.jpg"
-      ]
+      ],
+      "id": "coroana",
+      "nume": "Coroana"
     },
     {
-      "id": "accesoriu",
-      "categorie": "accesorii",
-      "nume": "accesoriu",
-      "pret": "0.01 RON",
       "material": "Stejar",
       "dimensiuni": "",
       "descriere": "tudor",
+      "pret": "0.01 RON",
       "stoc": "in_stoc",
+      "categorie": "accesorii",
       "subcategorie": "",
       "imagini": [
         "images/produse/accesorii/accesoriu/1.jpg"
-      ]
+      ],
+      "id": "accesoriu",
+      "nume": "accesoriu"
     },
     {
-      "id": "felinar-model-1",
-      "categorie": "felinare",
-      "nume": "Felinar model 1",
-      "pret": "",
       "material": "",
       "dimensiuni": "",
       "descriere": "",
+      "pret": "",
       "stoc": "in_stoc",
+      "categorie": "felinare",
       "subcategorie": "",
       "imagini": [
         "images/produse/felinare/felinar-model-1/1.png"
-      ]
+      ],
+      "id": "felinar-model-1",
+      "nume": "Felinar model 1"
     },
     {
-      "id": "accesoriu2",
-      "categorie": "accesorii",
-      "nume": "accesoriu2",
-      "pret": "",
       "material": "",
       "dimensiuni": "",
       "descriere": "tudorel",
+      "pret": "",
       "stoc": "in_stoc",
+      "categorie": "accesorii",
       "subcategorie": "",
       "imagini": [
         "images/produse/accesorii/accesoriu2/1.jpg"
-      ]
+      ],
+      "id": "accesoriu2",
+      "nume": "accesoriu2"
+    },
+    {
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "pret": "10000",
+      "stoc": "in_stoc",
+      "categorie": "imbracaminte",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/incarcate/whatsapp-image-2026-08-18-at-16.41.34.jpeg"
+      ],
+      "nume": "tudor"
     }
   ]
 }
