@@ -1300,6 +1300,14 @@ body.lightbox-open {
   margin-top: 0.9rem;
 }
 
+/* Imagine provizorie (logo-ul folosit până apar pozele reale):
+   se afișează întreg, centrat, pe fundal închis — nu decupat. */
+.placeholder-logo {
+  object-fit: contain !important;
+  background: linear-gradient(160deg, #16161a 0%, #0d0d0f 100%);
+  padding: 12%;
+}
+
 /* ===== DESPRE NOI ===== */
 .despre-page {
   display: grid;
