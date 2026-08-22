@@ -147,20 +147,6 @@
       "nume": "accesoriu2"
     },
     {
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "",
-      "pret": "90 RON",
-      "stoc": "in_stoc",
-      "categorie": "imbracaminte",
-      "subcategorie": null,
-      "imagini": [
-        "images/produse/incarcate/whatsapp-image-2026-08-18-at-16.41.34.jpeg"
-      ],
-      "id": "tudor-test",
-      "nume": "tudor"
-    },
-    {
       "material": "lut",
       "dimensiuni": "330ml",
       "descriere": "",
