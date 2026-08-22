@@ -1,11 +1,21 @@
+/* Panoul de administrare — aceeași temă ca site-ul (negru & auriu) */
+
 :root {
-  --black: #0a0a0a;
-  --black-soft: #161616;
-  --gold: #c9a227;
-  --gold-light: #e6c667;
-  --white: #f5f5f5;
-  --gray: #999;
-  --red: #c0392b;
+  --black: #08080a;
+  --black-soft: #121214;
+  --black-elev: #17171a;
+  --gold: #d9ac45;
+  --gold-light: #e7bd51;
+  --gold-deep: #a8801f;
+  --gold-linie: linear-gradient(90deg, transparent, var(--gold), transparent);
+  --white: #f2f0ec;
+  --gray: #9a978f;
+  --bordura: #232326;
+  --rosu: #c0392b;
+  --rosu-clar: #e0645a;
+  --verde: #7fb886;
+  --umbra: 0 18px 45px rgba(0, 0, 0, 0.55);
+  --umbra-aur: 0 14px 40px rgba(217, 172, 69, 0.14);
 }
 
 * {
@@ -15,27 +25,73 @@
 }
 
 body {
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
   background: var(--black);
   color: var(--white);
-  line-height: 1.5;
+  min-height: 100vh;
 }
 
+h1,
+h2,
+h3 {
+  font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* ===== HEADER ===== */
 .admin-header {
+  background: rgba(8, 8, 10, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(217, 172, 69, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1.2rem 2rem;
-  background: var(--black-soft);
-  border-bottom: 2px solid var(--gold);
+  gap: 1.2rem;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+}
+
+.admin-marca {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.admin-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+
+.admin-eticheta {
+  display: block;
+  color: var(--gold);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .admin-header h1 {
-  color: var(--gold);
   font-size: 1.5rem;
-  letter-spacing: 1px;
+  color: var(--white);
+  letter-spacing: 0.5px;
 }
 
 .admin-header-actiuni {
@@ -44,62 +100,75 @@ body {
   gap: 0.8rem;
 }
 
-.admin-vezi-site {
-  color: var(--white);
+/* ===== BUTOANE ===== */
+.buton-linie {
+  display: inline-flex;
+  align-items: center;
+  color: var(--gold);
   text-decoration: none;
-  border: 1px solid var(--gold);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-.admin-vezi-site:hover {
-  background: var(--gold);
-  color: var(--black);
-}
-
-/* ===== PUBLICARE PE SITE ===== */
-.buton-publica {
-  background: var(--gold);
-  color: var(--black);
-  border: 1px solid var(--gold);
-  border-radius: 6px;
-  padding: 0.6rem 1.3rem;
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: bold;
+  border: 1px solid rgba(217, 172, 69, 0.4);
+  border-radius: 2px;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
   cursor: pointer;
-  transition: background 0.25s, opacity 0.25s;
+  background: transparent;
+  font-family: inherit;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.buton-linie:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+.buton-publica {
+  background: linear-gradient(180deg, var(--gold-light), var(--gold-deep));
+  color: var(--black);
+  border: none;
+  border-radius: 2px;
+  padding: 0.7rem 1.6rem;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .buton-publica:hover:not(:disabled) {
-  background: var(--gold-light);
+  filter: brightness(1.1);
 }
 
 .buton-publica:disabled {
-  opacity: 0.6;
+  opacity: 0.55;
   cursor: default;
 }
 
 .buton-publica.evidentiat {
-  animation: pulsPublica 1.8s ease-in-out infinite;
+  animation: pulsPublica 2s ease-in-out infinite;
 }
 
 @keyframes pulsPublica {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(217, 172, 69, 0.5);
+    box-shadow: 0 0 0 0 rgba(217, 172, 69, 0.45);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(217, 172, 69, 0);
+    box-shadow: 0 0 0 9px rgba(217, 172, 69, 0);
   }
 }
 
+/* ===== BARA DE STARE A PUBLICĂRII ===== */
 .publica-bara {
   display: none;
-  padding: 0.7rem 2rem;
-  font-size: 0.9rem;
-  border-bottom: 1px solid #2b2b2b;
+  border-bottom: 1px solid var(--bordura);
 }
 
 .publica-bara.are-modificari,
@@ -109,41 +178,63 @@ body {
   display: block;
 }
 
+.publica-bara-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  font-size: 0.86rem;
+  white-space: pre-line;
+}
+
+.publica-punct {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
 .publica-bara.are-modificari {
-  background: rgba(217, 172, 69, 0.12);
+  background: rgba(217, 172, 69, 0.08);
   color: var(--gold-light);
 }
 
 .publica-bara.la-zi {
-  background: rgba(46, 160, 67, 0.12);
-  color: #7fb886;
+  background: rgba(127, 184, 134, 0.08);
+  color: var(--verde);
 }
 
 .publica-bara.in-lucru {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(242, 240, 236, 0.05);
   color: var(--white);
 }
 
 .publica-bara.eroare {
-  background: rgba(192, 57, 43, 0.15);
-  color: #e0645a;
-  white-space: pre-line;
+  background: rgba(192, 57, 43, 0.1);
+  color: var(--rosu-clar);
 }
 
+/* ===== ZONA PRINCIPALĂ ===== */
 main {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 2rem 5rem;
 }
 
-/* ===== NAVIGARE / TITLU PAGINĂ ===== */
 .admin-inapoi {
   display: inline-block;
   color: var(--gray);
   text-decoration: none;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
   cursor: pointer;
+  transition: color 0.35s ease;
 }
 
 .admin-inapoi:hover {
@@ -151,16 +242,26 @@ main {
 }
 
 .admin-titlu {
-  color: var(--gold);
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-/* ===== GRID DE TILE-URI MARI (categorii / produse) ===== */
+.admin-titlu::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-top: 1.1rem;
+  background: var(--gold);
+  opacity: 0.75;
+}
+
+/* ===== PLĂCI (categorii / produse / pachete) ===== */
 .tile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.4rem;
 }
 
 .tile {
@@ -168,121 +269,135 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   background: var(--black-soft);
-  border: 2px solid #2b2b2b;
-  border-radius: 12px;
-  padding: 1.5rem 1rem;
-  min-height: 160px;
+  border: 1px solid var(--bordura);
+  border-radius: 2px;
+  padding: 1.8rem 1.2rem;
+  min-height: 190px;
   cursor: pointer;
   text-align: center;
-  transition: border-color 0.2s, transform 0.2s;
   color: var(--white);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .tile:hover {
-  border-color: var(--gold);
+  border-color: rgba(217, 172, 69, 0.6);
   transform: translateY(-4px);
+  box-shadow: var(--umbra-aur);
 }
 
 .tile-img {
-  width: 90px;
-  height: 90px;
+  width: 92px;
+  height: 92px;
   object-fit: contain;
   background: var(--black);
-  border-radius: 8px;
+  border: 1px solid var(--bordura);
+  border-radius: 2px;
 }
 
-.tile-icon {
-  font-size: 2.6rem;
+/* semn discret în locul unei poze lipsă */
+.tile-marcaj {
+  width: 92px;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--bordura);
+  border-radius: 2px;
+  color: var(--gold);
+  opacity: 0.55;
+}
+
+.tile-marcaj svg {
+  width: 26px;
+  height: 26px;
+}
+
+.tile-nume {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.15rem;
 }
 
 .tile-count {
   color: var(--gray);
-  font-size: 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .tile-arhivat {
-  opacity: 0.55;
+  opacity: 0.5;
   border-style: dashed;
-  border-color: var(--red);
+  border-color: rgba(192, 57, 43, 0.6);
 }
 
 .tile-arhivat .tile-count {
-  color: var(--red);
+  color: var(--rosu-clar);
 }
 
-.tile-nou {
-  border-style: dashed;
-  border-color: var(--gold);
-  color: var(--gold);
-  font-size: 2rem;
-}
-
-.tile-nou span.tile-nou-text {
-  font-size: 1rem;
-}
-
-/* ===== FORMULAR CREARE PRODUS ===== */
+/* ===== FORMULAR DE CREARE ===== */
 .form-nou {
   background: var(--black-soft);
-  border: 2px dashed var(--gold);
-  border-radius: 12px;
-  padding: 1.5rem;
+  border: 1px dashed rgba(217, 172, 69, 0.5);
+  border-radius: 2px;
+  padding: 1.6rem 1.3rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  min-height: 160px;
+  gap: 0.9rem;
+  min-height: 190px;
   justify-content: center;
 }
 
+.form-nou-titlu {
+  color: var(--gold);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
 .form-nou input {
-  padding: 0.7rem;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  border: 1px solid #333;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border-radius: 2px;
+  border: 1px solid var(--bordura);
   background: var(--black);
   color: var(--white);
 }
 
-/* ===== PAGINA DE PRODUS ===== */
-.produs-nume-input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  color: var(--gold);
-  font-size: 1.8rem;
-  padding: 0.3rem 0;
-  margin-bottom: 2rem;
-}
-
-.produs-nume-input:focus {
+.form-nou input:focus {
   outline: none;
-  border-bottom-color: var(--gold);
+  border-color: var(--gold);
 }
 
+/* ===== SECȚIUNI ===== */
 .sectiune-titlu {
-  color: var(--gold-light);
-  font-size: 1.1rem;
+  color: var(--gold);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 2rem 0 1rem;
+  letter-spacing: 3px;
+  margin: 2.8rem 0 1.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--bordura);
 }
 
+/* ===== POZE PRODUS ===== */
 .imagini-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
 }
 
 .imagine-card {
   position: relative;
   aspect-ratio: 1 / 1;
-  background: var(--black-soft);
-  border: 1px solid #2b2b2b;
-  border-radius: 8px;
+  background: linear-gradient(160deg, #1a1a1d 0%, #101012 100%);
+  border: 1px solid var(--bordura);
+  border-radius: 2px;
   overflow: hidden;
 }
 
@@ -294,86 +409,120 @@ main {
 
 .imagine-sterge {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 32px;
-  height: 32px;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: none;
-  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(8, 8, 10, 0.85);
   color: var(--white);
   font-size: 1.1rem;
+  line-height: 1;
   cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .imagine-sterge:hover {
-  background: var(--red);
+  background: var(--rosu);
+  border-color: var(--rosu);
 }
 
 .drop-zone {
   aspect-ratio: 1 / 1;
-  border: 2px dashed var(--gold);
-  border-radius: 8px;
+  border: 1px dashed rgba(217, 172, 69, 0.5);
+  border-radius: 2px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
   text-align: center;
   color: var(--gold);
-  font-size: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
   cursor: pointer;
   padding: 1rem;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
+.drop-zone svg {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+}
+
+.drop-zone:hover,
 .drop-zone.drag {
-  background: rgba(201, 162, 39, 0.1);
+  background: rgba(217, 172, 69, 0.07);
+  border-color: var(--gold);
 }
 
 .drop-zone.loading {
-  opacity: 0.6;
+  opacity: 0.55;
   pointer-events: none;
 }
 
-/* ===== FORMULAR DETALII PRODUS ===== */
+/* ===== FORMULAR DETALII ===== */
 .detalii-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin-top: 1rem;
+  gap: 1.2rem;
+  max-width: 540px;
+  margin-top: 1.4rem;
 }
 
 .detalii-form label {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
   color: var(--gray);
-  font-size: 0.95rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .detalii-form input,
 .detalii-form select,
 .detalii-form textarea {
-  padding: 0.7rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #333;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  border-radius: 2px;
+  border: 1px solid var(--bordura);
   background: var(--black-soft);
   color: var(--white);
-  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.detalii-form input:focus,
+.detalii-form select:focus,
+.detalii-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
 }
 
 .detalii-form textarea {
-  min-height: 90px;
+  min-height: 110px;
   resize: vertical;
+  line-height: 1.7;
 }
 
 .input-cu-sufix {
   display: flex;
   align-items: stretch;
-  border-radius: 6px;
-  border: 1px solid #333;
+  border-radius: 2px;
+  border: 1px solid var(--bordura);
   background: var(--black-soft);
   overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.input-cu-sufix:focus-within {
+  border-color: var(--gold);
 }
 
 .input-cu-sufix input {
@@ -385,58 +534,99 @@ main {
 
 .input-cu-sufix input:focus {
   outline: none;
+  border: none;
 }
 
 .input-cu-sufix span {
   display: flex;
   align-items: center;
-  padding: 0 0.8rem;
+  padding: 0 1rem;
   color: var(--gold);
-  font-weight: bold;
-  background: rgba(201, 162, 39, 0.12);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  background: rgba(217, 172, 69, 0.08);
+  border-left: 1px solid var(--bordura);
 }
 
+/* ===== BUTOANE DE ACȚIUNE ===== */
 .buton {
   display: inline-block;
   border: none;
-  border-radius: 6px;
-  padding: 0.9rem 1.6rem;
-  font-size: 1.05rem;
+  border-radius: 2px;
+  padding: 0.85rem 1.8rem;
+  font-family: inherit;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   cursor: pointer;
   text-align: center;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, filter 0.3s ease;
 }
 
 .buton-salveaza {
-  background: var(--gold);
+  background: linear-gradient(180deg, var(--gold-light), var(--gold-deep));
   color: var(--black);
-  font-weight: bold;
+  font-weight: 700;
   align-self: flex-start;
 }
 
 .buton-salveaza:hover {
-  background: var(--gold-light);
+  filter: brightness(1.1);
 }
 
 .buton-sterge {
   background: transparent;
-  border: 1px solid var(--red);
-  color: var(--red);
+  border: 1px solid rgba(192, 57, 43, 0.55);
+  color: var(--rosu-clar);
   margin-top: 2.5rem;
   align-self: flex-start;
 }
 
 .buton-sterge:hover {
-  background: var(--red);
+  background: var(--rosu);
+  border-color: var(--rosu);
   color: var(--white);
 }
 
 .produs-vezi-site {
   color: var(--gray);
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 0.2rem;
   display: inline-block;
+  transition: color 0.35s ease;
 }
 
 .produs-vezi-site:hover {
   color: var(--gold);
+}
+
+/* ===== MOBIL ===== */
+@media (max-width: 700px) {
+  .admin-header-inner {
+    padding: 1rem 1.2rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .admin-marca {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .publica-bara-inner {
+    padding: 0.75rem 1.2rem;
+  }
+
+  main {
+    padding: 2rem 1.2rem 4rem;
+  }
+
+  .admin-titlu {
+    font-size: 1.6rem;
+  }
 }
