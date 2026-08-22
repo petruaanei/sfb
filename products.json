@@ -150,13 +150,14 @@
       "material": "",
       "dimensiuni": "",
       "descriere": "",
-      "pret": "10000",
+      "pret": "90 RON",
       "stoc": "in_stoc",
       "categorie": "imbracaminte",
-      "subcategorie": "",
+      "subcategorie": null,
       "imagini": [
         "images/produse/incarcate/whatsapp-image-2026-08-18-at-16.41.34.jpeg"
       ],
+      "id": "tudor-test",
       "nume": "tudor"
     }
   ]
