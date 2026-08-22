@@ -113,7 +113,12 @@ Site-ul primește o adresă de forma `nume-aleator.netlify.app`. O poți schimba
 
 ### Pasul 4 — Verifică
 
-1. Intră pe `https://adresa-site.netlify.app/cms/`
+1. Intră pe `https://<NUMELE-SITE-ULUI-TAU>.netlify.app/cms/`
+
+   > Adresa reală o vezi în Netlify, sus, pe pagina site-ului. Nu este
+   > `adresa-site.netlify.app` — acela e doar un exemplu. Netlify generează
+   > un nume aleatoriu (ex. `magical-tiramisu-a1b2c3.netlify.app`), pe care
+   > îl poți schimba din *Site configuration → Change site name*.
 2. Loghează-te
 3. Modifică un produs de test → **Publish**
 4. După ~1 minut, verifică pe site că modificarea a apărut
@@ -236,8 +241,9 @@ Redenumește scurtătura în **„Administrare site"**.
 
 ### Ca să adaugi produse — de pe tabletă, telefon sau calculator
 
-1. Deschide în browser: **`adresa-site.ro/cms`**
-   *(salvează pagina la favorite sau pune-o pe ecranul principal)*
+1. Deschide în browser adresa panoului, primită de la persoana care se ocupă de site.
+   Arată așa: **`numele-site-ului.netlify.app/cms`**
+   *(salveaz-o la favorite sau pune-o pe ecranul principal al tabletei)*
 2. Loghează-te cu emailul și parola ta
 3. Apasă **Produse** (sau **Pachete funerare**), apoi **Lista de produse**
 4. Ca să adaugi ceva nou, apasă **Add Produs** jos de tot
