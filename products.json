@@ -159,6 +159,20 @@
       ],
       "id": "tudor-test",
       "nume": "tudor"
+    },
+    {
+      "material": "lut",
+      "dimensiuni": "330ml",
+      "descriere": "",
+      "pret": "10",
+      "stoc": "limitat",
+      "categorie": "vesela",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/incarcate/50107429-fcbf-4fb7-bbfb-14d500889cf2.jpeg"
+      ],
+      "id": "test1",
+      "nume": "test"
     }
   ]
 }
