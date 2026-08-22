@@ -116,5 +116,19 @@
     "imagini": [
       "images/produse/accesorii/accesoriu/1.jpg"
     ]
+  },
+  {
+    "id": "felinar-model-1",
+    "categorie": "felinare",
+    "nume": "Felinar model 1",
+    "pret": "",
+    "material": "",
+    "dimensiuni": "",
+    "descriere": "",
+    "stoc": "in_stoc",
+    "subcategorie": "",
+    "imagini": [
+      "images/produse/felinare/felinar-model-1/1.png"
+    ]
   }
 ]
