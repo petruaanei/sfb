@@ -33,9 +33,10 @@ CAI_CONTINUT = [
     "images",
 ]
 
-# Lasă None ca să publice pe branch-ul curent.
-# Pune numele branch-ului de publicare (ex. "main") dacă vrei să meargă mereu acolo.
-BRANCH_PUBLICARE = None
+# Branch-ul pe care se publică site-ul.
+# Butonul "Publică pe site" trimite mereu acolo, indiferent pe ce branch
+# se află folderul — astfel proprietarul nu poate publica din greșeală altundeva.
+BRANCH_PUBLICARE = "main"
 # --------------------------------------------------------------------------
 
 CATEGORII = ["accesorii", "coroane", "felinare", "imbracaminte", "lenjerii", "prosoape", "sicrie", "vesela"]
@@ -140,6 +141,16 @@ def publica_pe_site():
         return False, (
             "Nu este configurată destinația site-ului. "
             "Roagă persoana care se ocupă de site să o configureze o singură dată."
+        )
+
+    # Ne asigurăm că publicăm de pe branch-ul corect. Dacă folderul ar fi pe alt
+    # branch, commit-ul ar ajunge acolo, iar pe site nu s-ar vedea nimic.
+    ramura_curenta = ruleaza_git("rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
+    if BRANCH_PUBLICARE and ramura_curenta != BRANCH_PUBLICARE:
+        return False, (
+            f"Folderul site-ului nu este pregătit corect "
+            f"(este pe „{ramura_curenta}” în loc de „{BRANCH_PUBLICARE}”).\n"
+            "Roagă persoana care se ocupă de site să verifice."
         )
 
     adaugare = ruleaza_git("add", "--", *CAI_CONTINUT)
