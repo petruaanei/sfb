@@ -72,5 +72,41 @@
       "images/produse/prosoape/prosop-mare-2/1.jpg",
       "images/produse/prosoape/prosop-mare-2/2.jpg"
     ]
+  },
+  {
+    "id": "doli",
+    "categorie": "accesorii",
+    "nume": "doliu",
+    "pret": "10 RON",
+    "material": "",
+    "dimensiuni": "",
+    "descriere": "",
+    "stoc": "limitat",
+    "subcategorie": "",
+    "imagini": []
+  },
+  {
+    "id": "fata-de-masa",
+    "categorie": "accesorii",
+    "nume": "fata de masa",
+    "pret": "20 RON",
+    "material": "",
+    "dimensiuni": "",
+    "descriere": "",
+    "stoc": "in_stoc",
+    "subcategorie": "",
+    "imagini": []
+  },
+  {
+    "id": "sicriu",
+    "categorie": "sicrie",
+    "nume": "Sicriu",
+    "pret": "",
+    "material": "",
+    "dimensiuni": "",
+    "descriere": "",
+    "stoc": "limitat",
+    "subcategorie": "clasic",
+    "imagini": []
   }
 ]
