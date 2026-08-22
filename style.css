@@ -1,10 +1,25 @@
 :root {
-  --black: #0a0a0a;
-  --black-soft: #141414;
+  --black: #08080a;
+  --black-soft: #121214;
+  --black-elev: #17171a;
   --gold: #d9ac45;
   --gold-light: #e7bd51;
-  --white: #f5f5f5;
-  --gray: #999;
+  --gold-deep: #a8801f;
+  --gold-linie: linear-gradient(90deg, transparent, var(--gold), transparent);
+  --white: #f2f0ec;
+  --gray: #9a978f;
+  --bordura: #232326;
+  --umbra: 0 18px 45px rgba(0, 0, 0, 0.55);
+  --umbra-aur: 0 14px 40px rgba(217, 172, 69, 0.14);
+
+  /* înălțimea header-ului — folosită de barele fixate; valori fixe, fără măsurători */
+  --header-h: 190px;
+  --scroll-offset: 270px;
+}
+
+html.pagina-derulata {
+  --header-h: 96px;
+  --scroll-offset: 190px;
 }
 
 * {
@@ -26,6 +41,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* spațiu constant pentru header-ul fix — nu se schimbă când header-ul se strânge,
+     ca înălțimea paginii să rămână stabilă și să nu apară tremurat la derulare */
+  padding-top: 190px;
 }
 
 main {
@@ -40,24 +58,48 @@ h3 {
   line-height: 1.25;
 }
 
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* linie aurie subțire, folosită sub titlurile de secțiune */
+.linie-aur::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 1px;
+  margin: 1.1rem auto 0;
+  background: var(--gold-linie);
+}
+
 /* ===== HEADER ===== */
 header {
-  background: var(--black);
-  border-bottom: 1px solid var(--gold);
+  background: rgba(8, 8, 10, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(217, 172, 69, 0.45);
+  box-shadow: 0 1px 0 rgba(217, 172, 69, 0.08), 0 10px 30px rgba(0, 0, 0, 0.45);
   padding: 0 2rem;
   height: 190px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   overflow: visible;
 }
 
-nav {
+/* la derulare, header-ul se strânge ca să nu ocupe tot ecranul */
+html.pagina-derulata header {
+  height: 96px;
+}
+
+header nav {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  column-gap: 3rem;
+  column-gap: 3.5rem;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1250px;
   height: 100%;
   margin: 0 auto;
 }
@@ -77,10 +119,15 @@ nav {
   object-fit: contain;
 }
 
+html.pagina-derulata .logo-img {
+  height: 78px;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 2.4rem;
 }
 
 .nav-links-left {
@@ -94,20 +141,148 @@ nav {
 }
 
 .nav-links a {
+  position: relative;
   color: var(--white);
   text-decoration: none;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding-bottom: 4px;
-  border-bottom: 1px solid transparent;
-  transition: color 0.3s, border-color 0.3s;
+  padding-bottom: 6px;
+  transition: color 0.35s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--gold);
-  border-color: var(--gold);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ===== MENIU MOBIL (ascuns pe desktop) ===== */
+.meniu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0.3rem 0.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.meniu-linii {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.meniu-linii span {
+  display: block;
+  width: 26px;
+  height: 1px;
+  background: var(--gold);
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.meniu-eticheta {
+  color: var(--gold);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+html.meniu-deschis .meniu-linii span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+html.meniu-deschis .meniu-linii span:nth-child(2) {
+  opacity: 0;
+}
+
+html.meniu-deschis .meniu-linii span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.meniu-mobil {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(8, 8, 10, 0.985);
+  backdrop-filter: blur(12px);
+  padding: 6rem 2rem 3rem;
+  overflow-y: auto;
+}
+
+html.meniu-deschis .meniu-mobil {
+  display: block;
+  animation: apareMeniu 0.3s ease;
+}
+
+@keyframes apareMeniu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.meniu-mobil ul {
+  list-style: none;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.meniu-mobil li {
+  border-bottom: 1px solid var(--bordura);
+}
+
+.meniu-mobil li:last-child {
+  border-bottom: none;
+}
+
+.meniu-mobil a {
+  display: block;
+  padding: 1.25rem 0.5rem;
+  color: var(--white);
+  text-decoration: none;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.meniu-mobil a.active {
+  color: var(--gold);
+}
+
+html.meniu-deschis body,
+html.meniu-deschis {
+  overflow: hidden;
 }
 
 /* ===== SLIDESHOW / HERO ===== */
@@ -146,27 +321,40 @@ nav {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: brightness(0.55);
+  filter: brightness(0.5) saturate(0.9);
+}
+
+/* vignetă subtilă, pentru un aspect mai cinematografic */
+.slideshow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.55) 100%),
+    linear-gradient(to bottom, rgba(8, 8, 10, 0.45) 0%, transparent 25%, transparent 70%, rgba(8, 8, 10, 0.75) 100%);
+  z-index: 2;
 }
 
 .slide-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(10, 10, 10, 0.5);
-  border: 1px solid var(--gold);
+  background: rgba(8, 8, 10, 0.45);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(217, 172, 69, 0.55);
   color: var(--gold);
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.1rem;
-  transition: background 0.3s;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
   z-index: 5;
 }
 
 .slide-btn:hover {
   background: var(--gold);
+  border-color: var(--gold);
   color: var(--black);
 }
 
@@ -189,38 +377,52 @@ nav {
 }
 
 .slide-dots .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(245, 245, 245, 0.4);
-  border: 1px solid var(--gold);
+  background: transparent;
+  border: 1px solid rgba(242, 240, 236, 0.55);
   cursor: pointer;
-  transition: background 0.3s;
+  padding: 0;
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
 }
 
 .slide-dots .dot.active {
   background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.35);
 }
 
 /* ===== INTRO PAGINA ACASĂ ===== */
 .intro {
-  padding: 4rem 2rem;
-  max-width: 800px;
+  padding: 5.5rem 2rem;
+  max-width: 780px;
   margin: 0 auto;
   text-align: center;
 }
 
 .intro h2 {
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   color: var(--gold);
+  letter-spacing: 3px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+
+.intro h2::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 1px;
+  margin: 1.1rem auto 0;
+  background: var(--gold-linie);
 }
 
 .intro p {
   color: var(--gray);
-  line-height: 1.8;
+  line-height: 1.95;
+  font-size: 1.02rem;
 }
 
 /* ===== PRODUSE / PACHETE ===== */
@@ -232,16 +434,17 @@ nav {
 }
 
 .produse h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.6rem;
 }
 
 .produse-subtitle {
   color: var(--gray);
   margin-bottom: 2.5rem;
+  font-size: 1.02rem;
 }
 
 /* ===== CĂUTARE PRODUSE ===== */
@@ -302,12 +505,13 @@ nav {
 .cautare-rezultate {
   display: none;
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 8px);
   right: 0;
   width: 280px;
-  background: var(--black-soft);
-  border: 1px solid var(--gold);
-  border-radius: 6px;
+  background: var(--black-elev);
+  border: 1px solid rgba(217, 172, 69, 0.5);
+  border-radius: 4px;
+  box-shadow: var(--umbra);
   overflow: hidden;
   z-index: 60;
   max-height: 360px;
@@ -325,7 +529,8 @@ nav {
   padding: 0.6rem 1rem;
   color: var(--white);
   text-decoration: none;
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid var(--bordura);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .cautare-item:last-child {
@@ -363,60 +568,200 @@ nav {
 
 .subcategorie-titlu {
   color: var(--gold);
-  font-size: 1.05rem;
+  font-size: 0.85rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #262626;
+  letter-spacing: 3px;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--bordura);
+}
+
+/* bara de filtre (categorii + subcategorii) rămâne fixată sub header */
+.produse-filtre {
+  position: sticky;
+  top: var(--header-h, 190px);
+  z-index: 50;
+  margin-bottom: 3.5rem;
+  background: rgba(8, 8, 10, 0.96);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--bordura);
+  border-bottom: 1px solid var(--bordura);
+}
+
+.filtre-rand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1.1rem 1.2rem;
 }
 
 .categorii-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.6rem 1rem;
-  padding: 1rem;
-  margin-bottom: 3rem;
-  border-top: 1px solid #262626;
-  border-bottom: 1px solid #262626;
-  position: sticky;
-  top: 190px;
-  background: var(--black);
-  z-index: 50;
+  align-items: center;
+  gap: 0.5rem 1.4rem;
+  min-width: 0;
 }
 
-.categorii-nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+.categorie-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 0.4rem 0.9rem;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  transition: color 0.3s, border-color 0.3s;
+  padding: 0.5rem 0.2rem;
+  cursor: pointer;
+  transition: color 0.35s ease;
 }
 
-.categorii-nav a:hover,
-.categorii-nav a.active {
+.categorie-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+}
+
+.categorie-btn:hover {
+  color: var(--gold-light);
+}
+
+.categorie-btn:hover::after {
+  transform: scaleX(0.6);
+}
+
+.categorie-btn.active {
   color: var(--gold);
-  border-color: var(--gold);
+}
+
+.categorie-btn.active::after {
+  transform: scaleX(1);
+}
+
+/* ===== INDICIU DE DERULARE LATERALĂ (doar pe telefon) ===== */
+.derulare-hint {
+  display: none;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0 1rem 0.7rem;
+  transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease;
+  opacity: 1;
+  max-height: 40px;
+}
+
+.derulare-hint.ascuns {
+  opacity: 0;
+  max-height: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+}
+
+.hint-sageata {
+  color: var(--gold);
+  display: inline-block;
+  animation: pulsHint 1.8s ease-in-out infinite;
+}
+
+@keyframes pulsHint {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ===== BARA DE SUBCATEGORII ===== */
+.subcategorii-nav {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.8rem;
+  padding: 0 1rem 0.9rem;
+  border-top: 1px solid var(--bordura);
+  padding-top: 0.9rem;
+}
+
+.subcategorii-nav.active {
+  display: flex;
+}
+
+.subcategorie-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.35rem 0.2rem;
+  cursor: pointer;
+  transition: color 0.35s ease;
+}
+
+.subcategorie-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+}
+
+.subcategorie-btn:hover {
+  color: var(--gold-light);
+}
+
+.subcategorie-btn.active {
+  color: var(--gold);
+}
+
+.subcategorie-btn.active::after {
+  transform: scaleX(1);
 }
 
 .categorie {
-  scroll-margin-top: 250px;
-  margin-bottom: 4rem;
+  scroll-margin-top: var(--scroll-offset, 250px);
+  margin-bottom: 5rem;
   text-align: left;
 }
 
 .categorie h2 {
-  font-size: 1.5rem;
-  color: var(--gold-light);
-  text-transform: uppercase;
+  font-size: 1.9rem;
+  color: var(--white);
   letter-spacing: 1px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
+}
+
+.categorie h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 1px;
+  margin: 0.9rem auto 0;
+  background: var(--gold-linie);
 }
 
 .produse-grid {
@@ -448,58 +793,58 @@ nav {
   font-style: italic;
 }
 
-/* ===== BADGE STOC ===== */
+/* ===== INDICATOR STOC (doar pe pagina produsului) ===== */
 .stoc-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-size: 0.72rem;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 0.3rem 0.7rem;
-  border-radius: 4px;
+  letter-spacing: 2.5px;
+  padding: 0;
+  background: none;
+  border: none;
 }
 
-.galerie .stoc-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 4;
+.stoc-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
 }
 
 .produs-detail-info .stoc-badge {
-  margin: 0.6rem 0 1rem;
+  margin: 0.8rem 0 1.2rem;
 }
 
 .stoc-in-stoc {
-  background: rgba(46, 160, 67, 0.15);
-  color: #3fc95a;
-  border: 1px solid #2ea043;
+  color: #7fb886;
 }
 
 .stoc-limitat {
-  background: rgba(217, 172, 69, 0.15);
   color: var(--gold-light);
-  border: 1px solid var(--gold);
 }
 
 .stoc-epuizat {
-  background: rgba(192, 57, 43, 0.15);
-  color: #e0645a;
-  border: 1px solid #c0392b;
+  color: #c98a82;
 }
 
 .produs-card {
   background: var(--black-soft);
-  border: 1px solid #262626;
-  border-radius: 8px;
+  border: 1px solid var(--bordura);
+  border-radius: 2px;
   overflow: hidden;
   text-align: left;
-  transition: border-color 0.3s, transform 0.3s;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .produs-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-6px);
+  border-color: rgba(217, 172, 69, 0.65);
+  transform: translateY(-5px);
+  box-shadow: var(--umbra-aur);
 }
 
 .produs-link {
@@ -513,7 +858,7 @@ nav {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: var(--black-soft);
+  background: linear-gradient(160deg, #1a1a1d 0%, #101012 100%);
   overflow: hidden;
 }
 
@@ -522,7 +867,12 @@ nav {
   height: 100%;
   object-fit: contain;
   display: block;
-  background: var(--black-soft);
+  background: transparent;
+  transition: transform 0.6s ease;
+}
+
+.produs-card:hover .galerie-img {
+  transform: scale(1.04);
 }
 
 .galerie-img.zoomable {
@@ -538,7 +888,8 @@ body.lightbox-open {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(6, 6, 8, 0.96);
+  backdrop-filter: blur(6px);
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -612,20 +963,28 @@ body.lightbox-open {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(10, 10, 10, 0.6);
-  border: 1px solid var(--gold);
+  background: rgba(8, 8, 10, 0.55);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(217, 172, 69, 0.45);
   color: var(--gold);
   width: 34px;
   height: 34px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.3s;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: background 0.35s ease, color 0.35s ease, opacity 0.35s ease;
   z-index: 5;
+}
+
+.galerie:hover .gallery-btn,
+.galerie-mare .gallery-btn {
+  opacity: 1;
 }
 
 .gallery-btn:hover {
   background: var(--gold);
+  border-color: var(--gold);
   color: var(--black);
 }
 
@@ -648,86 +1007,126 @@ body.lightbox-open {
 }
 
 .gallery-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: rgba(245, 245, 245, 0.4);
-  border: 1px solid var(--gold);
+  background: rgba(242, 240, 236, 0.35);
+  border: none;
+  transition: background 0.35s ease, transform 0.35s ease;
 }
 
 .gallery-dot.active {
   background: var(--gold);
+  transform: scale(1.4);
 }
 
 .produs-info {
-  padding: 1.2rem;
+  padding: 1.3rem 1.2rem 1.4rem;
+  border-top: 1px solid var(--bordura);
 }
 
 .produs-info h3 {
-  color: var(--gold-light);
-  margin-bottom: 0.5rem;
+  color: var(--white);
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
 }
 
 .produs-pret {
-  color: var(--gray);
-  margin-bottom: 1rem;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
   font-size: 0.95rem;
+  letter-spacing: 0.5px;
 }
 
-.produs-info .btn-gold {
+/* acțiunea de pe cardul de produs — link discret, fără chenar */
+.produs-actiune {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--gray);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.35s ease, border-color 0.35s ease;
+}
+
+.produs-actiune-sageata {
   display: inline-block;
+  transition: transform 0.35s ease;
+}
+
+.produs-card:hover .produs-actiune {
+  color: var(--gold);
+  border-bottom-color: rgba(217, 172, 69, 0.5);
+}
+
+.produs-card:hover .produs-actiune-sageata {
+  transform: translateX(4px);
 }
 
 .btn-gold {
   display: inline-block;
+  position: relative;
   background: transparent;
   color: var(--gold);
-  border: 1px solid var(--gold);
-  padding: 0.6rem 1.4rem;
-  border-radius: 4px;
+  border: 1px solid rgba(217, 172, 69, 0.4);
+  padding: 0.7rem 1.6rem;
+  border-radius: 2px;
   cursor: pointer;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  white-space: nowrap;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+  overflow: hidden;
+  transition: color 0.4s ease, border-color 0.4s ease, background 0.4s ease;
 }
 
 .btn-gold:hover {
-  background: var(--gold);
   color: var(--black);
+  border-color: var(--gold);
+  background: var(--gold);
 }
 
 /* ===== PAGINA DE DETALII PRODUS ===== */
 .produs-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 3.5rem;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2rem 5rem;
   align-items: start;
 }
 
 .galerie-mare {
-  border: 1px solid #262626;
-  border-radius: 8px;
+  border: 1px solid var(--bordura);
+  border-radius: 2px;
+  box-shadow: var(--umbra);
 }
 
 .produs-detail-info h1 {
-  font-size: 2rem;
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 1rem 0 0.5rem;
+  font-size: 2.4rem;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin: 1.2rem 0 0.3rem;
 }
 
 .produs-detail-back {
   color: var(--gray);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2.5px;
+  transition: color 0.35s ease;
 }
 
 .produs-detail-back:hover {
@@ -735,26 +1134,35 @@ body.lightbox-open {
 }
 
 .produs-detail-pret {
-  color: var(--gold-light);
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
+  color: var(--gold);
+  font-size: 1.6rem;
+  font-family: "DM Serif Display", Georgia, serif;
+  margin-bottom: 1.8rem;
 }
 
 .produs-detail-specs {
   list-style: none;
-  border-top: 1px solid #262626;
-  border-bottom: 1px solid #262626;
-  padding: 1rem 0;
-  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--bordura);
+  padding: 0.4rem 0 0;
+  margin-bottom: 1.8rem;
 }
 
 .produs-detail-specs li {
-  padding: 0.4rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
   color: var(--white);
+  border-bottom: 1px solid var(--bordura);
+  font-size: 0.95rem;
 }
 
 .produs-detail-specs strong {
-  color: var(--gold-light);
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin-right: 0.4rem;
 }
 
@@ -803,18 +1211,18 @@ body.lightbox-open {
 
 /* ===== SERVICII ===== */
 .servicii-page {
-  padding: 4rem 2rem;
-  max-width: 900px;
+  padding: 4.5rem 2rem 5rem;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: center;
 }
 
 .servicii-page h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.6rem;
 }
 
 .servicii-grid {
@@ -839,15 +1247,16 @@ body.lightbox-open {
 
 .serviciu-card {
   background: var(--black-soft);
-  border: 1px solid #262626;
-  border-radius: 10px;
+  border: 1px solid var(--bordura);
+  border-radius: 2px;
   overflow: hidden;
-  transition: border-color 0.3s, transform 0.3s;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .serviciu-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-6px);
+  border-color: rgba(217, 172, 69, 0.65);
+  transform: translateY(-5px);
+  box-shadow: var(--umbra-aur);
 }
 
 .serviciu-card img {
@@ -855,21 +1264,40 @@ body.lightbox-open {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
+  filter: grayscale(0.25) brightness(0.9);
+  transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.serviciu-card:hover img {
+  filter: grayscale(0) brightness(1);
+  transform: scale(1.03);
 }
 
 .serviciu-info {
-  padding: 1.4rem;
+  padding: 1.5rem 1.4rem 1.7rem;
 }
 
 .serviciu-info h3 {
-  color: var(--gold-light);
-  font-size: 1.15rem;
-  margin-bottom: 0.7rem;
+  color: var(--white);
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.serviciu-info h3::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 1px;
+  margin: 0.8rem 0 0;
+  background: var(--gold);
+  opacity: 0.7;
 }
 
 .serviciu-info p {
   color: var(--gray);
-  font-size: 0.95rem;
+  font-size: 0.93rem;
+  line-height: 1.8;
+  margin-top: 0.9rem;
 }
 
 /* ===== DESPRE NOI ===== */
@@ -890,10 +1318,16 @@ body.lightbox-open {
 
 .despre-img {
   position: absolute;
-  border-radius: 8px;
+  border-radius: 2px;
   object-fit: cover;
-  border: 3px solid var(--black);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--bordura);
+  box-shadow: var(--umbra);
+  filter: grayscale(0.2);
+  transition: filter 0.5s ease;
+}
+
+.despre-colaj:hover .despre-img {
+  filter: grayscale(0);
 }
 
 .despre-img-mare {
@@ -920,21 +1354,35 @@ body.lightbox-open {
 .despre-eticheta {
   display: block;
   color: var(--gold);
-  font-style: italic;
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  margin-bottom: 1rem;
 }
 
 .despre-text h1 {
-  font-size: 2rem;
+  font-size: 2.6rem;
   color: var(--white);
-  margin-bottom: 1.5rem;
-  line-height: 1.3;
+  margin-bottom: 1.8rem;
+  line-height: 1.25;
+}
+
+.despre-text h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-top: 1.5rem;
+  background: var(--gold);
+  opacity: 0.75;
 }
 
 .despre-text p {
   color: var(--gray);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.95;
 }
 
 @media (max-width: 800px) {
@@ -949,18 +1397,27 @@ body.lightbox-open {
 
 /* ===== CONTACT ===== */
 .contact-page {
-  padding: 4rem 2rem;
+  padding: 4.5rem 2rem 5rem;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .contact-page h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 2.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 1.8rem;
   text-align: center;
+}
+
+.contact-page h1::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 1px;
+  margin: 1.1rem auto 0;
+  background: var(--gold-linie);
 }
 
 .contact-grid {
@@ -992,9 +1449,9 @@ body.lightbox-open {
 .contact-rand {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid #262626;
+  gap: 0.35rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--bordura);
 }
 
 .contact-rand:first-child {
@@ -1003,9 +1460,10 @@ body.lightbox-open {
 
 .contact-rand dt {
   color: var(--gold);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2.5px;
 }
 
 .contact-rand dd {
@@ -1016,6 +1474,7 @@ body.lightbox-open {
 .contact-rand a {
   color: var(--white);
   text-decoration: none;
+  transition: color 0.35s ease;
 }
 
 .contact-rand a:hover {
@@ -1025,138 +1484,160 @@ body.lightbox-open {
 .contact-social {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
   gap: 0.6rem;
-  margin-top: 1.5rem;
-  padding: 0.7rem 1.4rem;
-  border: 1px solid var(--gold);
-  border-radius: 6px;
+  margin-top: 1.8rem;
+  padding: 0.7rem 1.5rem;
+  border: 1px solid rgba(217, 172, 69, 0.55);
+  border-radius: 2px;
   color: var(--gold);
   text-decoration: none;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 .contact-social svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
 }
 
 .contact-social:hover {
   background: var(--gold);
+  border-color: var(--gold);
   color: var(--black);
 }
 
 .contact-harta {
-  height: 400px;
-  border-radius: 8px;
+  height: 420px;
+  border-radius: 2px;
   overflow: hidden;
-  border: 1px solid #262626;
+  border: 1px solid var(--bordura);
+  box-shadow: var(--umbra);
+  filter: grayscale(0.35) contrast(1.05);
+  transition: filter 0.5s ease;
+}
+
+.contact-harta:hover {
+  filter: grayscale(0);
 }
 
 /* ===== PACHETE FUNERARE ===== */
 .pachete-page {
-  padding: 4rem 2rem;
+  padding: 4.5rem 2rem 5rem;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
 .pachete-page h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.6rem;
 }
 
 .pachete-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   align-items: stretch;
 }
 
 .pachet-card {
   position: relative;
-  background: var(--black-soft);
-  border: 1px solid #262626;
-  border-radius: 10px;
+  background: linear-gradient(180deg, var(--black-elev) 0%, var(--black-soft) 100%);
+  border: 1px solid var(--bordura);
+  border-radius: 2px;
   text-align: left;
-  transition: border-color 0.3s, transform 0.3s;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
 }
 
 .pachet-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-6px);
+  border-color: rgba(217, 172, 69, 0.65);
+  transform: translateY(-5px);
+  box-shadow: var(--umbra-aur);
 }
 
 .pachet-recomandat {
-  border-color: var(--gold);
+  border-color: rgba(217, 172, 69, 0.7);
+  box-shadow: var(--umbra-aur);
 }
 
 .pachet-eticheta {
   position: absolute;
-  top: -1px;
+  top: 0;
   right: 1.4rem;
-  background: var(--gold);
+  background: linear-gradient(180deg, var(--gold-light), var(--gold-deep));
   color: var(--black);
-  font-size: 0.75rem;
-  font-weight: bold;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 0.4rem 0.9rem;
-  border-radius: 0 0 6px 6px;
+  letter-spacing: 2px;
+  padding: 0.45rem 1rem;
+  border-radius: 0 0 2px 2px;
 }
 
 .pachet-info {
-  padding: 1.8rem 1.5rem;
+  padding: 2rem 1.6rem;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .pachet-info h3 {
-  color: var(--gold-light);
-  font-size: 1.3rem;
-  margin-bottom: 0.4rem;
+  color: var(--white);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .pachet-pret {
   color: var(--gold);
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.55rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid var(--bordura);
 }
 
 .pachet-lista {
   list-style: none;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .pachet-lista li {
   color: var(--white);
-  padding: 0.4rem 0;
-  padding-left: 1.4rem;
+  padding: 0.5rem 0 0.5rem 1.6rem;
   position: relative;
-  border-bottom: 1px solid #262626;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .pachet-lista li::before {
-  content: "✓";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--gold);
+  top: 1.05rem;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  transform: rotate(45deg);
 }
 
 .pachet-descriere {
   color: var(--gray);
-  font-size: 0.92rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--bordura);
   flex: 1;
 }
 
@@ -1185,49 +1666,143 @@ body.lightbox-open {
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2.2rem 1.5rem;
   background: var(--black);
-  border-top: 1px solid var(--gold);
+  border-top: 1px solid rgba(217, 172, 69, 0.35);
   color: var(--gray);
+  font-size: 0.82rem;
+  letter-spacing: 1.5px;
 }
 
 /* ===== MOBIL ===== */
 @media (max-width: 700px) {
-  header {
-    height: auto;
-    padding: 1rem 1.2rem;
+  /* pe telefon header-ul rămâne blocat sus (compact), ca meniul să fie mereu la îndemână */
+  :root {
+    --header-h: 112px;
+    --scroll-offset: 130px;
   }
 
-  nav {
+  html.pagina-derulata {
+    --header-h: 68px;
+    --scroll-offset: 96px;
+  }
+
+  body {
+    padding-top: 112px;
+  }
+
+  header {
+    height: 112px;
+    padding: 0 1.2rem;
+  }
+
+  html.pagina-derulata header {
+    height: 68px;
+  }
+
+  html.pagina-derulata .logo-img {
+    height: 46px;
+  }
+
+  /* pe telefon: logo centrat, meniul se deschide din butonul hamburger */
+  header nav {
     display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    height: auto;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: none;
   }
 
   .logo {
-    height: auto;
-    order: -1;
+    height: 100%;
+    justify-content: center;
   }
 
   .logo-img {
-    height: 80px;
+    height: 82px;
   }
 
   .nav-links {
-    justify-self: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem 1.2rem;
-    font-size: 0.8rem;
+    display: none;
   }
 
-  .categorii-nav {
+  .meniu-toggle {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* cât timp meniul e deschis, butonul (devenit X) stă deasupra panoului */
+  html.meniu-deschis .meniu-toggle {
+    position: fixed;
+    top: 1.3rem;
+    right: 1.3rem;
+    transform: none;
+    z-index: 300;
+  }
+
+  /* pe telefon bara de filtre nu se mai lipește sus — se derulează odată cu pagina */
+  .produse-filtre {
     position: static;
+    margin-bottom: 2.5rem;
   }
 
-  .categorie {
-    scroll-margin-top: 110px;
+  .derulare-hint {
+    display: block;
+  }
+
+  .filtre-rand {
+    gap: 0.8rem;
+    padding: 0.9rem 1rem;
+  }
+
+  /* categoriile stau pe un singur rând, care se trage lateral cu degetul */
+  .categorii-nav {
+    flex: 1;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.4rem;
+    /* estompare la marginea din dreapta — arată că bara continuă lateral */
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 24px), transparent 100%);
+    mask-image: linear-gradient(90deg, #000 calc(100% - 24px), transparent 100%);
+  }
+
+  .categorii-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .categorie-btn {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+  }
+
+  .produse-search {
+    flex: 0 0 auto;
+    margin-left: 0.4rem;
+  }
+
+  .subcategorii-nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 1.4rem;
+    padding: 0.8rem 1.2rem 0.9rem;
+  }
+
+  .subcategorii-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subcategorie-btn {
+    flex: 0 0 auto;
   }
 
   .cautare-rezultate {
@@ -1240,5 +1815,33 @@ footer {
 
   .produs-detail {
     padding: 2rem 1.2rem;
+  }
+
+  .produse h1,
+  .servicii-page h1,
+  .pachete-page h1,
+  .contact-page h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .despre-text h1 {
+    font-size: 1.9rem;
+  }
+
+  .produs-detail-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .categorie h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .intro h2 {
+    font-size: 1.6rem;
   }
 }

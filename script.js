@@ -1,11 +1,131 @@
 document.addEventListener("DOMContentLoaded", () => {
+  initHeader();
+  initMeniuMobil();
   initHeroSlideshow();
   initCatalog();
   initProductDetail();
   initCategoriiNav();
   initPachete();
   initCautareProduse();
+  initHintDerulare();
 });
+
+/* ===== MENIU MOBIL (buton hamburger + panou) =====
+   Ordinea este fixată aici, ca să fie identică pe toate paginile. */
+const MENIU_ORDINE = [
+  { href: "index.html", text: "Acasă" },
+  { href: "despre.html", text: "Despre noi" },
+  { href: "servicii.html", text: "Servicii" },
+  { href: "produse.html", text: "Produse" },
+  { href: "pachete.html", text: "Pachete funerare" },
+  { href: "contact.html", text: "Contact" },
+];
+
+function initMeniuMobil() {
+  const header = document.querySelector("header");
+  const nav = header && header.querySelector("nav");
+  if (!nav) return;
+
+  const buton = document.createElement("button");
+  buton.type = "button";
+  buton.className = "meniu-toggle";
+  buton.setAttribute("aria-label", "Deschide meniul");
+  buton.setAttribute("aria-expanded", "false");
+  buton.innerHTML = `
+    <span class="meniu-linii"><span></span><span></span><span></span></span>
+    <span class="meniu-eticheta">Meniu</span>
+  `;
+  nav.appendChild(buton);
+
+  // pagina curentă (produs.html se consideră tot "Produse")
+  let paginaCurenta = window.location.pathname.split("/").pop() || "index.html";
+  if (paginaCurenta === "produs.html") paginaCurenta = "produse.html";
+
+  const panou = document.createElement("div");
+  panou.className = "meniu-mobil";
+
+  const lista = document.createElement("ul");
+  MENIU_ORDINE.forEach((item) => {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = item.href;
+    link.textContent = item.text;
+    if (item.href === paginaCurenta) link.classList.add("active");
+    li.appendChild(link);
+    lista.appendChild(li);
+  });
+
+  panou.appendChild(lista);
+  document.body.appendChild(panou);
+
+  const eticheta = buton.querySelector(".meniu-eticheta");
+
+  function comuta(deschis) {
+    document.documentElement.classList.toggle("meniu-deschis", deschis);
+    buton.setAttribute("aria-expanded", String(deschis));
+    buton.setAttribute("aria-label", deschis ? "Închide meniul" : "Deschide meniul");
+    eticheta.textContent = deschis ? "Închide" : "Meniu";
+  }
+
+  buton.addEventListener("click", () => {
+    comuta(!document.documentElement.classList.contains("meniu-deschis"));
+  });
+
+  panou.addEventListener("click", (e) => {
+    if (e.target === panou || e.target.tagName === "A") comuta(false);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") comuta(false);
+  });
+}
+
+/* ===== INDICIU: bara de categorii se trage lateral (doar pe telefon) ===== */
+function initHintDerulare() {
+  const bara = document.querySelector(".categorii-nav");
+  if (!bara) return;
+
+  // apare doar dacă bara chiar are conținut ascuns lateral
+  if (bara.scrollWidth <= bara.clientWidth + 10) return;
+
+  const hint = document.createElement("div");
+  hint.className = "derulare-hint";
+  hint.innerHTML = `<span class="hint-sageata">&#8592;</span> Trage lateral pentru toate categoriile <span class="hint-sageata">&#8594;</span>`;
+
+  // se pune SUB rândul de filtre, nu în interiorul lui (acolo ar strica aranjarea)
+  const rand = bara.closest(".filtre-rand") || bara;
+  rand.insertAdjacentElement("afterend", hint);
+
+  function ascunde() {
+    hint.classList.add("ascuns");
+  }
+
+  bara.addEventListener("scroll", ascunde, { once: true, passive: true });
+  setTimeout(ascunde, 9000);
+
+  // mică mișcare inițială, ca să se vadă că bara se poate trage
+  setTimeout(() => {
+    if (hint.classList.contains("ascuns")) return;
+    bara.scrollTo({ left: 46, behavior: "smooth" });
+    setTimeout(() => bara.scrollTo({ left: 0, behavior: "smooth" }), 650);
+  }, 900);
+}
+
+/* ===== HEADER: se strânge la derulare (înălțimile sunt fixe în CSS, ca să nu tremure) ===== */
+function initHeader() {
+  const radacina = document.documentElement;
+  if (!document.querySelector("header")) return;
+
+  // prag dublu (histerezis), ca să nu comute înainte și înapoi la limita exactă
+  function actualizeaza() {
+    const y = window.scrollY;
+    if (y > 90) radacina.classList.add("pagina-derulata");
+    else if (y < 40) radacina.classList.remove("pagina-derulata");
+  }
+
+  actualizeaza();
+  window.addEventListener("scroll", actualizeaza, { passive: true });
+}
 
 /* ===== CĂUTARE PRODUSE ===== */
 function normalizeazaText(text) {
@@ -124,22 +244,85 @@ function initPachete() {
   });
 }
 
-/* ===== EVIDENȚIERE CATEGORIE SELECTATĂ (pagina de produse) ===== */
+/* ===== FILTRARE PE CATEGORII ȘI SUBCATEGORII (pagina de produse) ===== */
 function initCategoriiNav() {
-  const linkuri = document.querySelectorAll(".categorii-nav a");
-  if (!linkuri.length) return;
+  const butoane = document.querySelectorAll(".categorie-btn");
+  const subNav = document.getElementById("subcategoriiNav");
+  if (!butoane.length || !subNav) return;
 
-  function seteazaActiv(link) {
-    linkuri.forEach((a) => a.classList.remove("active"));
-    if (link) link.classList.add("active");
+  const sectiuni = document.querySelectorAll("section.categorie");
+
+  function aplicaSubcategorie(categorie, subId) {
+    const sectiune = document.getElementById(categorie);
+    if (!sectiune) return;
+
+    sectiune.querySelectorAll(".subcategorie").forEach((bloc) => {
+      const potrivit = subId === "toate" || bloc.dataset.subcategorie === subId;
+      bloc.style.display = potrivit ? "" : "none";
+    });
   }
 
-  linkuri.forEach((link) => {
-    link.addEventListener("click", () => seteazaActiv(link));
+  function construiesteSubNav(categorie) {
+    subNav.innerHTML = "";
+    subNav.classList.remove("active");
+
+    if (categorie === "toate") return;
+
+    const sectiune = document.getElementById(categorie);
+    if (!sectiune) return;
+
+    const blocuri = [...sectiune.querySelectorAll(".subcategorie")];
+    if (blocuri.length < 2) return;
+
+    const optiuni = [
+      { id: "toate", eticheta: "Toate" },
+      ...blocuri.map((b) => ({ id: b.dataset.subcategorie, eticheta: b.dataset.eticheta })),
+    ];
+
+    optiuni.forEach((opt, i) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "subcategorie-btn" + (i === 0 ? " active" : "");
+      btn.textContent = opt.eticheta;
+      btn.addEventListener("click", () => {
+        subNav.querySelectorAll(".subcategorie-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        aplicaSubcategorie(categorie, opt.id);
+      });
+      subNav.appendChild(btn);
+    });
+
+    subNav.classList.add("active");
+  }
+
+  function selecteaza(categorie, { deruleaza = true } = {}) {
+    butoane.forEach((b) => b.classList.toggle("active", b.dataset.categorie === categorie));
+
+    sectiuni.forEach((sec) => {
+      sec.style.display = categorie === "toate" || sec.id === categorie ? "" : "none";
+    });
+
+    if (categorie !== "toate") aplicaSubcategorie(categorie, "toate");
+    construiesteSubNav(categorie);
+
+    if (categorie === "toate") {
+      history.replaceState(null, "", window.location.pathname);
+    } else {
+      history.replaceState(null, "", `#${categorie}`);
+      if (deruleaza) {
+        const sectiune = document.getElementById(categorie);
+        if (sectiune) sectiune.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }
+
+  butoane.forEach((btn) => {
+    btn.addEventListener("click", () => selecteaza(btn.dataset.categorie));
   });
 
-  const dinHash = [...linkuri].find((a) => a.getAttribute("href") === window.location.hash);
-  seteazaActiv(dinHash || linkuri[0]);
+  const dinHash = window.location.hash.replace("#", "");
+  const existaInMeniu = [...butoane].some((b) => b.dataset.categorie === dinHash);
+  selecteaza(existaInMeniu ? dinHash : "toate", { deruleaza: false });
 }
 
 /* ===== SLIDESHOW PAGINA DE ACASĂ ===== */
@@ -384,12 +567,14 @@ function initCatalog() {
     const produseCategorie = PRODUCTS.filter((p) => p.categorie === categorie && p.stoc !== "epuizat");
     let auProduse = false;
 
-    function adaugaSectiune(titluText, produseSub) {
+    function adaugaSectiune(subId, titluText, produseSub) {
       if (!produseSub.length) return;
       auProduse = true;
 
       const sectiune = document.createElement("div");
       sectiune.className = "subcategorie";
+      sectiune.dataset.subcategorie = subId;
+      sectiune.dataset.eticheta = titluText;
 
       const titlu = document.createElement("h3");
       titlu.className = "subcategorie-titlu";
@@ -405,10 +590,11 @@ function initCatalog() {
     }
 
     subcategorii.forEach((sub) => {
-      adaugaSectiune(sub.eticheta, produseCategorie.filter((p) => p.subcategorie === sub.id));
+      adaugaSectiune(sub.id, sub.eticheta, produseCategorie.filter((p) => p.subcategorie === sub.id));
     });
 
     adaugaSectiune(
+      "altele",
       "Altele",
       produseCategorie.filter((p) => !subcategorii.some((s) => s.id === p.subcategorie))
     );
@@ -428,14 +614,6 @@ const STOC_INFO = {
   epuizat: { clasa: "stoc-epuizat", eticheta: "Stoc epuizat" },
 };
 
-function creazaBadgeStoc(stoc) {
-  const info = STOC_INFO[stoc] || STOC_INFO.in_stoc;
-  const badge = document.createElement("span");
-  badge.className = `stoc-badge ${info.clasa}`;
-  badge.textContent = info.eticheta;
-  return badge;
-}
-
 function createProductCard(produs) {
   const card = document.createElement("div");
   card.className = "produs-card";
@@ -445,7 +623,6 @@ function createProductCard(produs) {
   link.className = "produs-link";
 
   const galerie = buildGallery(produs.imagini, produs.nume);
-  galerie.appendChild(creazaBadgeStoc(produs.stoc));
   link.appendChild(galerie);
 
   const info = document.createElement("div");
@@ -463,8 +640,8 @@ function createProductCard(produs) {
   }
 
   const btn = document.createElement("span");
-  btn.className = "btn-gold";
-  btn.textContent = "Vezi detalii";
+  btn.className = "produs-actiune";
+  btn.innerHTML = `Vezi detalii <span class="produs-actiune-sageata">&#8594;</span>`;
   info.appendChild(btn);
 
   link.appendChild(info);
