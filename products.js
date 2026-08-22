@@ -111,5 +111,17 @@ const PRODUCTS = [
     "stoc": "limitat",
     "subcategorie": "clasic",
     "imagini": []
+  },
+  {
+    "id": "coroana",
+    "categorie": "coroane",
+    "nume": "Coroana",
+    "pret": "150 RON",
+    "material": "",
+    "dimensiuni": "",
+    "descriere": "",
+    "stoc": "limitat",
+    "subcategorie": "",
+    "imagini": []
   }
 ];
