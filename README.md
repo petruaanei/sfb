@@ -93,6 +93,9 @@ git clone https://github.com/petruaanei/sfb.git
 cd sfb
 ```
 
+Clona vine implicit pe `main`, care conține tot proiectul — site, panou de
+administrare și datele curente. Nu mai e nimic de configurat în cod.
+
 ### Pasul 4 — Configurează identitatea Git
 
 ```
@@ -122,22 +125,29 @@ git config user.email "adrianciudin9@gmail.com"
 > Dacă e contul altcuiva decât proprietarul repo-ului, adaugă-l la
 > *Settings → Collaborators*.
 
-### Pasul 6 — Stabilește branch-ul de publicare
+### Pasul 6 — Verifică branch-ul
 
-Deschide `admin_server.py` și setează branch-ul pe care se publică site-ul live:
-
-```python
-BRANCH_PUBLICARE = "main"   # sau branch-ul din care se face deploy
-```
-
-Dacă rămâne `None`, publică pe branch-ul curent din folder — riscant dacă folderul
-lui rămâne pe alt branch. **Setează-l explicit.**
-
-Asigură-te că folderul lui e pe acel branch:
+Publicarea e deja configurată pe `main` (`BRANCH_PUBLICARE = "main"` în
+`admin_server.py`), deci nu trebuie schimbat nimic. Asigură-te doar că folderul
+lui este pe `main`:
 
 ```
 git checkout main
+git pull
 ```
+
+> Panoul refuză publicarea dacă folderul e pe alt branch și afișează un mesaj clar.
+> Așa nu se poate întâmpla ca modificările să ajungă unde nu trebuie.
+
+**Important — protecția branch-ului `main`:**
+Repository-ul are o regulă care cere ca modificările să treacă prin Pull Request.
+Proprietarul repo-ului poate trece peste ea, dar un cont de **colaborator va fi
+respins**, iar butonul „Publică pe site" nu va funcționa. Ai două variante:
+
+- *GitHub → Settings → Rules / Branches* → scoate regula de pe `main`, **sau**
+- adaugă contul proprietarului în lista de excepții (*bypass list*) a regulii
+
+Verifică asta înainte să predai calculatorul, la Pasul 7.
 
 ### Pasul 7 — Testează publicarea
 
