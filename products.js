@@ -133,5 +133,19 @@ const PRODUCTS = [
     "imagini": [
       "images/produse/felinare/felinar-model-1/1.png"
     ]
+  },
+  {
+    "id": "accesoriu2",
+    "categorie": "accesorii",
+    "nume": "accesoriu2",
+    "pret": "",
+    "material": "",
+    "dimensiuni": "",
+    "descriere": "tudorel",
+    "stoc": "in_stoc",
+    "subcategorie": "",
+    "imagini": [
+      "images/produse/accesorii/accesoriu2/1.jpg"
+    ]
   }
 ];
