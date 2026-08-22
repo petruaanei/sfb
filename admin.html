@@ -10,8 +10,17 @@
 
   <header class="admin-header">
     <h1>Panou admin — produse</h1>
-    <a href="produse.html" target="_blank" class="admin-vezi-site">Vezi site-ul ↗</a>
+    <div class="admin-header-actiuni">
+      <a href="produse.html" target="_blank" class="admin-vezi-site">Vezi site-ul ↗</a>
+      <button type="button" class="buton-publica" id="butonPublica">
+        <span id="publicaText">Publică pe site</span>
+      </button>
+    </div>
   </header>
+
+  <div class="publica-bara" id="publicaBara">
+    <span id="publicaStare"></span>
+  </div>
 
   <main id="app"></main>
 

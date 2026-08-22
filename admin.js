@@ -40,12 +40,100 @@ let stare = { view: "acasa" };
 
 const app = document.getElementById("app");
 
-document.addEventListener("DOMContentLoaded", incarcaSiRandeaza);
+document.addEventListener("DOMContentLoaded", () => {
+  incarcaSiRandeaza();
+  initPublicare();
+});
+
+/* ===== PUBLICARE PE SITE ===== */
+function initPublicare() {
+  const buton = document.getElementById("butonPublica");
+  const text = document.getElementById("publicaText");
+  const bara = document.getElementById("publicaBara");
+  const stare = document.getElementById("publicaStare");
+  if (!buton) return;
+
+  async function verificaStarea() {
+    try {
+      const res = await fetch("/api/publica", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "status" }),
+      });
+      const data = await res.json();
+      const n = data.nepublicate;
+
+      if (n === null || n === undefined) {
+        bara.className = "publica-bara";
+        stare.textContent = "";
+        return;
+      }
+
+      if (n > 0) {
+        bara.className = "publica-bara are-modificari";
+        stare.textContent =
+          n === 1
+            ? "Ai 1 modificare care nu este încă pe site. Apasă „Publică pe site”."
+            : `Ai ${n} modificări care nu sunt încă pe site. Apasă „Publică pe site”.`;
+        buton.classList.add("evidentiat");
+      } else {
+        bara.className = "publica-bara la-zi";
+        stare.textContent = "Site-ul este la zi.";
+        buton.classList.remove("evidentiat");
+      }
+    } catch (e) {
+      bara.className = "publica-bara";
+      stare.textContent = "";
+    }
+  }
+
+  buton.addEventListener("click", async () => {
+    buton.disabled = true;
+    text.textContent = "Se publică...";
+    bara.className = "publica-bara in-lucru";
+    stare.textContent = "Se trimit modificările către site, așteaptă puțin...";
+
+    try {
+      const res = await fetch("/api/publica", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "publica" }),
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        bara.className = "publica-bara la-zi";
+        stare.textContent = data.mesaj;
+        alert(data.mesaj);
+      } else {
+        bara.className = "publica-bara eroare";
+        stare.textContent = data.mesaj || data.eroare || "Publicarea nu a reușit.";
+        alert(stare.textContent);
+      }
+    } catch (e) {
+      bara.className = "publica-bara eroare";
+      stare.textContent = "Publicarea nu a reușit. Verifică internetul și încearcă din nou.";
+      alert(stare.textContent);
+    }
+
+    buton.disabled = false;
+    text.textContent = "Publică pe site";
+    verificaStarea();
+  });
+
+  // e apelată și după fiecare modificare de produs/pachet
+  window.verificaStareaPublicare = verificaStarea;
+
+  verificaStarea();
+  // reverifică periodic, ca bara să reflecte modificările făcute între timp
+  setInterval(verificaStarea, 15000);
+}
 
 async function incarcaSiRandeaza() {
   PRODUSE = await fetch("products.json?t=" + Date.now()).then((r) => r.json());
   PACHETE = await fetch("packages.json?t=" + Date.now()).then((r) => r.json());
   randeaza();
+  if (window.verificaStareaPublicare) window.verificaStareaPublicare();
 }
 
 async function apiCall(payload, ruta = "/api/produse") {

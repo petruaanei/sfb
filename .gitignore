@@ -1,0 +1,6 @@
+# fișiere temporare generate de Python (panoul de admin)
+__pycache__/
+*.pyc
+
+# copie de siguranță a stilului, păstrată doar local
+style-clasic-backup.css
