@@ -27,6 +27,39 @@ async function incarcaDate() {
     ia("products.json", "produse"),
     ia("packages.json", "pachete"),
   ]);
+
+  PRODUCTS = completeazaIdentificatori(PRODUCTS);
+  PACHETE = completeazaIdentificatori(PACHETE);
+}
+
+/* Transformă un nume în identificator: "Prosop Mare" -> "prosop-mare" */
+function faIdentificator(text) {
+  return (text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(new RegExp("[̀-ͯ]", "g"), "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/* Produsele adăugate din panoul online nu au identificator — îl generăm aici,
+   din nume, ca link-urile către pagina produsului să funcționeze. */
+function completeazaIdentificatori(lista) {
+  const folosite = new Set(lista.map((x) => x.id).filter(Boolean));
+
+  return lista.map((element) => {
+    if (element.id) return element;
+
+    const baza = faIdentificator(element.nume) || "produs";
+    let id = baza;
+    let n = 2;
+    while (folosite.has(id)) {
+      id = `${baza}-${n}`;
+      n++;
+    }
+    folosite.add(id);
+    return { ...element, id };
+  });
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

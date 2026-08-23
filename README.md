@@ -247,13 +247,15 @@ Redenumește scurtătura în **„Administrare site"**.
 2. Loghează-te cu emailul și parola ta
 3. Apasă **Produse** (sau **Pachete funerare**), apoi **Lista de produse**
 4. Ca să adaugi ceva nou, apasă **Add Produs** jos de tot
-5. Completează câmpurile:
-   - **Nume produs** — cum vrei să apară pe site
-   - **Identificator** — un nume scurt, fără spații și fără diacritice
-     (exemplu: `prosop-mare`). Se scrie o singură dată, nu îl mai schimba.
-   - **Categorie** și, dacă e cazul, **Subcategorie**
-   - **Preț**, **Stoc**, **Material**, **Dimensiuni**, **Descriere**
-   - **Poze** — apasă *Add Poză* și alege din galerie; poți pune mai multe
+5. Completează câmpurile, în ordinea în care apar:
+   - **Numele produsului** — cum vrei să apară pe site
+   - **Poze** — apasă *Add Poză* și alege din galerie; poți pune mai multe.
+     Prima poză este cea care apare în listă.
+   - **Preț** — scrie și moneda, de exemplu `150 RON`
+   - **Categorie** și **Stoc**
+   - **Subcategorie** — doar la Sicrie, Prosoape, Lenjerii și Veselă;
+     în rest lasă „— fără —"
+   - **Material**, **Dimensiuni**, **Descriere** — opționale
 6. Apasă **Publish → Publish now** (sus)
 7. După aproximativ un minut, produsul apare pe site
 

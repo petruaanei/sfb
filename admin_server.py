@@ -64,9 +64,28 @@ def _citeste(cale, cheie):
     with open(cale, "r", encoding="utf-8") as f:
         date = json.load(f)
     # acceptă și forma veche (listă simplă), ca să nu se piardă date
-    if isinstance(date, list):
-        return date
-    return date.get(cheie, [])
+    lista = date if isinstance(date, list) else date.get(cheie, [])
+    return _completeaza_identificatori(lista)
+
+
+def _completeaza_identificatori(lista):
+    """Produsele adăugate din panoul online nu au identificator — îl generăm
+    din nume, ca restul aplicației să poată lucra cu ele."""
+    folosite = {x["id"] for x in lista if x.get("id")}
+
+    for element in lista:
+        if element.get("id"):
+            continue
+        baza = slugify(element.get("nume", ""))
+        id_ = baza
+        n = 2
+        while id_ in folosite:
+            id_ = f"{baza}-{n}"
+            n += 1
+        element["id"] = id_
+        folosite.add(id_)
+
+    return lista
 
 
 def _scrie(cale, cheie, lista):

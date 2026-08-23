@@ -1,6 +1,6 @@
 # Configurația panoului de administrare online (Decap CMS).
-# Editează produsele și pachetele direct în products.json / packages.json,
-# aceleași fișiere folosite de site și de panoul local (admin.bat).
+# Editează products.json și packages.json — aceleași fișiere folosite de site
+# și de panoul local (admin.bat).
 
 backend:
   name: git-gateway
@@ -24,24 +24,43 @@ collections:
     label: 'Produse'
     files:
       - name: 'lista'
-        label: 'Lista de produse'
+        label: 'Toate produsele'
         file: 'products.json'
-        description: 'Toate produsele care apar pe site, grupate pe categorii.'
+        description: >-
+          Apasă pe un produs ca să îl modifici, sau pe „Add Produs" (jos de tot)
+          ca să adaugi unul nou. La final, apasă Publish sus în dreapta.
         fields:
           - name: 'produse'
             label: 'Produse'
             label_singular: 'Produs'
             widget: 'list'
-            summary: '{{fields.nume}} — {{fields.pret}}'
+            collapsed: true
+            summary: '{{fields.nume}}  ·  {{fields.pret}}'
             fields:
               - name: 'nume'
-                label: 'Nume produs'
+                label: 'Numele produsului'
                 widget: 'string'
+                hint: 'Așa va apărea pe site. Exemplu: Prosop Mare'
 
-              - name: 'id'
-                label: 'Identificator (se completează o singură dată, fără spații)'
+              - name: 'imagini'
+                label: 'Poze'
+                label_singular: 'Poză'
+                widget: 'list'
+                required: false
+                default: []
+                collapsed: false
+                hint: 'Prima poză este cea care apare în listă. Cel mai bine arată pozele pătrate.'
+                field:
+                  name: 'poza'
+                  label: 'Poză'
+                  widget: 'image'
+
+              - name: 'pret'
+                label: 'Preț'
                 widget: 'string'
-                hint: 'Exemplu: prosop-mare. Nu îl mai schimba după ce ai salvat.'
+                required: false
+                default: ''
+                hint: 'Scrie și moneda. Exemplu: 150 RON'
 
               - name: 'categorie'
                 label: 'Categorie'
@@ -56,97 +75,86 @@ collections:
                   - { label: 'Sicrie', value: 'sicrie' }
                   - { label: 'Veselă', value: 'vesela' }
 
+              - name: 'stoc'
+                label: 'Stoc'
+                widget: 'select'
+                default: 'in_stoc'
+                hint: 'Dacă alegi „Stoc epuizat", produsul dispare de pe site, dar rămâne salvat aici.'
+                options:
+                  - { label: 'În stoc', value: 'in_stoc' }
+                  - { label: 'Cantitate limitată', value: 'limitat' }
+                  - { label: 'Stoc epuizat — nu apare pe site', value: 'epuizat' }
+
               - name: 'subcategorie'
                 label: 'Subcategorie'
                 widget: 'select'
                 required: false
                 default: ''
-                hint: 'Se folosește doar la Sicrie, Prosoape, Lenjerii și Veselă. Lasă gol în rest.'
+                hint: 'Se completează DOAR la Sicrie, Prosoape, Lenjerii și Veselă. În rest, lasă „— fără —".'
                 options:
                   - { label: '— fără —', value: '' }
-                  - { label: 'Sicrie: Premium', value: 'premium' }
-                  - { label: 'Sicrie: Clasic', value: 'clasic' }
-                  - { label: 'Prosoape: Mici', value: 'mici' }
-                  - { label: 'Prosoape: Medii', value: 'medii' }
-                  - { label: 'Prosoape: Mari', value: 'mari' }
-                  - { label: 'Lenjerii: Lenjerii de pat', value: 'lenjerii-pat' }
-                  - { label: 'Lenjerii: Plăpumi', value: 'plapumi' }
-                  - { label: 'Veselă: Pahare', value: 'pahare' }
-                  - { label: 'Veselă: Căni', value: 'cani' }
-                  - { label: 'Veselă: Farfurii', value: 'farfurii' }
-                  - { label: 'Veselă: Boluri', value: 'boluri' }
-                  - { label: 'Veselă: Vas Iena', value: 'vas-iena' }
-                  - { label: 'Veselă: Oale', value: 'oale' }
-
-              - name: 'pret'
-                label: 'Preț'
-                widget: 'string'
-                required: false
-                default: ''
-                hint: 'Scrie și moneda. Exemplu: 150 RON'
-
-              - name: 'stoc'
-                label: 'Stoc'
-                widget: 'select'
-                default: 'in_stoc'
-                options:
-                  - { label: 'În stoc', value: 'in_stoc' }
-                  - { label: 'Cantitate limitată', value: 'limitat' }
-                  - { label: 'Stoc epuizat (nu apare pe site)', value: 'epuizat' }
+                  - { label: 'Sicrie · Premium', value: 'premium' }
+                  - { label: 'Sicrie · Clasic', value: 'clasic' }
+                  - { label: 'Prosoape · Mici', value: 'mici' }
+                  - { label: 'Prosoape · Medii', value: 'medii' }
+                  - { label: 'Prosoape · Mari', value: 'mari' }
+                  - { label: 'Lenjerii · Lenjerii de pat', value: 'lenjerii-pat' }
+                  - { label: 'Lenjerii · Plăpumi', value: 'plapumi' }
+                  - { label: 'Veselă · Pahare', value: 'pahare' }
+                  - { label: 'Veselă · Căni', value: 'cani' }
+                  - { label: 'Veselă · Farfurii', value: 'farfurii' }
+                  - { label: 'Veselă · Boluri', value: 'boluri' }
+                  - { label: 'Veselă · Vas Iena', value: 'vas-iena' }
+                  - { label: 'Veselă · Oale', value: 'oale' }
 
               - name: 'material'
                 label: 'Material'
                 widget: 'string'
                 required: false
                 default: ''
+                hint: 'Opțional. Exemplu: Bumbac 100%'
 
               - name: 'dimensiuni'
                 label: 'Dimensiuni'
                 widget: 'string'
                 required: false
                 default: ''
+                hint: 'Opțional. Exemplu: 70x140 cm'
 
               - name: 'descriere'
                 label: 'Descriere'
                 widget: 'text'
                 required: false
                 default: ''
+                hint: 'Opțional. Câteva cuvinte despre produs.'
 
-              - name: 'imagini'
-                label: 'Poze'
-                label_singular: 'Poză'
-                widget: 'list'
+              - name: 'id'
+                label: 'Cod intern'
+                widget: 'hidden'
                 required: false
-                default: []
-                hint: 'Cel mai bine arată pozele pătrate. Poți adăuga mai multe.'
-                field:
-                  name: 'poza'
-                  label: 'Poză'
-                  widget: 'image'
+                default: ''
 
   # ---------------- PACHETE ----------------
   - name: 'pachete'
     label: 'Pachete funerare'
     files:
       - name: 'lista'
-        label: 'Lista de pachete'
+        label: 'Toate pachetele'
         file: 'packages.json'
-        description: 'Pachetele funerare afișate pe site.'
+        description: >-
+          Apasă pe un pachet ca să îl modifici. La final, apasă Publish sus în dreapta.
         fields:
           - name: 'pachete'
             label: 'Pachete'
             label_singular: 'Pachet'
             widget: 'list'
-            summary: '{{fields.nume}} — {{fields.pret}}'
+            collapsed: true
+            summary: '{{fields.nume}}  ·  {{fields.pret}}'
             fields:
               - name: 'nume'
-                label: 'Nume pachet'
+                label: 'Numele pachetului'
                 widget: 'string'
-
-              - name: 'id'
-                label: 'Identificator (fără spații)'
-                widget: 'string'
-                hint: 'Exemplu: pachet-10000'
+                hint: 'Exemplu: Pachet Funerar 10.000'
 
               - name: 'pret'
                 label: 'Preț'
@@ -155,19 +163,14 @@ collections:
                 default: ''
                 hint: 'Exemplu: 10000 RON'
 
-              - name: 'eticheta'
-                label: 'Etichetă specială'
-                widget: 'string'
-                required: false
-                default: ''
-                hint: 'Exemplu: Cel mai complet. Lasă gol dacă nu vrei etichetă.'
-
               - name: 'itemi'
                 label: 'Ce conține pachetul'
                 label_singular: 'Element'
                 widget: 'list'
                 required: false
                 default: []
+                collapsed: false
+                hint: 'Câte un element pe rând. Apar pe site ca listă cu bifă.'
                 field:
                   name: 'element'
                   label: 'Element'
@@ -176,5 +179,18 @@ collections:
               - name: 'descriere'
                 label: 'Descriere'
                 widget: 'text'
+                required: false
+                default: ''
+
+              - name: 'eticheta'
+                label: 'Etichetă specială'
+                widget: 'string'
+                required: false
+                default: ''
+                hint: 'Opțional. Exemplu: Cel mai complet. Lasă gol dacă nu vrei etichetă.'
+
+              - name: 'id'
+                label: 'Cod intern'
+                widget: 'hidden'
                 required: false
                 default: ''

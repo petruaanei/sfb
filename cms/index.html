@@ -6,23 +6,147 @@
   <meta name="robots" content="noindex">
   <title>Administrare — Servicii Funerare Băltătești</title>
   <link rel="icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* ecranul de așteptare, în tema site-ului */
-    body { margin: 0; background: #08080a; }
+    :root {
+      --aur: #c08b20;
+      --aur-inchis: #9a6f16;
+      --negru: #08080a;
+    }
+
+    body { margin: 0; font-family: "DM Sans", system-ui, sans-serif; }
+
+    /* ---------- ecranul de așteptare ---------- */
     #incarcare {
       position: fixed; inset: 0; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 1.2rem;
-      background: #08080a; color: #d9ac45; z-index: 9999;
-      font-family: "Segoe UI", system-ui, sans-serif;
-      letter-spacing: 3px; text-transform: uppercase; font-size: 0.75rem;
+      align-items: center; justify-content: center; gap: 1.4rem;
+      background: var(--negru); color: var(--aur); z-index: 9999;
+      letter-spacing: 3px; text-transform: uppercase; font-size: 0.72rem;
+      transition: opacity 0.4s ease;
     }
-    #incarcare img { height: 90px; }
+    #incarcare img { height: 100px; }
+    #incarcare.ascuns { opacity: 0; pointer-events: none; }
+
+    /* ---------- bara proprie, deasupra panoului ---------- */
+    #bara-firma {
+      display: none;
+      align-items: center; gap: 0.9rem;
+      background: var(--negru);
+      border-bottom: 1px solid rgba(192, 139, 32, 0.5);
+      padding: 0.55rem 1.1rem;
+      position: sticky; top: 0; z-index: 100;
+    }
+    #bara-firma img { height: 34px; }
+    #bara-firma .titlu {
+      color: var(--aur); font-size: 0.68rem;
+      letter-spacing: 2.5px; text-transform: uppercase;
+    }
+    #bara-firma a {
+      margin-left: auto; color: var(--aur); text-decoration: none;
+      font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase;
+      border: 1px solid rgba(192, 139, 32, 0.5);
+      padding: 0.4rem 0.9rem; border-radius: 2px;
+    }
+    #bara-firma a:hover { background: var(--aur); color: var(--negru); }
+    body.gata #bara-firma { display: flex; }
+
+    /* ---------- ajustări asupra panoului ---------- */
+
+    /* titluri cu fontul site-ului */
+    [class*="AppHeader"] h1,
+    [class*="CollectionTop"] h1,
+    [class*="EditorToolbar"] h1 {
+      font-family: "DM Serif Display", Georgia, serif !important;
+    }
+
+    /* butoanele principale — auriu în loc de albastru/verde */
+    button[class*="ToolbarButton"],
+    [class*="PublishButton"],
+    [class*="SaveButton"] {
+      background-color: var(--aur) !important;
+      border-color: var(--aur) !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.6px;
+    }
+    button[class*="ToolbarButton"]:hover,
+    [class*="PublishButton"]:hover,
+    [class*="SaveButton"]:hover {
+      background-color: var(--aur-inchis) !important;
+    }
+
+    /* câmpuri mai mari și mai lizibile, pentru degete pe tabletă */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select,
+    [class*="control-input"] {
+      font-size: 1rem !important;
+      padding: 0.65rem 0.75rem !important;
+      line-height: 1.5 !important;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--aur) !important;
+      outline: none !important;
+    }
+
+    /* etichetele câmpurilor — mai clare */
+    label[class*="FieldLabel"] {
+      font-size: 0.72rem !important;
+      letter-spacing: 1.4px !important;
+      color: #5a5a5a !important;
+    }
+
+    /* explicațiile de sub câmpuri — mai citibile */
+    p[class*="FieldHint"],
+    [class*="hint"] {
+      font-size: 0.85rem !important;
+      color: #6b6b6b !important;
+      font-style: normal !important;
+      line-height: 1.5 !important;
+    }
+
+    /* fiecare produs din listă — rând mai înalt, mai ușor de apăsat */
+    [class*="StyledListItem"],
+    [class*="SortableListItem"] {
+      padding: 0.35rem 0 !important;
+    }
+    [class*="TopBar"] {
+      min-height: 46px !important;
+    }
+
+    /* zona de conținut — puțin mai lată pe ecrane mari */
+    [class*="EditorContent"] [class*="ControlPaneContainer"] {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* pe tabletă și telefon */
+    @media (max-width: 800px) {
+      #bara-firma { padding: 0.5rem 0.8rem; }
+      #bara-firma img { height: 28px; }
+      #bara-firma .titlu { font-size: 0.6rem; letter-spacing: 1.5px; }
+      input[type="text"], textarea, select { font-size: 1.05rem !important; }
+    }
   </style>
 </head>
 <body>
   <div id="incarcare">
     <img src="../images/logo.png" alt="">
-    <div>Se deschide panoul de administrare...</div>
+    <div>Se deschide panoul de administrare</div>
+  </div>
+
+  <div id="bara-firma">
+    <img src="../images/logo.png" alt="">
+    <span class="titlu">Administrare produse</span>
+    <a href="/" target="_blank">Vezi site-ul</a>
   </div>
 
   <!-- autentificarea (invitație pe email, apoi email + parolă) -->
@@ -31,12 +155,14 @@
   <script src="https://unpkg.com/decap-cms@^3.1.10/dist/decap-cms.js"></script>
 
   <script>
-    // ascunde ecranul de așteptare când panoul e gata
+    // ascunde ecranul de așteptare când panoul e gata de folosit
+    function gata() {
+      var e = document.getElementById("incarcare");
+      if (e) e.classList.add("ascuns");
+      document.body.classList.add("gata");
+    }
     window.addEventListener("load", function () {
-      setTimeout(function () {
-        var e = document.getElementById("incarcare");
-        if (e) e.style.display = "none";
-      }, 1200);
+      setTimeout(gata, 1000);
     });
 
     // după ce se loghează, intră direct în panou
