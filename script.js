@@ -32,6 +32,30 @@ async function incarcaDate() {
   PACHETE = completeazaIdentificatori(PACHETE);
 }
 
+/* ===== IMAGINI REDIMENSIONATE AUTOMAT =====
+   Pozele urcate din telefon pot avea 2-4 MB. Nu are rost să fie trimise așa
+   vizitatorilor: Netlify le redimensionează și le comprimă la cerere, iar
+   originalul rămâne neatins în arhivă.
+
+   Pune false dacă site-ul se mută de pe Netlify — atunci se folosesc
+   pozele originale, ca înainte. */
+const REDIMENSIONARE_AUTOMATA = true;
+
+/* Local (localhost sau rețeaua de acasă) nu există serviciul Netlify,
+   așa că folosim fișierele originale. */
+const RULEAZA_LOCAL = /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\d+\.\d+\.\d+\.\d+)$/.test(
+  window.location.hostname
+);
+
+function urlImagine(cale, latime) {
+  if (!cale) return cale;
+  if (!REDIMENSIONARE_AUTOMATA || RULEAZA_LOCAL) return cale;
+  if (/^https?:/i.test(cale)) return cale;
+
+  const caleAbsoluta = cale.startsWith("/") ? cale : `/${cale}`;
+  return `/.netlify/images?url=${encodeURIComponent(caleAbsoluta)}&w=${latime}&fit=contain`;
+}
+
 /* Prețul e salvat ca număr (ex. 150), iar moneda se adaugă aici, la afișare.
    Acceptă și forma veche, scrisă ca text (ex. "150 RON"). */
 function formateazaPret(valoare) {
@@ -266,7 +290,7 @@ function initCautareProduse() {
 
       const poza = p.imagini && p.imagini.length ? p.imagini[0] : "";
       item.innerHTML = `
-        ${poza ? `<img src="${poza}" alt="">` : `<span class="cautare-item-fara-poza">🖼️</span>`}
+        ${poza ? `<img src="${urlImagine(poza, 120)}" alt="" loading="lazy">` : `<span class="cautare-item-fara-poza">🖼️</span>`}
         <span>${p.nume}</span>
       `;
       rezultateBox.appendChild(item);
@@ -462,12 +486,17 @@ function buildGallery(imagini, altText, options = {}) {
   const wrap = document.createElement("div");
   wrap.className = "galerie";
 
+  // cât de mare e nevoie să fie poza aici (dublu față de afișare, pentru ecrane fine)
+  const latime = options.latime || 600;
+
   let index = 0;
 
   const img = document.createElement("img");
   img.className = "galerie-img";
-  img.src = imagini[0];
+  img.src = urlImagine(imagini[0], latime);
   img.alt = altText;
+  img.loading = "lazy";
+  img.decoding = "async";
   wrap.appendChild(img);
 
   if (options.zoom) {
@@ -497,7 +526,7 @@ function buildGallery(imagini, altText, options = {}) {
     });
 
     function update() {
-      img.src = imagini[index];
+      img.src = urlImagine(imagini[index], latime);
       dots.querySelectorAll(".gallery-dot").forEach((d, i) => {
         d.classList.toggle("active", i === index);
       });
@@ -544,7 +573,8 @@ function ensureLightbox() {
   const img = lightboxEl.querySelector(".lightbox-img");
 
   function updateLightbox() {
-    img.src = lightboxImagini[lightboxIndex];
+    // la zoom vrem calitate mare, dar tot sub dimensiunea originală
+    img.src = urlImagine(lightboxImagini[lightboxIndex], 1600);
   }
 
   function showNav(show) {
@@ -755,7 +785,7 @@ function initProductDetail() {
 
   document.title = `${produs.nume} - Site Proiect`;
 
-  const galerie = buildGallery(produs.imagini, produs.nume, { zoom: true });
+  const galerie = buildGallery(produs.imagini, produs.nume, { zoom: true, latime: 1100 });
   galerie.classList.add("galerie-mare");
   container.appendChild(galerie);
 

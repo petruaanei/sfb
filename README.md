@@ -263,6 +263,8 @@ Redenumește scurtătura în **„Administrare site"**.
 
 ### Sfaturi
 
+- Pozele se **micșorează automat** înainte de a ajunge la vizitatori, deci poți
+  urca liniștit poze făcute direct cu telefonul
 - Cel mai bine arată pozele **pătrate**
 - Poți pune mai multe poze pentru un produs — pe site apar săgeți de răsfoire
 - Poza se vede întotdeauna întreagă, nu e tăiată
@@ -337,6 +339,7 @@ Rulează pe <http://127.0.0.1:8123/admin.html> (doar local).
 | Categorii de produse | `script.js` + `admin.js` (`CATEGORII`, `SUBCATEGORII`) și `produse.html` |
 | Ordinea meniului | `script.js`, constanta `MENIU_ORDINE` |
 | Ce se publică la apăsarea butonului | `admin_server.py`, constanta `CAI_CONTINUT` |
+| Redimensionarea automată a pozelor | `script.js`, constanta `REDIMENSIONARE_AUTOMATA` |
 | Branch-ul de publicare | `admin_server.py`, constanta `BRANCH_PUBLICARE` |
 
 ### Dacă adaugi o categorie nouă
@@ -346,6 +349,30 @@ Trebuie modificate **trei** locuri:
 2. `script.js` — `SUBCATEGORII` (dacă are subcategorii)
 3. `admin.js` — `CATEGORII`, `ETICHETE_CATEGORII`, `SUBCATEGORII`
 4. `admin_server.py` — `CATEGORII`
+
+---
+
+## Poze și consum
+
+Pozele urcate din telefon pot avea 2-4 MB. Site-ul **nu** le trimite așa
+vizitatorilor: sunt redimensionate și comprimate la cerere de serviciul de
+imagini Netlify, iar originalul rămâne neatins în arhivă.
+
+| Unde apare poza | Lățime trimisă |
+|---|---|
+| Card în catalog | 600 px |
+| Pagina produsului | 1100 px |
+| Zoom pe toată pagina | 1600 px |
+| Rezultat în căutare | 120 px |
+
+În plus, pozele se încarcă doar când ajungi cu derularea la ele (`loading="lazy"`),
+deci o vizită descarcă doar ce se vede efectiv.
+
+Local (`localhost` sau adresă din rețea) serviciul Netlify nu există, așa că se
+folosesc fișierele originale — comportamentul e identic vizual.
+
+Ca să dezactivezi complet mecanismul (de exemplu dacă site-ul se mută de pe
+Netlify), pune `REDIMENSIONARE_AUTOMATA = false` în `script.js`.
 
 ---
 
