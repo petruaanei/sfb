@@ -61,6 +61,20 @@
       ],
       "id": "prosop-mare-2",
       "nume": "Prosop Mare 2"
+    },
+    {
+      "id": "tudor",
+      "categorie": "accesorii",
+      "nume": "tudor",
+      "pret": 25,
+      "material": "we",
+      "dimensiuni": "23x12",
+      "descriere": "dasda",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/tudor/1.jpg"
+      ]
     }
   ]
 }

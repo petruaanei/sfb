@@ -33,6 +33,11 @@ CAI_CONTINUT = [
 # Butonul "Publică pe site" trimite mereu acolo, indiferent pe ce branch
 # se află folderul — astfel proprietarul nu poate publica din greșeală altundeva.
 BRANCH_PUBLICARE = "main"
+
+# Netlify (plan gratuit) acceptă build-uri doar de la un singur autor Git pe
+# repo-uri private. Publicăm cu autorul pe care îl recunoaște, iar cine a apăsat
+# efectiv butonul rămâne vizibil în istoric drept „committer”.
+AUTOR_PUBLICARE = "Aanei Petru-Mircea <peteer31@yahoo.com>"
 # --------------------------------------------------------------------------
 
 CATEGORII = ["accesorii", "coroane", "felinare", "imbracaminte", "lenjerii", "prosoape", "sicrie", "vesela"]
@@ -147,6 +152,43 @@ def modificari_nepublicate():
     return len([linie for linie in rezultat.stdout.splitlines() if linie.strip()])
 
 
+def _explica_esec_push(push, branch):
+    """Traduce eroarea lui `git push` într-un mesaj pe înțelesul proprietarului."""
+    detalii = "\n".join(p for p in (push.stderr.strip(), push.stdout.strip()) if p)
+    # eroarea brută rămâne și în fereastra neagră a panoului, pentru diagnostic
+    print(f"[publicare] `git push origin {branch}` a eșuat:\n{detalii}\n")
+    motiv = detalii.lower()
+    inceput = "Modificările au fost salvate local, dar nu au putut fi trimise pe site.\n"
+
+    if any(s in motiv for s in ("protected branch", "pull request", "gh006", "hook declined")):
+        return inceput + (
+            f"Pe GitHub, branch-ul „{branch}” are o regulă care cere Pull Request, "
+            "iar contul de pe acest calculator nu poate trece peste ea.\n"
+            "Roagă proprietarul repo-ului să scoată regula din Settings → Rules "
+            "sau să adauge acest cont în lista de excepții (bypass list)."
+        )
+
+    if any(s in motiv for s in ("authentication failed", "could not read username",
+                                "invalid username or password", "403", "permission denied",
+                                "does not appear to be a git repository")):
+        return inceput + (
+            "Contul GitHub de pe acest calculator nu are drept de publicare, "
+            "sau parola/token-ul nu mai este valabil.\n"
+            "Roagă persoana care se ocupă de site să reconfigureze accesul."
+        )
+
+    if any(s in motiv for s in ("could not resolve host", "failed to connect",
+                                "unable to access", "timed out", "timeout",
+                                "network is unreachable", "connection was reset")):
+        return inceput + "Verifică dacă ai internet, apoi încearcă din nou."
+
+    return inceput + (
+        "Motivul exact, așa cum l-a dat GitHub:\n"
+        + "\n".join(detalii.splitlines()[:4]) + "\n"
+        "Roagă persoana care se ocupă de site să verifice."
+    )
+
+
 def publica_pe_site():
     """Trimite modificările de conținut pe site. Întoarce (reusit, mesaj)."""
     try:
@@ -187,7 +229,10 @@ def publica_pe_site():
         return True, "Nu sunt modificări noi de publicat — site-ul este deja la zi."
 
     acum = datetime.now().strftime("%d.%m.%Y %H:%M")
-    commit = ruleaza_git("commit", "-m", f"Actualizare produse ({acum})")
+    comanda = ["commit", "-m", f"Actualizare produse ({acum})"]
+    if AUTOR_PUBLICARE:
+        comanda += ["--author", AUTOR_PUBLICARE]
+    commit = ruleaza_git(*comanda)
     if commit.returncode != 0:
         return False, f"Nu s-au putut salva modificările:\n{commit.stderr.strip() or commit.stdout.strip()}"
 
@@ -200,12 +245,21 @@ def publica_pe_site():
     if push.returncode == 0:
         return True, "Site-ul a fost actualizat cu succes!"
 
-    # dacă altcineva a publicat între timp, aducem modificările lui și reîncercăm o dată
+    # Reîncercarea cu sincronizare are rost doar dacă altcineva a publicat între
+    # timp. Pentru orice altă cauză (regulă de protecție, cont fără drepturi,
+    # internet) un rebase nu schimbă nimic, așa că spunem direct ce s-a întâmplat.
+    motiv = (push.stderr + push.stdout).lower()
+    if not any(s in motiv for s in ("fetch first", "non-fast-forward", "stale info")):
+        return False, _explica_esec_push(push, branch)
+
     sincronizare = ruleaza_git("pull", "--rebase", "origin", branch)
     if sincronizare.returncode != 0:
         ruleaza_git("rebase", "--abort")
+        print("[publicare] sincronizarea a eșuat:\n"
+              + (sincronizare.stderr.strip() or sincronizare.stdout.strip()))
         return False, (
             "Modificările au fost salvate local, dar nu au putut fi trimise pe site.\n"
+            "Altcineva a publicat între timp, iar modificările nu s-au putut îmbina automat.\n"
             "Roagă persoana care se ocupă de site să verifice."
         )
 
@@ -213,10 +267,7 @@ def publica_pe_site():
     if push.returncode == 0:
         return True, "Site-ul a fost actualizat cu succes!"
 
-    return False, (
-        "Modificările au fost salvate local, dar nu au putut fi trimise pe site.\n"
-        "Verifică dacă ai internet, apoi încearcă din nou."
-    )
+    return False, _explica_esec_push(push, branch)
 
 
 def unique_id(products, base):
