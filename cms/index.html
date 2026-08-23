@@ -150,12 +150,95 @@
       margin: 0 auto;
     }
 
-    /* pe tabletă și telefon */
+    /* ===================== TABLETĂ ȘI TELEFON ===================== */
     @media (max-width: 800px) {
+      /* nimic nu iese lateral din ecran */
+      html, body { overflow-x: hidden !important; max-width: 100vw; }
+
       #bara-firma { padding: 0.5rem 0.8rem; }
       #bara-firma img { height: 28px; }
       #bara-firma .titlu { font-size: 0.6rem; letter-spacing: 1.5px; }
-      input[type="text"], textarea, select { font-size: 1.05rem !important; }
+
+      /* bara de sus a editorului: se așază pe mai multe rânduri,
+         în loc să înghesuie butoanele sau să le taie */
+      [class*="EditorToolbar"],
+      [class*="Toolbar"] {
+        height: auto !important;
+        min-height: 0 !important;
+        flex-wrap: wrap !important;
+        gap: 0.4rem !important;
+        padding: 0.5rem 0.6rem !important;
+      }
+
+      [class*="EditorToolbar"] > *,
+      [class*="Toolbar"] > * {
+        min-width: 0 !important;
+        flex: 0 1 auto !important;
+      }
+
+      /* butoanele din bară — lizibile, dar nu uriașe */
+      [class*="ToolbarButton"],
+      [class*="PublishButton"] {
+        font-size: 0.8rem !important;
+        padding: 0.5rem 0.9rem !important;
+        white-space: nowrap;
+      }
+
+      /* zona de formular ocupă toată lățimea, cu margini mici */
+      [class*="ControlPaneContainer"],
+      [class*="EditorContent"],
+      [class*="CardsGrid"],
+      [class*="CollectionTop"],
+      [class*="ListWidget"] {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 0.6rem !important;
+        padding-right: 0.6rem !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      /* meniul cu colecții (Produse / Pachete) stă deasupra, nu lateral */
+      [class*="SidebarContainer"] {
+        position: static !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 0.5rem 0.6rem !important;
+      }
+
+      /* rânduri mai înalte, ușor de apăsat cu degetul */
+      [class*="TopBar"] { min-height: 58px !important; }
+
+      [class*="StyledListItem"],
+      [class*="SortableListItem"] {
+        margin-bottom: 0.75rem !important;
+      }
+
+      /* câmpurile: text de 16px, ca telefonul să NU mărească pagina
+         automat când începi să scrii */
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"],
+      textarea,
+      select {
+        font-size: 16px !important;
+        padding: 0.7rem !important;
+        max-width: 100% !important;
+      }
+
+      /* explicațiile de sub câmpuri */
+      p[class*="FieldHint"], [class*="hint"] { font-size: 0.9rem !important; }
+
+      /* fereastra de alegere a pozelor, pe tot ecranul */
+      [class*="MediaLibrary"],
+      [class*="ModalDialog"] {
+        width: 96vw !important;
+        max-width: 96vw !important;
+        height: 92vh !important;
+        max-height: 92vh !important;
+      }
     }
   </style>
 </head>

@@ -99,10 +99,10 @@ document.addEventListener("DOMContentLoaded", async () => {
    Ordinea este fixată aici, ca să fie identică pe toate paginile. */
 const MENIU_ORDINE = [
   { href: "index.html", text: "Acasă" },
-  { href: "despre.html", text: "Despre noi" },
   { href: "servicii.html", text: "Servicii" },
   { href: "produse.html", text: "Produse" },
   { href: "pachete.html", text: "Pachete funerare" },
+  { href: "despre.html", text: "Despre noi" },
   { href: "contact.html", text: "Contact" },
 ];
 
