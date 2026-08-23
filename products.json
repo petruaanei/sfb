@@ -61,34 +61,6 @@
       ],
       "id": "prosop-mare-2",
       "nume": "Prosop Mare 2"
-    },
-    {
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "",
-      "pret": null,
-      "stoc": "limitat",
-      "categorie": "sicrie",
-      "subcategorie": "clasic",
-      "imagini": [
-        "images/produse/sicrie/sicriu/1.jpg"
-      ],
-      "id": "sicriu",
-      "nume": "Sicriu"
-    },
-    {
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "",
-      "pret": 150,
-      "stoc": "epuizat",
-      "categorie": "coroane",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/coroane/coroana/1.jpg"
-      ],
-      "id": "coroana",
-      "nume": "Coroana"
     }
   ]
 }
