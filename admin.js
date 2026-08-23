@@ -398,7 +398,7 @@ function randeazaProdus(categorie, id) {
         action: "update",
         id: produs.id,
         nume: document.getElementById("campNume").value,
-        pret: numarPret ? `${numarPret} RON` : "",
+        pret: numarPret ? parseFloat(numarPret) : null,
         material: document.getElementById("campMaterial").value,
         dimensiuni: document.getElementById("campDimensiuni").value,
         subcategorie: document.getElementById("campSubcategorie")?.value || "",
@@ -519,7 +519,7 @@ function randeazaPachet(id) {
           action: "update",
           id: pachet.id,
           nume: document.getElementById("campNume").value,
-          pret: numarPret ? `${numarPret} RON` : "",
+          pret: numarPret ? parseFloat(numarPret) : null,
           eticheta: document.getElementById("campEticheta").value,
           itemi,
           descriere: document.getElementById("campDescriere").value,
@@ -573,12 +573,14 @@ function fisierToDataURL(file) {
 }
 
 function extrageNumarPret(pret) {
-  const m = (pret || "").match(/[\d.,]+/);
+  // prețul poate fi număr (150) sau text vechi ("150 RON")
+  if (typeof pret === "number") return String(pret);
+  const m = String(pret || "").match(/[\d.,]+/);
   return m ? m[0].replace(",", ".") : "";
 }
 
 function escapeAttr(text) {
-  return (text || "").replace(/"/g, "&quot;");
+  return String(text === null || text === undefined ? "" : text).replace(/"/g, "&quot;");
 }
 
 function escapeHtml(text) {

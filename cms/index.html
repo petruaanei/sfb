@@ -113,13 +113,35 @@
       line-height: 1.5 !important;
     }
 
-    /* fiecare produs din listă — rând mai înalt, mai ușor de apăsat */
+    /* fiecare produs din listă — card distinct, ușor de apăsat */
     [class*="StyledListItem"],
     [class*="SortableListItem"] {
-      padding: 0.35rem 0 !important;
+      margin-bottom: 0.6rem !important;
+      border-radius: 4px !important;
+      border-left: 3px solid var(--aur) !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     }
+
     [class*="TopBar"] {
-      min-height: 46px !important;
+      min-height: 52px !important;
+    }
+
+    /* numele produsului din rândul restrâns — mai mare și mai vizibil */
+    [class*="StyledListItem"] [class*="Label"],
+    [class*="SortableListItem"] [class*="Label"] {
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      color: #2b2b2b !important;
+    }
+
+    /* butonul „Add produs" — auriu, evident */
+    button[class*="AddButton"],
+    [class*="ListWidget"] button[class*="Add"] {
+      background-color: var(--aur) !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      padding: 0.55rem 1.2rem !important;
+      font-size: 0.9rem !important;
     }
 
     /* zona de conținut — puțin mai lată pe ecrane mari */
@@ -163,6 +185,41 @@
     }
     window.addEventListener("load", function () {
       setTimeout(gata, 1000);
+    });
+
+    /* Când apeși „Add produs", panoul îl adaugă la finalul listei.
+       Aici îl aducem automat în fața ochilor, ca să nu mai derulezi până jos. */
+    document.addEventListener("click", function (e) {
+      var buton = e.target && e.target.closest && e.target.closest("button");
+      if (!buton) return;
+
+      var text = (buton.textContent || "").trim().toLowerCase();
+      if (text.indexOf("add") !== 0) return;
+
+      // așteptăm ca panoul să insereze noul element, apoi derulăm la el
+      setTimeout(function () {
+        try {
+          var elemente = document.querySelectorAll(
+            '[class*="StyledListItem"], [class*="SortableListItem"]'
+          );
+          if (!elemente.length) return;
+
+          var ultimul = elemente[elemente.length - 1];
+          ultimul.scrollIntoView({ behavior: "smooth", block: "center" });
+
+          // dacă e restrâns, îl deschidem ca să poți scrie direct
+          var deschide = ultimul.querySelector('button[class*="TopBar"], [class*="ExpandButton"]');
+          if (deschide) deschide.click();
+
+          // punem cursorul în primul câmp (numele)
+          setTimeout(function () {
+            var camp = ultimul.querySelector('input[type="text"]');
+            if (camp) camp.focus();
+          }, 350);
+        } catch (err) {
+          /* dacă panoul își schimbă structura, pur și simplu nu facem nimic */
+        }
+      }, 250);
     });
 
     // după ce se loghează, intră direct în panou

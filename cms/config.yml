@@ -22,6 +22,8 @@ collections:
   # ---------------- PRODUSE ----------------
   - name: 'produse'
     label: 'Produse'
+    editor:
+      preview: false
     files:
       - name: 'lista'
         label: 'Toate produsele'
@@ -35,7 +37,7 @@ collections:
             label_singular: 'Produs'
             widget: 'list'
             collapsed: true
-            summary: '{{fields.nume}}  ·  {{fields.pret}}'
+            summary: '{{fields.nume}}  ·  {{fields.categorie}}  ·  {{fields.pret}} RON'
             fields:
               - name: 'nume'
                 label: 'Numele produsului'
@@ -56,11 +58,12 @@ collections:
                   widget: 'image'
 
               - name: 'pret'
-                label: 'Preț'
-                widget: 'string'
+                label: 'Preț (RON)'
+                widget: 'number'
                 required: false
-                default: ''
-                hint: 'Scrie și moneda. Exemplu: 150 RON'
+                value_type: 'float'
+                min: 0
+                hint: 'Scrie doar cifra. „RON” se adaugă automat pe site.'
 
               - name: 'categorie'
                 label: 'Categorie'
@@ -137,6 +140,8 @@ collections:
   # ---------------- PACHETE ----------------
   - name: 'pachete'
     label: 'Pachete funerare'
+    editor:
+      preview: false
     files:
       - name: 'lista'
         label: 'Toate pachetele'
@@ -149,7 +154,7 @@ collections:
             label_singular: 'Pachet'
             widget: 'list'
             collapsed: true
-            summary: '{{fields.nume}}  ·  {{fields.pret}}'
+            summary: '{{fields.nume}}  ·  {{fields.pret}} RON'
             fields:
               - name: 'nume'
                 label: 'Numele pachetului'
@@ -157,11 +162,12 @@ collections:
                 hint: 'Exemplu: Pachet Funerar 10.000'
 
               - name: 'pret'
-                label: 'Preț'
-                widget: 'string'
+                label: 'Preț (RON)'
+                widget: 'number'
                 required: false
-                default: ''
-                hint: 'Exemplu: 10000 RON'
+                value_type: 'float'
+                min: 0
+                hint: 'Scrie doar cifra. „RON” se adaugă automat pe site.'
 
               - name: 'itemi'
                 label: 'Ce conține pachetul'

@@ -246,12 +246,14 @@ Redenumește scurtătura în **„Administrare site"**.
    *(salveaz-o la favorite sau pune-o pe ecranul principal al tabletei)*
 2. Loghează-te cu emailul și parola ta
 3. Apasă **Produse** (sau **Pachete funerare**), apoi **Lista de produse**
-4. Ca să adaugi ceva nou, apasă **Add Produs** jos de tot
+4. Ca să adaugi ceva nou, apasă **Add produs** (sus, în dreapta listei).
+   Panoul te duce automat la produsul nou și îți pune cursorul în câmpul de nume.
 5. Completează câmpurile, în ordinea în care apar:
    - **Numele produsului** — cum vrei să apară pe site
    - **Poze** — apasă *Add Poză* și alege din galerie; poți pune mai multe.
      Prima poză este cea care apare în listă.
-   - **Preț** — scrie și moneda, de exemplu `150 RON`
+   - **Preț (RON)** — scrie doar cifra, de exemplu `150`.
+     „RON" se adaugă automat pe site.
    - **Categorie** și **Stoc**
    - **Subcategorie** — doar la Sicrie, Prosoape, Lenjerii și Veselă;
      în rest lasă „— fără —"

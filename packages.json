@@ -3,7 +3,7 @@
     {
       "id": "fara-masa",
       "nume": "Pachet Funerar Fără Masă",
-      "pret": "8500 RON",
+      "pret": 8500,
       "eticheta": "",
       "itemi": [
         "Sicriu, cruce, cruce de doliu și icoană",
@@ -20,7 +20,7 @@
     {
       "id": "ajutor-inmormantare",
       "nume": "Pachet Funerar Ajutor de Înmormântare",
-      "pret": "9180 RON",
+      "pret": 9180,
       "eticheta": "",
       "itemi": [
         "Preluarea persoanei decedate, toaletare și set haine",
@@ -38,7 +38,7 @@
     {
       "id": "pachet-10000",
       "nume": "Pachet Funerar 10.000",
-      "pret": "10000 RON",
+      "pret": 10000,
       "eticheta": "",
       "itemi": [
         "Sicriu (set), cruce, cruce de doliu și icoană",
@@ -55,7 +55,7 @@
     {
       "id": "pachet-12000",
       "nume": "Pachet Funerar 12.000",
-      "pret": "12000 RON",
+      "pret": 12000,
       "eticheta": "",
       "itemi": [
         "Sicriu, cruce, cruce de doliu și icoană",
@@ -72,7 +72,7 @@
     {
       "id": "pachet-14000",
       "nume": "Pachet Funerar 14.000",
-      "pret": "14000 RON",
+      "pret": 14000,
       "eticheta": "",
       "itemi": [
         "Sicriu de calitate superioară, cruce, cruce de doliu și icoană",
@@ -89,7 +89,7 @@
     {
       "id": "pachet-20000",
       "nume": "Pachet Funerar 20.000",
-      "pret": "20000 RON",
+      "pret": 20000,
       "eticheta": "Cel mai complet",
       "itemi": [
         "Sicriu premium, cruce, cruce de doliu și icoană",

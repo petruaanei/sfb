@@ -68,6 +68,23 @@ def _citeste(cale, cheie):
     return _completeaza_identificatori(lista)
 
 
+def _pret_numeric(valoare):
+    """Prețul se păstrează ca număr; moneda o adaugă site-ul la afișare.
+    Acceptă și text vechi, de forma „150 RON”."""
+    if valoare is None or valoare == "":
+        return None
+    if isinstance(valoare, (int, float)):
+        return valoare
+    gasit = re.search(r"[\d.,]+", str(valoare))
+    if not gasit:
+        return None
+    try:
+        numar = float(gasit.group(0).replace(",", "."))
+    except ValueError:
+        return None
+    return int(numar) if numar == int(numar) else numar
+
+
 def _completeaza_identificatori(lista):
     """Produsele adăugate din panoul online nu au identificator — îl generăm
     din nume, ca restul aplicației să poată lucra cu ele."""
@@ -345,9 +362,11 @@ class AdminHandler(SimpleHTTPRequestHandler):
 
     def _update_pachet(self, packages, payload):
         pachet = self._find(packages, payload.get("id"))
-        for camp in ("nume", "pret", "eticheta", "descriere"):
+        for camp in ("nume", "eticheta", "descriere"):
             if camp in payload:
                 pachet[camp] = (payload[camp] or "").strip()
+        if "pret" in payload:
+            pachet["pret"] = _pret_numeric(payload["pret"])
         if "itemi" in payload and isinstance(payload["itemi"], list):
             pachet["itemi"] = [str(x).strip() for x in payload["itemi"] if str(x).strip()]
         save_packages(packages)
@@ -387,9 +406,11 @@ class AdminHandler(SimpleHTTPRequestHandler):
 
     def _update(self, products, payload):
         produs = self._find(products, payload.get("id"))
-        for camp in ("nume", "pret", "material", "dimensiuni", "descriere", "subcategorie"):
+        for camp in ("nume", "material", "dimensiuni", "descriere", "subcategorie"):
             if camp in payload:
                 produs[camp] = (payload[camp] or "").strip()
+        if "pret" in payload:
+            produs["pret"] = _pret_numeric(payload["pret"])
         if "stoc" in payload and payload["stoc"] in STOC_VALORI:
             produs["stoc"] = payload["stoc"]
         save_products(products)

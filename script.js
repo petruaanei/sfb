@@ -32,6 +32,23 @@ async function incarcaDate() {
   PACHETE = completeazaIdentificatori(PACHETE);
 }
 
+/* Prețul e salvat ca număr (ex. 150), iar moneda se adaugă aici, la afișare.
+   Acceptă și forma veche, scrisă ca text (ex. "150 RON"). */
+function formateazaPret(valoare) {
+  if (valoare === null || valoare === undefined || valoare === "") return "";
+
+  if (typeof valoare === "number") {
+    return `${valoare.toLocaleString("ro-RO")} RON`;
+  }
+
+  const text = String(valoare).trim();
+  if (!text) return "";
+  if (/ron|lei/i.test(text)) return text; // conține deja moneda
+
+  const numar = parseFloat(text.replace(",", "."));
+  return isNaN(numar) ? text : `${numar.toLocaleString("ro-RO")} RON`;
+}
+
 /* Transformă un nume în identificator: "Prosop Mare" -> "prosop-mare" */
 function faIdentificator(text) {
   return (text || "")
@@ -301,7 +318,7 @@ function initPachete() {
       ${eticheta}
       <div class="pachet-info">
         <h3>${pachet.nume}</h3>
-        ${pachet.pret ? `<p class="pachet-pret">${pachet.pret}</p>` : ""}
+        ${formateazaPret(pachet.pret) ? `<p class="pachet-pret">${formateazaPret(pachet.pret)}</p>` : ""}
         <ul class="pachet-lista">${itemi}</ul>
         ${pachet.descriere ? `<p class="pachet-descriere">${pachet.descriere}</p>` : ""}
         <a href="contact.html" class="btn-gold">Solicită detalii</a>
@@ -700,10 +717,11 @@ function createProductCard(produs) {
   titlu.textContent = produs.nume;
   info.appendChild(titlu);
 
-  if (produs.pret) {
+  const pretAfisat = formateazaPret(produs.pret);
+  if (pretAfisat) {
     const pret = document.createElement("p");
     pret.className = "produs-pret";
-    pret.textContent = produs.pret;
+    pret.textContent = pretAfisat;
     info.appendChild(pret);
   }
 
@@ -750,7 +768,7 @@ function initProductDetail() {
     <a href="produse.html#${produs.categorie}" class="produs-detail-back">&#10094; Înapoi la ${produs.categorie}</a>
     <h1>${produs.nume}</h1>
     <span class="stoc-badge ${stocInfo.clasa}">${stocInfo.eticheta}</span>
-    ${produs.pret ? `<p class="produs-detail-pret">${produs.pret}</p>` : ""}
+    ${formateazaPret(produs.pret) ? `<p class="produs-detail-pret">${formateazaPret(produs.pret)}</p>` : ""}
     <ul class="produs-detail-specs">
       ${produs.material ? `<li><strong>Material:</strong> ${produs.material}</li>` : ""}
       ${produs.dimensiuni ? `<li><strong>Dimensiuni:</strong> ${produs.dimensiuni}</li>` : ""}
