@@ -1,20 +1,6 @@
 {
   "produse": [
     {
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "",
-      "pret": 233.92,
-      "stoc": "in_stoc",
-      "categorie": "imbracaminte",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/imbracaminte/costum/1.png"
-      ],
-      "id": "costum",
-      "nume": "costum"
-    },
-    {
       "material": "Bumbac 100%",
       "dimensiuni": "70x140cm",
       "descriere": "",
@@ -103,105 +89,6 @@
       ],
       "id": "coroana",
       "nume": "Coroana"
-    },
-    {
-      "material": "Stejar",
-      "dimensiuni": "",
-      "descriere": "tudor",
-      "pret": 0.01,
-      "stoc": "in_stoc",
-      "categorie": "accesorii",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/accesorii/accesoriu/1.jpg"
-      ],
-      "id": "accesoriu",
-      "nume": "accesoriu"
-    },
-    {
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "",
-      "pret": null,
-      "stoc": "in_stoc",
-      "categorie": "felinare",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/felinare/felinar-model-1/1.png"
-      ],
-      "id": "felinar-model-1",
-      "nume": "Felinar model 1"
-    },
-    {
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "tudorel",
-      "pret": null,
-      "stoc": "in_stoc",
-      "categorie": "accesorii",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/accesorii/accesoriu2/1.jpg"
-      ],
-      "id": "accesoriu2",
-      "nume": "accesoriu2"
-    },
-    {
-      "material": "lut",
-      "dimensiuni": "330ml",
-      "descriere": "",
-      "pret": 10,
-      "stoc": "limitat",
-      "categorie": "vesela",
-      "subcategorie": "cani",
-      "imagini": [
-        "images/produse/incarcate/50107429-fcbf-4fb7-bbfb-14d500889cf2.jpeg"
-      ],
-      "id": "test1",
-      "nume": "test"
-    },
-    {
-      "material": "pisic",
-      "dimensiuni": "",
-      "descriere": "",
-      "pret": 100,
-      "stoc": "in_stoc",
-      "categorie": "accesorii",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/incarcate/img_0757.jpeg"
-      ],
-      "id": "suki1",
-      "nume": "suki"
-    },
-    {
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "",
-      "pret": 25,
-      "stoc": "limitat",
-      "categorie": "felinare",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/incarcate/detectie.png"
-      ],
-      "id": "",
-      "nume": "test3"
-    },
-    {
-      "material": "pisic 100%",
-      "dimensiuni": "2 luni",
-      "descriere": "",
-      "pret": 60,
-      "stoc": "in_stoc",
-      "categorie": "accesorii",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/incarcate/9dccf284-9e7e-409b-b7dc-c4fddec916ce.jpeg",
-        "images/produse/incarcate/50107429-fcbf-4fb7-bbfb-14d500889cf2.jpeg"
-      ],
-      "id": "",
-      "nume": "tudorel"
     }
   ]
 }
