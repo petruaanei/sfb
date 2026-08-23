@@ -173,6 +173,20 @@
       ],
       "id": "suki1",
       "nume": "suki"
+    },
+    {
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "pret": 25,
+      "stoc": "limitat",
+      "categorie": "felinare",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/incarcate/detectie.png"
+      ],
+      "id": "",
+      "nume": "test3"
     }
   ]
 }
