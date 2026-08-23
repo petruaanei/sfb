@@ -33,11 +33,6 @@ CAI_CONTINUT = [
 # Butonul "Publică pe site" trimite mereu acolo, indiferent pe ce branch
 # se află folderul — astfel proprietarul nu poate publica din greșeală altundeva.
 BRANCH_PUBLICARE = "main"
-
-# Netlify (plan gratuit) acceptă build-uri doar de la un singur autor Git pe
-# repo-uri private. Publicăm cu autorul pe care îl recunoaște, iar cine a apăsat
-# efectiv butonul rămâne vizibil în istoric drept „committer”.
-AUTOR_PUBLICARE = "Aanei Petru-Mircea <peteer31@yahoo.com>"
 # --------------------------------------------------------------------------
 
 CATEGORII = ["accesorii", "coroane", "felinare", "imbracaminte", "lenjerii", "prosoape", "sicrie", "vesela"]
@@ -229,10 +224,7 @@ def publica_pe_site():
         return True, "Nu sunt modificări noi de publicat — site-ul este deja la zi."
 
     acum = datetime.now().strftime("%d.%m.%Y %H:%M")
-    comanda = ["commit", "-m", f"Actualizare produse ({acum})"]
-    if AUTOR_PUBLICARE:
-        comanda += ["--author", AUTOR_PUBLICARE]
-    commit = ruleaza_git(*comanda)
+    commit = ruleaza_git("commit", "-m", f"Actualizare produse ({acum})")
     if commit.returncode != 0:
         return False, f"Nu s-au putut salva modificările:\n{commit.stderr.strip() or commit.stdout.strip()}"
 
