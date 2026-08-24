@@ -60,7 +60,7 @@
         "images/produse/prosoape/prosop-mare-2/2.jpg"
       ],
       "id": "prosop-mare-2",
-      "nume": "Prosop Mare 2"
+      "nume": "Prosop Mare"
     },
     {
       "id": "tudor",
@@ -74,6 +74,948 @@
       "subcategorie": "",
       "imagini": [
         "images/produse/accesorii/tudor/1.jpg"
+      ]
+    },
+    {
+      "id": "sicriu",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu/2.png",
+        "images/produse/sicrie/sicriu/3.png",
+        "images/produse/sicrie/sicriu/4.png",
+        "images/produse/sicrie/sicriu/5.png",
+        "images/produse/sicrie/sicriu/6.png"
+      ]
+    },
+    {
+      "id": "sicriu-2",
+      "categorie": "sicrie",
+      "nume": "Sicriu alb",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/sicrie/sicriu-2/1.png",
+        "images/produse/sicrie/sicriu-2/2.png",
+        "images/produse/sicrie/sicriu-2/3.png",
+        "images/produse/sicrie/sicriu-2/4.png",
+        "images/produse/sicrie/sicriu-2/5.png"
+      ]
+    },
+    {
+      "id": "sicriu-3",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-3/1.png",
+        "images/produse/sicrie/sicriu-3/2.png",
+        "images/produse/sicrie/sicriu-3/3.png",
+        "images/produse/sicrie/sicriu-3/4.png",
+        "images/produse/sicrie/sicriu-3/5.png",
+        "images/produse/sicrie/sicriu-3/6.png"
+      ]
+    },
+    {
+      "id": "sicriu-4",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-4/2.png",
+        "images/produse/sicrie/sicriu-4/3.png",
+        "images/produse/sicrie/sicriu-4/4.png",
+        "images/produse/sicrie/sicriu-4/5.png",
+        "images/produse/sicrie/sicriu-4/6.png",
+        "images/produse/sicrie/sicriu-4/7.png"
+      ]
+    },
+    {
+      "id": "sicriu-5",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "premium",
+      "imagini": [
+        "images/produse/sicrie/sicriu-5/1.png",
+        "images/produse/sicrie/sicriu-5/2.png",
+        "images/produse/sicrie/sicriu-5/3.png",
+        "images/produse/sicrie/sicriu-5/4.png",
+        "images/produse/sicrie/sicriu-5/5.png",
+        "images/produse/sicrie/sicriu-5/6.png"
+      ]
+    },
+    {
+      "id": "sicriu-6",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "premium",
+      "imagini": [
+        "images/produse/sicrie/sicriu-6/1.png",
+        "images/produse/sicrie/sicriu-6/2.png",
+        "images/produse/sicrie/sicriu-6/3.png",
+        "images/produse/sicrie/sicriu-6/4.jpg"
+      ]
+    },
+    {
+      "id": "sicriu-7",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-7/1.png",
+        "images/produse/sicrie/sicriu-7/2.png",
+        "images/produse/sicrie/sicriu-7/3.png",
+        "images/produse/sicrie/sicriu-7/4.png",
+        "images/produse/sicrie/sicriu-7/5.jpg"
+      ]
+    },
+    {
+      "id": "sicriu-8",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "premium",
+      "imagini": [
+        "images/produse/sicrie/sicriu-8/1.png",
+        "images/produse/sicrie/sicriu-8/2.png",
+        "images/produse/sicrie/sicriu-8/3.png",
+        "images/produse/sicrie/sicriu-8/4.png",
+        "images/produse/sicrie/sicriu-8/5.png"
+      ]
+    },
+    {
+      "id": "sicriu-9",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-9/1.png",
+        "images/produse/sicrie/sicriu-9/2.png",
+        "images/produse/sicrie/sicriu-9/3.png",
+        "images/produse/sicrie/sicriu-9/4.png"
+      ]
+    },
+    {
+      "id": "sicriu-10",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-10/1.png",
+        "images/produse/sicrie/sicriu-10/2.png",
+        "images/produse/sicrie/sicriu-10/3.png",
+        "images/produse/sicrie/sicriu-10/4.png",
+        "images/produse/sicrie/sicriu-10/5.png"
+      ]
+    },
+    {
+      "id": "sicriu-11",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-11/1.png",
+        "images/produse/sicrie/sicriu-11/2.png",
+        "images/produse/sicrie/sicriu-11/3.png"
+      ]
+    },
+    {
+      "id": "sicriu-12",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-12/1.png",
+        "images/produse/sicrie/sicriu-12/2.png",
+        "images/produse/sicrie/sicriu-12/3.png"
+      ]
+    },
+    {
+      "id": "sicriu-13",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-13/1.png",
+        "images/produse/sicrie/sicriu-13/2.png",
+        "images/produse/sicrie/sicriu-13/3.png"
+      ]
+    },
+    {
+      "id": "sicriu-14",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-14/1.png",
+        "images/produse/sicrie/sicriu-14/2.png",
+        "images/produse/sicrie/sicriu-14/3.png"
+      ]
+    },
+    {
+      "id": "sicriu-15",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "clasic",
+      "imagini": [
+        "images/produse/sicrie/sicriu-15/1.png",
+        "images/produse/sicrie/sicriu-15/2.png",
+        "images/produse/sicrie/sicriu-15/3.png",
+        "images/produse/sicrie/sicriu-15/4.jpg",
+        "images/produse/sicrie/sicriu-15/5.jpg"
+      ]
+    },
+    {
+      "id": "sicriu-16",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "premium",
+      "imagini": [
+        "images/produse/sicrie/sicriu-16/1.png",
+        "images/produse/sicrie/sicriu-16/2.png",
+        "images/produse/sicrie/sicriu-16/3.png",
+        "images/produse/sicrie/sicriu-16/4.png",
+        "images/produse/sicrie/sicriu-16/5.png",
+        "images/produse/sicrie/sicriu-16/6.png"
+      ]
+    },
+    {
+      "id": "sicriu-17",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "premium",
+      "imagini": [
+        "images/produse/sicrie/sicriu-17/1.png",
+        "images/produse/sicrie/sicriu-17/2.png",
+        "images/produse/sicrie/sicriu-17/3.png",
+        "images/produse/sicrie/sicriu-17/4.png",
+        "images/produse/sicrie/sicriu-17/5.png",
+        "images/produse/sicrie/sicriu-17/6.png"
+      ]
+    },
+    {
+      "id": "sicriu-18",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "premium",
+      "imagini": [
+        "images/produse/sicrie/sicriu-18/1.png",
+        "images/produse/sicrie/sicriu-18/2.png",
+        "images/produse/sicrie/sicriu-18/3.png",
+        "images/produse/sicrie/sicriu-18/4.png",
+        "images/produse/sicrie/sicriu-18/5.png"
+      ]
+    },
+    {
+      "id": "sicriu-19",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/sicrie/sicriu-19/1.png",
+        "images/produse/sicrie/sicriu-19/2.png",
+        "images/produse/sicrie/sicriu-19/3.png",
+        "images/produse/sicrie/sicriu-19/4.png",
+        "images/produse/sicrie/sicriu-19/5.png"
+      ]
+    },
+    {
+      "id": "sicriu-20",
+      "categorie": "sicrie",
+      "nume": "Sicriu",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/sicrie/sicriu-20/1.png",
+        "images/produse/sicrie/sicriu-20/2.png",
+        "images/produse/sicrie/sicriu-20/3.png"
+      ]
+    },
+    {
+      "id": "prosop-mare-3",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-mare-3/1.png"
+      ]
+    },
+    {
+      "id": "prosop",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop/1.png"
+      ]
+    },
+    {
+      "id": "prosop-2",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-2/1.png"
+      ]
+    },
+    {
+      "id": "prosop-3",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-3/1.png"
+      ]
+    },
+    {
+      "id": "prosop-4",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-4/1.png"
+      ]
+    },
+    {
+      "id": "prosop-5",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-5/1.png"
+      ]
+    },
+    {
+      "id": "prosop-6",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-6/1.png"
+      ]
+    },
+    {
+      "id": "prosop-7",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-7/1.png"
+      ]
+    },
+    {
+      "id": "prosop-8",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-8/1.png"
+      ]
+    },
+    {
+      "id": "prosop-9",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-9/1.png"
+      ]
+    },
+    {
+      "id": "prosop-10",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-10/1.png"
+      ]
+    },
+    {
+      "id": "prosop-11",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-11/1.png"
+      ]
+    },
+    {
+      "id": "prosop-12",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-12/1.png"
+      ]
+    },
+    {
+      "id": "prosop-13",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-13/1.png"
+      ]
+    },
+    {
+      "id": "prosop-14",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-14/1.png"
+      ]
+    },
+    {
+      "id": "prosop-15",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/prosoape/prosop-15/1.png"
+      ]
+    },
+    {
+      "id": "prosop-16",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-16/1.png"
+      ]
+    },
+    {
+      "id": "prosop-17",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-17/1.png"
+      ]
+    },
+    {
+      "id": "prosop-18",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-18/1.png"
+      ]
+    },
+    {
+      "id": "prosop-19",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-19/1.png"
+      ]
+    },
+    {
+      "id": "prosop-20",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-20/1.png",
+        "images/produse/prosoape/prosop-20/2.png"
+      ]
+    },
+    {
+      "id": "prosop-21",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-21/1.png"
+      ]
+    },
+    {
+      "id": "prosop-22",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-22/2.png",
+        "images/produse/prosoape/prosop-22/3.png"
+      ]
+    },
+    {
+      "id": "prosop-23",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-23/1.png"
+      ]
+    },
+    {
+      "id": "prosop-24",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "medii",
+      "imagini": [
+        "images/produse/prosoape/prosop-24/1.png",
+        "images/produse/prosoape/prosop-24/2.png"
+      ]
+    },
+    {
+      "id": "prosop-25",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-25/1.png",
+        "images/produse/prosoape/prosop-25/2.png"
+      ]
+    },
+    {
+      "id": "prosop-26",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-26/1.png",
+        "images/produse/prosoape/prosop-26/2.png"
+      ]
+    },
+    {
+      "id": "prosop-27",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-27/1.png",
+        "images/produse/prosoape/prosop-27/2.png"
+      ]
+    },
+    {
+      "id": "prosop-28",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-28/1.png",
+        "images/produse/prosoape/prosop-28/2.png"
+      ]
+    },
+    {
+      "id": "prosop-29",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-29/1.png",
+        "images/produse/prosoape/prosop-29/2.png"
+      ]
+    },
+    {
+      "id": "prosop-30",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-30/1.png",
+        "images/produse/prosoape/prosop-30/2.png"
+      ]
+    },
+    {
+      "id": "prosop-31",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": "",
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": []
+    },
+    {
+      "id": "prosop-32",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-32/1.png",
+        "images/produse/prosoape/prosop-32/2.png"
+      ]
+    },
+    {
+      "id": "prosop-33",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-33/1.png",
+        "images/produse/prosoape/prosop-33/2.png"
+      ]
+    },
+    {
+      "id": "prosop-34",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-34/1.png",
+        "images/produse/prosoape/prosop-34/2.png"
+      ]
+    },
+    {
+      "id": "prosop-35",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-35/1.png"
+      ]
+    },
+    {
+      "id": "prosop-36",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-36/1.png",
+        "images/produse/prosoape/prosop-36/2.png"
+      ]
+    },
+    {
+      "id": "prosop-37",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-37/1.png",
+        "images/produse/prosoape/prosop-37/2.png"
+      ]
+    },
+    {
+      "id": "prosop-38",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-38/1.png",
+        "images/produse/prosoape/prosop-38/2.png"
+      ]
+    },
+    {
+      "id": "prosop-39",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-39/1.png",
+        "images/produse/prosoape/prosop-39/2.png"
+      ]
+    },
+    {
+      "id": "prosop-40",
+      "categorie": "prosoape",
+      "nume": "Prosop",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "mari",
+      "imagini": [
+        "images/produse/prosoape/prosop-40/1.png",
+        "images/produse/prosoape/prosop-40/2.png"
       ]
     }
   ]
