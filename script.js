@@ -797,6 +797,7 @@ function initProductDetail() {
   info.innerHTML = `
     <a href="produse.html#${produs.categorie}" class="produs-detail-back">&#10094; Înapoi la ${produs.categorie}</a>
     <h1>${produs.nume}</h1>
+    ${produs.cod ? `<p class="produs-detail-cod">Cod produs: <strong>${produs.cod}</strong></p>` : ""}
     <span class="stoc-badge ${stocInfo.clasa}">${stocInfo.eticheta}</span>
     ${formateazaPret(produs.pret) ? `<p class="produs-detail-pret">${formateazaPret(produs.pret)}</p>` : ""}
     <ul class="produs-detail-specs">

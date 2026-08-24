@@ -1133,6 +1133,21 @@ body.lightbox-open {
   color: var(--gold);
 }
 
+/* codul de catalog al produsului, deasupra stării de stoc */
+.produs-detail-cod {
+  color: var(--gray);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0.7rem 0 0.9rem;
+}
+
+.produs-detail-cod strong {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
 .produs-detail-pret {
   color: var(--gold);
   font-size: 1.6rem;
