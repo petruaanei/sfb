@@ -63,20 +63,6 @@
       "nume": "Prosop Mare"
     },
     {
-      "id": "tudor",
-      "categorie": "accesorii",
-      "nume": "tudor",
-      "pret": 25,
-      "material": "we",
-      "dimensiuni": "23x12",
-      "descriere": "dasda",
-      "stoc": "in_stoc",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/accesorii/tudor/1.jpg"
-      ]
-    },
-    {
       "id": "sicriu",
       "categorie": "sicrie",
       "nume": "Sicriu",
@@ -1018,6 +1004,119 @@
       "imagini": [
         "images/produse/prosoape/prosop-40/1.png",
         "images/produse/prosoape/prosop-40/2.png"
+      ]
+    },
+    {
+      "id": "fata-de-masa",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa/1.png"
+      ]
+    },
+    {
+      "id": "fata-de-masa-2",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-2/1.png",
+        "images/produse/accesorii/fata-de-masa-2/2.png"
+      ]
+    },
+    {
+      "id": "fata-de-masa-3",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-3/1.png"
+      ]
+    },
+    {
+      "id": "fata-de-masa-4",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-4/1.png"
+      ]
+    },
+    {
+      "id": "fata-de-masa-5",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-5/1.png"
+      ]
+    },
+    {
+      "id": "fata-de-masa-6",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-6/1.png"
+      ]
+    },
+    {
+      "id": "fata-de-masa-7",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-7/1.png"
+      ]
+    },
+    {
+      "id": "fata-de-masa-8",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-8/1.png"
       ]
     }
   ]
