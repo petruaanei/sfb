@@ -35,7 +35,7 @@ CAI_CONTINUT = [
 BRANCH_PUBLICARE = "main"
 # --------------------------------------------------------------------------
 
-CATEGORII = ["accesorii", "cavouri", "coroane", "felinare", "imbracaminte",
+CATEGORII = ["accesorii", "aranjamente-florale", "cavouri", "coroane", "felinare", "imbracaminte",
               "lenjerii", "meniu-mancare", "prosoape", "sicrie", "vesela"]
 STOC_VALORI = ["in_stoc", "limitat", "epuizat"]
 

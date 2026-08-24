@@ -1,7 +1,8 @@
-const CATEGORII = ["accesorii", "cavouri", "coroane", "felinare", "imbracaminte",
+const CATEGORII = ["accesorii", "aranjamente-florale", "cavouri", "coroane", "felinare", "imbracaminte",
   "lenjerii", "meniu-mancare", "prosoape", "sicrie", "vesela"];
 const ETICHETE_CATEGORII = {
   accesorii: "Accesorii",
+  "aranjamente-florale": "Aranjamente florale",
   cavouri: "Cavouri",
   coroane: "Coroane",
   felinare: "Felinare",
