@@ -594,30 +594,44 @@ html.meniu-deschis {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
-  padding: 1.1rem 1.2rem;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
 }
 
+/* Categoriile stau întotdeauna pe un singur rând. Dacă fereastra e prea
+   îngustă ca să încapă toate, bara se trage lateral în loc să se rupă. */
 .categorii-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
+  /* „safe” împiedică tăierea primelor categorii dacă bara nu încape;
+     browserele care nu îl cunosc păstrează simplul „center” de mai sus */
+  justify-content: safe center;
   align-items: center;
-  gap: 0.5rem 1.4rem;
+  gap: 1rem;
   min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.categorii-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .categorie-btn {
   position: relative;
+  flex: 0 0 auto;
+  white-space: nowrap;
   background: none;
   border: none;
   color: var(--gray);
   font-family: "DM Sans", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 0.5rem 0.2rem;
+  padding: 0.5rem 0.1rem;
   cursor: pointer;
   transition: color 0.35s ease;
 }
@@ -708,9 +722,10 @@ html.meniu-deschis {
   border: none;
   color: var(--gray);
   font-family: "DM Sans", sans-serif;
-  font-size: 0.72rem;
+  /* puțin mai mici decât categoriile, ca ierarhia să se citească */
+  font-size: 0.65rem;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
   padding: 0.35rem 0.2rem;
   cursor: pointer;
