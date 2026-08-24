@@ -66,7 +66,10 @@ def _citeste(cale, cheie):
         date = json.load(f)
     # acceptă și forma veche (listă simplă), ca să nu se piardă date
     lista = date if isinstance(date, list) else date.get(cheie, [])
-    return _completeaza_identificatori(lista)
+    lista = _completeaza_identificatori(lista)
+    if cheie == "produse":
+        lista = _completeaza_coduri(lista)
+    return lista
 
 
 def _pret_numeric(valoare):
@@ -94,6 +97,15 @@ def urmatorul_cod(produse):
         if cod.isdigit():
             numere.append(int(cod))
     return str(max(numere) + 1) if numere else "1"
+
+
+def _completeaza_coduri(produse):
+    """Produsele adăugate din panoul online pot veni fără cod de catalog.
+    Le dăm aici următorul număr liber, ca fiecare produs să aibă unul."""
+    for p in produse:
+        if not str(p.get("cod", "")).strip():
+            p["cod"] = urmatorul_cod(produse)
+    return produse
 
 
 def _completeaza_identificatori(lista):
