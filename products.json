@@ -876,13 +876,15 @@
       "id": "prosop-31",
       "categorie": "prosoape",
       "nume": "Prosop",
-      "pret": "",
+      "pret": null,
       "material": "",
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
-      "imagini": []
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-31/1.png"
+      ]
     },
     {
       "id": "prosop-32",
