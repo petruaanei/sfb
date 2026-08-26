@@ -1466,19 +1466,6 @@
       ]
     },
     {
-      "id": "felinar-funerar-7",
-      "categorie": "felinare",
-      "nume": "Felinar funerar",
-      "cod": "93",
-      "pret": "",
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "",
-      "stoc": "in_stoc",
-      "subcategorie": "",
-      "imagini": []
-    },
-    {
       "id": "candela-funerara-decorativa",
       "categorie": "accesorii",
       "nume": "Candela funerara decorativa",
@@ -2101,6 +2088,463 @@
       "imagini": [
         "images/produse/accesorii/n-8/1.png",
         "images/produse/accesorii/n-8/2.png"
+      ]
+    },
+    {
+      "id": "set-imbracaminte-dama",
+      "categorie": "imbracaminte",
+      "nume": "Set imbracaminte dama",
+      "cod": "135",
+      "pret": 415,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Setul cuprinde:\nCostum ,\n Bluza ,\nChilot ,\nMaieu ,\nCiorap ,\nPantof ,\nEsarfa/Palarie",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/set-imbracaminte-dama/1.png"
+      ]
+    },
+    {
+      "id": "set-imbracaminte-barbati",
+      "categorie": "imbracaminte",
+      "nume": "Set imbracaminte barbati",
+      "cod": "136",
+      "pret": 380,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Setul cuprinde :\nCostum ,\nCamasa ,\nChilot ,\nMaieu ,\nCiorapi ,\nPantofi ,\nPalarie ,\nCravata",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/set-imbracaminte-barbati/1.png"
+      ]
+    },
+    {
+      "id": "b",
+      "categorie": "imbracaminte",
+      "nume": "Camasa barbati",
+      "cod": "137",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/b/1.png",
+        "images/produse/imbracaminte/b/2.png",
+        "images/produse/imbracaminte/b/3.png",
+        "images/produse/imbracaminte/b/4.png"
+      ]
+    },
+    {
+      "id": "c",
+      "categorie": "imbracaminte",
+      "nume": "Esarfa/batic femei",
+      "cod": "138",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/c/1.png",
+        "images/produse/imbracaminte/c/2.png",
+        "images/produse/imbracaminte/c/3.png",
+        "images/produse/imbracaminte/c/4.png"
+      ]
+    },
+    {
+      "id": "b-2",
+      "categorie": "imbracaminte",
+      "nume": "Palarii dama",
+      "cod": "139",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/b-2/1.png",
+        "images/produse/imbracaminte/b-2/2.png",
+        "images/produse/imbracaminte/b-2/3.png"
+      ]
+    },
+    {
+      "id": "palarii-barbati",
+      "categorie": "imbracaminte",
+      "nume": "Palarii barbati",
+      "cod": "140",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/palarii-barbati/1.png"
+      ]
+    },
+    {
+      "id": "n-9",
+      "categorie": "imbracaminte",
+      "nume": "Pantofi dama",
+      "cod": "141",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/n-9/1.png"
+      ]
+    },
+    {
+      "id": "pantofi-barbati",
+      "categorie": "imbracaminte",
+      "nume": "Pantofi barbati",
+      "cod": "142",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/pantofi-barbati/1.png"
+      ]
+    },
+    {
+      "id": "l",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "143",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/l/1.png",
+        "images/produse/lenjerii/l/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie finet de o persoana",
+      "cod": "144",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat/3.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-2",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat 6 piese cu 2 volanase",
+      "cod": "145",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-2/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-2/2.png",
+        "images/produse/lenjerii/lenjerie-de-pat-2/3.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-3",
+      "categorie": "lenjerii",
+      "nume": "Patura",
+      "cod": "146",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-3/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-3/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-4",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "147",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-4/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-5",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat cu pliuri 2 persoane",
+      "cod": "148",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Lenjerie de pat cu 4 piese de 2 persoane. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-5/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-5/2.png",
+        "images/produse/lenjerii/lenjerie-de-pat-5/3.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-6",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "149",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-6/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-6/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-7",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "150",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-7/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-7/2.png",
+        "images/produse/lenjerii/lenjerie-de-pat-7/3.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-8",
+      "categorie": "lenjerii",
+      "nume": "Covertura",
+      "cod": "151",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-8/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-9",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie finet 2 persoane",
+      "cod": "152",
+      "pret": null,
+      "material": "Finet",
+      "dimensiuni": "",
+      "descriere": "Lenjerie de pat 2 persoane cu 6 piese. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-9/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-9/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-10",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "153",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-10/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-10/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-11",
+      "categorie": "lenjerii",
+      "nume": "Patura",
+      "cod": "154",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-11/1.png"
+      ]
+    },
+    {
+      "id": "patura",
+      "categorie": "lenjerii",
+      "nume": "Patura",
+      "cod": "155",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/patura/1.png"
+      ]
+    },
+    {
+      "id": "patura-2",
+      "categorie": "lenjerii",
+      "nume": "Patura 3D",
+      "cod": "156",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/patura-2/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-12",
+      "categorie": "lenjerii",
+      "nume": "Patura",
+      "cod": "157",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "160x220",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-12/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-13",
+      "categorie": "lenjerii",
+      "nume": "Pilota",
+      "cod": "158",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-13/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-13/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-14",
+      "categorie": "lenjerii",
+      "nume": "Pilota",
+      "cod": "159",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-14/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-14/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-15",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat 2 persoane",
+      "cod": "160",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Setul contine pilota , cerceaf , fete de perna. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-15/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-16",
+      "categorie": "lenjerii",
+      "nume": "Pilota",
+      "cod": "161",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-16/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-17",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "162",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-17/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-18",
+      "categorie": "lenjerii",
+      "nume": "Perna de puf",
+      "cod": "163",
+      "pret": null,
+      "material": "Bumbac",
+      "dimensiuni": "70x70",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-18/1.png"
       ]
     }
   ]
