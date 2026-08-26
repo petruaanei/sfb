@@ -56,6 +56,27 @@ function urlImagine(cale, latime) {
   return `/.netlify/images?url=${encodeURIComponent(caleAbsoluta)}&w=${latime}&fit=contain`;
 }
 
+/* Pozele scrise direct în pagini (slideshow, Despre noi, Servicii) nu treceau
+   prin redimensionare, spre deosebire de cele de produs. Le trecem și pe ele,
+   ca vizitatorul să nu descarce fotografii de mai multe MB. */
+function optimizeazaImaginiStatice() {
+  const grupuri = [
+    { selector: ".slide img", latime: 1800 },
+    { selector: ".despre-img-mare", latime: 900 },
+    { selector: ".despre-img-mica-1, .despre-img-mica-2", latime: 700 },
+    { selector: ".serviciu-card img", latime: 800 },
+  ];
+
+  grupuri.forEach(({ selector, latime }) => {
+    document.querySelectorAll(selector).forEach((img) => {
+      const sursa = img.getAttribute("src");
+      if (!sursa) return;
+      const noua = urlImagine(sursa, latime);
+      if (noua !== sursa) img.setAttribute("src", noua);
+    });
+  });
+}
+
 /* Prețul e salvat ca număr (ex. 150), iar moneda se adaugă aici, la afișare.
    Acceptă și forma veche, scrisă ca text (ex. "150 RON"). */
 function formateazaPret(valoare) {
@@ -107,6 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // partea vizuală pornește imediat, nu așteaptă datele
   initHeader();
   initMeniuMobil();
+  optimizeazaImaginiStatice();
   initHeroSlideshow();
 
   await incarcaDate();
