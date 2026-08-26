@@ -67,21 +67,6 @@
       "cod": "4"
     },
     {
-      "id": "tudor",
-      "categorie": "accesorii",
-      "nume": "tudor",
-      "pret": 25,
-      "material": "we",
-      "dimensiuni": "23x12",
-      "descriere": "dasda",
-      "stoc": "in_stoc",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/accesorii/tudor/1.jpg"
-      ],
-      "cod": "1"
-    },
-    {
       "id": "sicriu",
       "categorie": "sicrie",
       "nume": "Sicriu",
@@ -932,13 +917,15 @@
       "id": "prosop-31",
       "categorie": "prosoape",
       "nume": "Prosop",
-      "pret": "",
+      "pret": null,
       "material": "",
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
-      "imagini": [],
+      "subcategorie": "mici",
+      "imagini": [
+        "images/produse/prosoape/prosop-31/1.png"
+      ],
       "cod": "36"
     },
     {
@@ -1063,8 +1050,8 @@
       "stoc": "in_stoc",
       "subcategorie": "mari",
       "imagini": [
-        "images/produse/prosoape/prosop-39/1.png",
-        "images/produse/prosoape/prosop-39/2.png"
+        "images/produse/prosoape/prosop-39/4.png",
+        "images/produse/prosoape/prosop-39/5.png"
       ],
       "cod": "44"
     },
@@ -1083,6 +1070,1813 @@
         "images/produse/prosoape/prosop-40/2.png"
       ],
       "cod": "45"
+    },
+    {
+      "id": "fata-de-masa",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa/1.png"
+      ],
+      "cod": "67"
+    },
+    {
+      "id": "fata-de-masa-2",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-2/1.png",
+        "images/produse/accesorii/fata-de-masa-2/2.png"
+      ],
+      "cod": "68"
+    },
+    {
+      "id": "fata-de-masa-3",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-3/1.png"
+      ],
+      "cod": "69"
+    },
+    {
+      "id": "fata-de-masa-4",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-4/1.png"
+      ],
+      "cod": "70"
+    },
+    {
+      "id": "fata-de-masa-5",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-5/1.png"
+      ],
+      "cod": "71"
+    },
+    {
+      "id": "fata-de-masa-6",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-6/1.png"
+      ],
+      "cod": "72"
+    },
+    {
+      "id": "fata-de-masa-7",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-7/1.png"
+      ],
+      "cod": "73"
+    },
+    {
+      "id": "fata-de-masa-8",
+      "categorie": "accesorii",
+      "nume": "Fata de masa",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/fata-de-masa-8/1.png"
+      ],
+      "cod": "74"
+    },
+    {
+      "id": "aranjament-cu-flori-din-plastic",
+      "categorie": "aranjamente-florale",
+      "nume": "Aranjament floral decorativ",
+      "cod": "75",
+      "pret": 280,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Aranjamente florale decorative, realizate din flori și elemente verzi atent alese, disponibile în diferite modele, combinații de culori și dimensiuni.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/aranjamente-florale/aranjament-cu-flori-din-plastic/1.png"
+      ]
+    },
+    {
+      "id": "aranjament-floral-decorativ",
+      "categorie": "aranjamente-florale",
+      "nume": "Aranjament floral decorativ",
+      "cod": "76",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Aranjamente florale decorative, realizate din flori și elemente verzi atent alese, disponibile în diferite modele, combinații de culori și dimensiuni.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/aranjamente-florale/aranjament-floral-decorativ/1.png"
+      ]
+    },
+    {
+      "id": "aranjament-floral-decorativ-2",
+      "categorie": "aranjamente-florale",
+      "nume": "Aranjament floral decorativ",
+      "cod": "77",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Aranjamente florale decorative, realizate din flori și elemente verzi atent alese, disponibile în diferite modele, combinații de culori și dimensiuni.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/aranjamente-florale/aranjament-floral-decorativ-2/1.png"
+      ]
+    },
+    {
+      "id": "coroana",
+      "categorie": "coroane",
+      "nume": "Cruce decorativa cu flori",
+      "cod": "78",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Compoziție decorativă în formă de cruce, realizată din elemente verzi și flori decorative, disponibilă în diferite modele, dimensiuni și combinații de culori.\nModelul, florile și culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/coroane/coroana/2.png"
+      ]
+    },
+    {
+      "id": "coroana-2",
+      "categorie": "coroane",
+      "nume": "Coroana funerara florala",
+      "cod": "79",
+      "pret": 85,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Coroană funerară decorativă, realizată din elemente verzi și flori artificiale, disponibilă într-o varietate de modele, dimensiuni și combinații de culori.\nModelul, florile și culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/coroane/coroana-2/1.png",
+        "images/produse/coroane/coroana-2/2.png"
+      ]
+    },
+    {
+      "id": "coroana-funerara-florala",
+      "categorie": "coroane",
+      "nume": "Coroana funerara florala",
+      "cod": "80",
+      "pret": 100,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Coroană funerară decorativă, realizată din elemente verzi și flori artificiale, disponibilă într-o varietate de modele, dimensiuni și combinații de culori.\nModelul, florile și culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/coroane/coroana-funerara-florala/1.png"
+      ]
+    },
+    {
+      "id": "coroana-funerara-florala-2",
+      "categorie": "coroane",
+      "nume": "Coroana funerara florala",
+      "cod": "81",
+      "pret": 50,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Coroană funerară decorativă, realizată din elemente verzi și flori artificiale, disponibilă într-o varietate de modele, dimensiuni și combinații de culori.\nModelul, florile și culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/coroane/coroana-funerara-florala-2/1.png"
+      ]
+    },
+    {
+      "id": "coroana-funerara-florala-3",
+      "categorie": "coroane",
+      "nume": "Coroana funerara florala",
+      "cod": "82",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Coroană funerară decorativă, realizată din elemente verzi și flori artificiale, disponibilă într-o varietate de modele, dimensiuni și combinații de culori.\nModelul, florile și culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/coroane/coroana-funerara-florala-3/1.png"
+      ]
+    },
+    {
+      "id": "coroana-funerara-florala-4",
+      "categorie": "coroane",
+      "nume": "Coroana funerara florala",
+      "cod": "83",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Coroană funerară decorativă, realizată din elemente verzi și flori artificiale, disponibilă într-o varietate de modele, dimensiuni și combinații de culori.\nModelul, florile și culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/coroane/coroana-funerara-florala-4/1.png"
+      ]
+    },
+    {
+      "id": "coroana-funerara-florala-5",
+      "categorie": "coroane",
+      "nume": "Coroana funerara florala",
+      "cod": "84",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Coroană funerară decorativă, realizată din elemente verzi și flori artificiale, disponibilă într-o varietate de modele, dimensiuni și combinații de culori.Modelul, florile și culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/coroane/coroana-funerara-florala-5/1.png",
+        "images/produse/coroane/coroana-funerara-florala-5/2.png"
+      ]
+    },
+    {
+      "id": "coroana-funerara-florala-6",
+      "categorie": "coroane",
+      "nume": "Cruce decorativa cu flori",
+      "cod": "85",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Coroană funerară decorativă in forma de cruce, realizată din elemente verzi și flori artificiale, disponibilă într-o varietate de modele, dimensiuni și combinații de culori.Modelul, florile și culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/coroane/coroana-funerara-florala-6/1.png"
+      ]
+    },
+    {
+      "id": "felinar",
+      "categorie": "felinare",
+      "nume": "Felinar funerar",
+      "cod": "86",
+      "pret": null,
+      "material": "Metal",
+      "dimensiuni": "",
+      "descriere": "Felinar funerar decorativ, destinat utilizării în spații comemorative și pentru amplasarea pe monumente funerare. \nPoate fi utilizat pentru lumânări sau candele și se potrivește diferitelor tipuri de monumente funerare.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/felinare/felinar/1.png",
+        "images/produse/felinare/felinar/2.png"
+      ]
+    },
+    {
+      "id": "felinar-funerar",
+      "categorie": "felinare",
+      "nume": "Felinar funerar",
+      "cod": "87",
+      "pret": null,
+      "material": "Metal si sticla",
+      "dimensiuni": "",
+      "descriere": "Felinar din metal și sticlă, cu design elegant, potrivit pentru amplasarea pe monumente funerare și în spații comemorative. Ideal pentru utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/felinare/felinar-funerar/1.png"
+      ]
+    },
+    {
+      "id": "felinar-funerar-2",
+      "categorie": "felinare",
+      "nume": "Felinar funerar",
+      "cod": "88",
+      "pret": null,
+      "material": "Metal si sticla",
+      "dimensiuni": "",
+      "descriere": "Felinar din metal și sticlă, cu design elegant, potrivit pentru amplasarea pe monumente funerare și în spații comemorative. Ideal pentru utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/felinare/felinar-funerar-2/1.png"
+      ]
+    },
+    {
+      "id": "felinar-funerar-3",
+      "categorie": "felinare",
+      "nume": "Felinar funerar",
+      "cod": "89",
+      "pret": null,
+      "material": "Metal si sticla",
+      "dimensiuni": "",
+      "descriere": "Felinar din metal și sticlă, cu design elegant, potrivit pentru amplasarea pe monumente funerare și în spații comemorative. Ideal pentru utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/felinare/felinar-funerar-3/1.png"
+      ]
+    },
+    {
+      "id": "felinar-funerar-4",
+      "categorie": "felinare",
+      "nume": "Felinar funerar",
+      "cod": "90",
+      "pret": null,
+      "material": "Metal si sticla",
+      "dimensiuni": "",
+      "descriere": "Felinar din metal și sticlă, cu design elegant, potrivit pentru amplasarea pe monumente funerare și în spații comemorative. Ideal pentru utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/felinare/felinar-funerar-4/1.png"
+      ]
+    },
+    {
+      "id": "felinar-funerar-5",
+      "categorie": "felinare",
+      "nume": "Felinar funerar",
+      "cod": "91",
+      "pret": null,
+      "material": "Metal si sticla",
+      "dimensiuni": "",
+      "descriere": "Felinar din metal, cu design clasic și decorativ, potrivit pentru amplasarea pe monumente funerare. Ideal pentru utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/felinare/felinar-funerar-5/1.png"
+      ]
+    },
+    {
+      "id": "felinar-funerar-6",
+      "categorie": "felinare",
+      "nume": "Felinar funerar",
+      "cod": "92",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Felinar realizat din plastic, cu element decorativ în formă de cruce, potrivit pentru amplasarea pe monumente funerare. Design elegant, destinat utilizării cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/felinare/felinar-funerar-6/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "94",
+      "pret": null,
+      "material": "Plastic si sticla",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară realizată din plastic și sticlă, cu bază și capac decorativ. Potrivită pentru amplasarea pe monumente funerare și utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa/1.png",
+        "images/produse/accesorii/candela-funerara-decorativa/2.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-2",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "95",
+      "pret": null,
+      "material": "Plastic si sticla",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară realizată din plastic și sticlă, cu bază și capac decorativ. Potrivită pentru amplasarea pe monumente funerare și utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-2/1.png",
+        "images/produse/accesorii/candela-funerara-decorativa-2/2.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-3",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "96",
+      "pret": null,
+      "material": "Plastic si sticla",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară realizată din plastic și sticlă, cu bază și capac decorativ. Potrivită pentru amplasarea pe monumente funerare și utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-3/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-4",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "97",
+      "pret": null,
+      "material": "Plastic si sticla",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară realizată din plastic și sticlă, cu bază și capac decorativ. Potrivită pentru amplasarea pe monumente funerare și utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-4/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-5",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "98",
+      "pret": null,
+      "material": "Plastic si sticla",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară realizată din plastic și sticlă, cu bază și capac decorativ. Potrivită pentru amplasarea pe monumente funerare și utilizarea cu lumânări sau candele.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-5/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-6",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "99",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candeluță funerară din plastic, cu design ornamental. Poate fi utilizată atât cu ulei și fitil, cât și cu lumânări tip pastilă.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-6/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-7",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "100",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candeluță funerară din plastic, cu design ornamental. Poate fi utilizată atât cu ulei și fitil, cât și cu lumânări tip pastilă.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-7/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-8",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "101",
+      "pret": null,
+      "material": "Ceramica",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară realizată din ceramică, cu elemente decorative și finisaje aurii. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative. Se poate utiliza cu ulei și fitil, pentru iluminare de durată.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-8/1.png",
+        "images/produse/accesorii/candela-funerara-decorativa-8/2.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-9",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "102",
+      "pret": null,
+      "material": "Ceramica",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară realizată din ceramică, cu elemente decorative și finisaje aurii. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative. Se poate utiliza cu ulei și fitil, pentru iluminare de durată.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-9/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-10",
+      "categorie": "accesorii",
+      "nume": "Candela funerara decorativa",
+      "cod": "103",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară ,cu elemente decorative și finisaje aurii. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative. Se poate utiliza cu ulei și fitil, pentru iluminare de durată.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-10/1.png",
+        "images/produse/accesorii/candela-funerara-decorativa-10/2.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-decorativa-11",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "104",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative. Durata ardere de aprox 1h.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-decorativa-11/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-cu-ceara",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "105",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative. Durata ardere de aprox 50h.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-cu-ceara/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-cu-ceara-2",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "106",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "8x6",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-cu-ceara-2/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-cu-ceara-3",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "107",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "12x6",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-cu-ceara-3/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-cu-ceara-4",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "108",
+      "pret": null,
+      "material": "Parafina",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-cu-ceara-4/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-cu-ceara-5",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "109",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative. Timp de ardere aprox 7h.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-cu-ceara-5/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-cu-ceara-6",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "110",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-cu-ceara-6/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-cu-ceara-7",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "111",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative. Timp de ardere aprox 14 zile . Disponibil si pe alb.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-cu-ceara-7/1.png"
+      ]
+    },
+    {
+      "id": "candela-funerara-cu-ceara-8",
+      "categorie": "accesorii",
+      "nume": "Candela funerara cu ceara",
+      "cod": "112",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "Candelă funerară cu ceară, în recipient din plastic și cu capac decorativ. Potrivită pentru amplasarea pe monumente funerare și în spații comemorative. Timp de ardere aprox 10 zile.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/candela-funerara-cu-ceara-8/2.png",
+        "images/produse/accesorii/candela-funerara-cu-ceara-8/3.png"
+      ]
+    },
+    {
+      "id": "caldare",
+      "categorie": "accesorii",
+      "nume": "Galeata emailata 6L",
+      "cod": "113",
+      "pret": null,
+      "material": "Tabla emailata",
+      "dimensiuni": "Inaltime: 21 cm Diametru gura: 23cm Diametru baza: 18 cm",
+      "descriere": "Galeata fabricata din metal rezistent si durabil este imbracata intr-un strat protector din email care asigura o curatare mai usoara si mai eficienta.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/caldare/1.png",
+        "images/produse/accesorii/caldare/2.png",
+        "images/produse/accesorii/caldare/3.png"
+      ]
+    },
+    {
+      "id": "galeata-plastic-6l",
+      "categorie": "accesorii",
+      "nume": "Galeata plastic 5L",
+      "cod": "114",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "20 cm diametru x 22 cm înălțime",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/galeata-plastic-6l/1.png"
+      ]
+    },
+    {
+      "id": "galeata-plastic-10l",
+      "categorie": "accesorii",
+      "nume": "Galeata plastic 10L",
+      "cod": "115",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/galeata-plastic-10l/1.png"
+      ]
+    },
+    {
+      "id": "galeata-metal-6l",
+      "categorie": "accesorii",
+      "nume": "Galeata inox 10L",
+      "cod": "116",
+      "pret": null,
+      "material": "Inox",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/galeata-metal-6l/1.png"
+      ]
+    },
+    {
+      "id": "nu-tiu",
+      "categorie": "accesorii",
+      "nume": "Carbuni",
+      "cod": "117",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/nu-tiu/1.png"
+      ]
+    },
+    {
+      "id": "nuj",
+      "categorie": "accesorii",
+      "nume": "Covor",
+      "cod": "118",
+      "pret": null,
+      "material": "Bumbac, polyester, acrylic",
+      "dimensiuni": "",
+      "descriere": "Modelul si  culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/nuj/1.png"
+      ]
+    },
+    {
+      "id": "covor",
+      "categorie": "accesorii",
+      "nume": "Covor",
+      "cod": "119",
+      "pret": null,
+      "material": "Bumbac, polyester, acrylic",
+      "dimensiuni": "",
+      "descriere": "Modelul si  culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.Bumbac, polyester, acrylic",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/covor/1.png"
+      ]
+    },
+    {
+      "id": "covor-2",
+      "categorie": "accesorii",
+      "nume": "Covor",
+      "cod": "120",
+      "pret": null,
+      "material": "Bumbac, polyester, acrylic",
+      "dimensiuni": "",
+      "descriere": "Modelul si  culorile pot varia în funcție de disponibilitate. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/covor-2/1.png"
+      ]
+    },
+    {
+      "id": "nuj-2",
+      "categorie": "accesorii",
+      "nume": "Cruce de lemn",
+      "cod": "121",
+      "pret": null,
+      "material": "Lemn",
+      "dimensiuni": "",
+      "descriere": "Cruce din lemn pentru mormânt, cu design simplu și clasic. Potrivită pentru marcarea și decorarea locului de veci.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/nuj-2/1.png"
+      ]
+    },
+    {
+      "id": "nuj-3",
+      "categorie": "accesorii",
+      "nume": "Doliu pentru usa",
+      "cod": "122",
+      "pret": null,
+      "material": "Textil negru si alb",
+      "dimensiuni": "",
+      "descriere": "Doliu pentru ușă – accesoriu funerar decorativ, destinat afișării la ușa locuinței în semn de doliu.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/nuj-3/1.png"
+      ]
+    },
+    {
+      "id": "n",
+      "categorie": "accesorii",
+      "nume": "Set fitile pentru candela cu ulei",
+      "cod": "123",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Fitil pentru candelă – set cu suport metalic, destinat utilizării la candele cu ulei. Fitilurile sunt din material textil absorbant, iar suportul este metalic.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/n/1.png",
+        "images/produse/accesorii/n/2.png"
+      ]
+    },
+    {
+      "id": "n-2",
+      "categorie": "accesorii",
+      "nume": "Icoana",
+      "cod": "124",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelele pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/n-2/1.png"
+      ]
+    },
+    {
+      "id": "icoana",
+      "categorie": "accesorii",
+      "nume": "Icoana",
+      "cod": "125",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelele pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/icoana/1.png"
+      ]
+    },
+    {
+      "id": "icoana-2",
+      "categorie": "accesorii",
+      "nume": "Icoana",
+      "cod": "126",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelele pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/icoana-2/1.png"
+      ]
+    },
+    {
+      "id": "n-3",
+      "categorie": "accesorii",
+      "nume": "Set funerar din ceară pentru decedat",
+      "cod": "127",
+      "pret": null,
+      "material": "Ceara",
+      "dimensiuni": "",
+      "descriere": "Set din ceară, destinat așezării pe pieptul persoanei decedate",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/n-3/1.png"
+      ]
+    },
+    {
+      "id": "n-4",
+      "categorie": "accesorii",
+      "nume": "Pachet lumanari",
+      "cod": "128",
+      "pret": null,
+      "material": "Ceara",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/n-4/1.png",
+        "images/produse/accesorii/n-4/2.png"
+      ]
+    },
+    {
+      "id": "pachet-lumanari-pastila",
+      "categorie": "accesorii",
+      "nume": "Pachet lumanari pastila",
+      "cod": "129",
+      "pret": null,
+      "material": "Ceara",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/pachet-lumanari-pastila/1.png"
+      ]
+    },
+    {
+      "id": "n-5",
+      "categorie": "accesorii",
+      "nume": "Banda satinata",
+      "cod": "130",
+      "pret": null,
+      "material": "Textil negru",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/n-5/1.png"
+      ]
+    },
+    {
+      "id": "n-6",
+      "categorie": "accesorii",
+      "nume": "Punga mare cu text funerar",
+      "cod": "131",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/n-6/1.png"
+      ]
+    },
+    {
+      "id": "punga-mica-cu-text-funerar",
+      "categorie": "accesorii",
+      "nume": "Punga mica cu text funerar",
+      "cod": "132",
+      "pret": null,
+      "material": "Plastic",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/punga-mica-cu-text-funerar/1.png"
+      ]
+    },
+    {
+      "id": "n-7",
+      "categorie": "accesorii",
+      "nume": "Placuta funerara pentru cruce",
+      "cod": "133",
+      "pret": null,
+      "material": "Metal",
+      "dimensiuni": "",
+      "descriere": "Plăcuță funerară pentru cruce, personalizată cu fotografie, nume și date comemorative.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/n-7/1.png"
+      ]
+    },
+    {
+      "id": "n-8",
+      "categorie": "accesorii",
+      "nume": "Tamaier",
+      "cod": "134",
+      "pret": null,
+      "material": "metal",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/n-8/1.png",
+        "images/produse/accesorii/n-8/2.png"
+      ]
+    },
+    {
+      "id": "set-imbracaminte-dama",
+      "categorie": "imbracaminte",
+      "nume": "Set imbracaminte dama",
+      "cod": "135",
+      "pret": 415,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Setul cuprinde:\nCostum ,\n Bluza ,\nChilot ,\nMaieu ,\nCiorap ,\nPantof ,\nEsarfa/Palarie",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/set-imbracaminte-dama/1.png"
+      ]
+    },
+    {
+      "id": "set-imbracaminte-barbati",
+      "categorie": "imbracaminte",
+      "nume": "Set imbracaminte barbati",
+      "cod": "136",
+      "pret": 380,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Setul cuprinde :\nCostum ,\nCamasa ,\nChilot ,\nMaieu ,\nCiorapi ,\nPantofi ,\nPalarie ,\nCravata",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/set-imbracaminte-barbati/1.png"
+      ]
+    },
+    {
+      "id": "b",
+      "categorie": "imbracaminte",
+      "nume": "Camasa barbati",
+      "cod": "137",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/b/1.png",
+        "images/produse/imbracaminte/b/2.png",
+        "images/produse/imbracaminte/b/3.png",
+        "images/produse/imbracaminte/b/4.png"
+      ]
+    },
+    {
+      "id": "c",
+      "categorie": "imbracaminte",
+      "nume": "Esarfa/batic femei",
+      "cod": "138",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/c/1.png",
+        "images/produse/imbracaminte/c/2.png",
+        "images/produse/imbracaminte/c/3.png",
+        "images/produse/imbracaminte/c/4.png"
+      ]
+    },
+    {
+      "id": "b-2",
+      "categorie": "imbracaminte",
+      "nume": "Palarii dama",
+      "cod": "139",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/b-2/1.png",
+        "images/produse/imbracaminte/b-2/2.png",
+        "images/produse/imbracaminte/b-2/3.png"
+      ]
+    },
+    {
+      "id": "palarii-barbati",
+      "categorie": "imbracaminte",
+      "nume": "Palarii barbati",
+      "cod": "140",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/palarii-barbati/1.png"
+      ]
+    },
+    {
+      "id": "n-9",
+      "categorie": "imbracaminte",
+      "nume": "Pantofi dama",
+      "cod": "141",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/n-9/1.png"
+      ]
+    },
+    {
+      "id": "pantofi-barbati",
+      "categorie": "imbracaminte",
+      "nume": "Pantofi barbati",
+      "cod": "142",
+      "pret": null,
+      "material": "Textil",
+      "dimensiuni": "",
+      "descriere": "Modelul si dimensiunile  pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/imbracaminte/pantofi-barbati/1.png"
+      ]
+    },
+    {
+      "id": "l",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "143",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/l/1.png",
+        "images/produse/lenjerii/l/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie finet de o persoana",
+      "cod": "144",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat/3.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-2",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat 6 piese cu 2 volanase",
+      "cod": "145",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-2/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-2/2.png",
+        "images/produse/lenjerii/lenjerie-de-pat-2/3.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-3",
+      "categorie": "lenjerii",
+      "nume": "Patura",
+      "cod": "146",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-3/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-3/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-4",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat 4 piese cu elastic",
+      "cod": "147",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-4/1.jpg",
+        "images/produse/lenjerii/lenjerie-de-pat-4/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-5",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat cu pliuri 2 persoane",
+      "cod": "148",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Lenjerie de pat cu 4 piese de 2 persoane. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-5/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-5/2.png",
+        "images/produse/lenjerii/lenjerie-de-pat-5/3.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-6",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "149",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-6/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-6/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-7",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "150",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-7/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-7/2.png",
+        "images/produse/lenjerii/lenjerie-de-pat-7/3.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-8",
+      "categorie": "lenjerii",
+      "nume": "Covertura",
+      "cod": "151",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-8/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-9",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie finet 2 persoane",
+      "cod": "152",
+      "pret": null,
+      "material": "Finet",
+      "dimensiuni": "",
+      "descriere": "Lenjerie de pat 2 persoane cu 6 piese. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-9/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-9/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-10",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "153",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-10/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-10/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-11",
+      "categorie": "lenjerii",
+      "nume": "Patura",
+      "cod": "154",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-11/1.png"
+      ]
+    },
+    {
+      "id": "patura",
+      "categorie": "lenjerii",
+      "nume": "Patura",
+      "cod": "155",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/patura/1.png"
+      ]
+    },
+    {
+      "id": "patura-2",
+      "categorie": "lenjerii",
+      "nume": "Patura 3D",
+      "cod": "156",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/patura-2/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-12",
+      "categorie": "lenjerii",
+      "nume": "Patura",
+      "cod": "157",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "160x220",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-12/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-13",
+      "categorie": "lenjerii",
+      "nume": "Pilota",
+      "cod": "158",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-13/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-13/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-14",
+      "categorie": "lenjerii",
+      "nume": "Pilota",
+      "cod": "159",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-14/1.png",
+        "images/produse/lenjerii/lenjerie-de-pat-14/2.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-15",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat 2 persoane",
+      "cod": "160",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Setul contine pilota , cerceaf , fete de perna. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-15/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-16",
+      "categorie": "lenjerii",
+      "nume": "Pilota",
+      "cod": "161",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-16/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-17",
+      "categorie": "lenjerii",
+      "nume": "Lenjerie de pat",
+      "cod": "162",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-17/1.png"
+      ]
+    },
+    {
+      "id": "lenjerie-de-pat-18",
+      "categorie": "lenjerii",
+      "nume": "Perna de puf",
+      "cod": "163",
+      "pret": null,
+      "material": "Bumbac",
+      "dimensiuni": "70x70",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/lenjerii/lenjerie-de-pat-18/1.png"
+      ]
+    },
+    {
+      "id": "n-10",
+      "categorie": "vesela",
+      "nume": "Cana de sticla",
+      "cod": "164",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-10/1.png"
+      ]
+    },
+    {
+      "id": "cana-de-sticla",
+      "categorie": "vesela",
+      "nume": "Cana de sticla",
+      "cod": "165",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/cana-de-sticla/1.png"
+      ]
+    },
+    {
+      "id": "cana-de-sticla-2",
+      "categorie": "vesela",
+      "nume": "Cana de sticla 1.6L",
+      "cod": "166",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/cana-de-sticla-2/1.png"
+      ]
+    },
+    {
+      "id": "cana-de-sticla-3",
+      "categorie": "vesela",
+      "nume": "Cana de sticla",
+      "cod": "167",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/cana-de-sticla-3/1.png"
+      ]
+    },
+    {
+      "id": "n-11",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "168",
+      "pret": 9,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-11/1.png"
+      ]
+    },
+    {
+      "id": "farfurie",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "169",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-2",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "170",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-2/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-3",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "171",
+      "pret": 8,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-3/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-4",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "172",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-4/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-5",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "173",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-5/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-6",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "174",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-6/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-7",
+      "categorie": "vesela",
+      "nume": "Bol mic",
+      "cod": "175",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-7/1.png"
+      ]
+    },
+    {
+      "id": "n-12",
+      "categorie": "vesela",
+      "nume": "Oala lut",
+      "cod": "176",
+      "pret": 75,
+      "material": "Lut",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-12/1.png"
+      ]
+    },
+    {
+      "id": "oala",
+      "categorie": "vesela",
+      "nume": "Oala",
+      "cod": "177",
+      "pret": 18,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala/1.png"
+      ]
+    },
+    {
+      "id": "oala-2",
+      "categorie": "vesela",
+      "nume": "Oala",
+      "cod": "178",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala-2/1.png"
+      ]
+    },
+    {
+      "id": "oala-3",
+      "categorie": "vesela",
+      "nume": "Oala",
+      "cod": "179",
+      "pret": 35,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala-3/1.png"
+      ]
+    },
+    {
+      "id": "oala-4",
+      "categorie": "vesela",
+      "nume": "Oala al turnat int ceramic 3.5L",
+      "cod": "180",
+      "pret": null,
+      "material": "Ceramic",
+      "dimensiuni": "24 cm",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala-4/1.png"
+      ]
+    },
+    {
+      "id": "n-13",
+      "categorie": "vesela",
+      "nume": "Platou",
+      "cod": "181",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-13/1.png"
+      ]
+    },
+    {
+      "id": "platou",
+      "categorie": "vesela",
+      "nume": "Platou",
+      "cod": "182",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/platou/1.png"
+      ]
+    },
+    {
+      "id": "platou-2",
+      "categorie": "vesela",
+      "nume": "Platou",
+      "cod": "183",
+      "pret": 25,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/platou-2/1.png"
+      ]
+    },
+    {
+      "id": "n-14",
+      "categorie": "vesela",
+      "nume": "Vas yena",
+      "cod": "184",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-14/1.png"
+      ]
+    },
+    {
+      "id": "vas-yena",
+      "categorie": "vesela",
+      "nume": "Vas yena",
+      "cod": "185",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/vas-yena/1.png"
+      ]
     }
   ]
 }
