@@ -75,6 +75,14 @@ function optimizeazaImaginiStatice() {
       if (noua !== sursa) img.setAttribute("src", noua);
     });
   });
+
+  // fiecare slide primește ca fundal aceeași poză, folosită încețoșat
+  document.querySelectorAll(".slide").forEach((slide) => {
+    const img = slide.querySelector("img");
+    if (!img) return;
+    const sursa = img.getAttribute("src");
+    if (sursa) slide.style.setProperty("--poza", `url("${sursa}")`);
+  });
 }
 
 /* Prețul e salvat ca număr (ex. 150), iar moneda se adaugă aici, la afișare.
