@@ -2286,7 +2286,7 @@
     {
       "id": "lenjerie-de-pat-4",
       "categorie": "lenjerii",
-      "nume": "Lenjerie de pat",
+      "nume": "Lenjerie de pat 4 piese cu elastic",
       "cod": "147",
       "pret": null,
       "material": "",
@@ -2295,7 +2295,8 @@
       "stoc": "in_stoc",
       "subcategorie": "",
       "imagini": [
-        "images/produse/lenjerii/lenjerie-de-pat-4/1.png"
+        "images/produse/lenjerii/lenjerie-de-pat-4/1.jpg",
+        "images/produse/lenjerii/lenjerie-de-pat-4/2.png"
       ]
     },
     {
@@ -2545,6 +2546,336 @@
       "subcategorie": "",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-18/1.png"
+      ]
+    },
+    {
+      "id": "n-10",
+      "categorie": "vesela",
+      "nume": "Cana de sticla",
+      "cod": "164",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-10/1.png"
+      ]
+    },
+    {
+      "id": "cana-de-sticla",
+      "categorie": "vesela",
+      "nume": "Cana de sticla",
+      "cod": "165",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/cana-de-sticla/1.png"
+      ]
+    },
+    {
+      "id": "cana-de-sticla-2",
+      "categorie": "vesela",
+      "nume": "Cana de sticla 1.6L",
+      "cod": "166",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/cana-de-sticla-2/1.png"
+      ]
+    },
+    {
+      "id": "cana-de-sticla-3",
+      "categorie": "vesela",
+      "nume": "Cana de sticla",
+      "cod": "167",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/cana-de-sticla-3/1.png"
+      ]
+    },
+    {
+      "id": "n-11",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "168",
+      "pret": 9,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-11/1.png"
+      ]
+    },
+    {
+      "id": "farfurie",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "169",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-2",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "170",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-2/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-3",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "171",
+      "pret": 8,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-3/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-4",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "172",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-4/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-5",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "173",
+      "pret": null,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-5/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-6",
+      "categorie": "vesela",
+      "nume": "Farfurie",
+      "cod": "174",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-6/1.png"
+      ]
+    },
+    {
+      "id": "farfurie-7",
+      "categorie": "vesela",
+      "nume": "Bol mic",
+      "cod": "175",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/farfurie-7/1.png"
+      ]
+    },
+    {
+      "id": "n-12",
+      "categorie": "vesela",
+      "nume": "Oala lut",
+      "cod": "176",
+      "pret": 75,
+      "material": "Lut",
+      "dimensiuni": "",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-12/1.png"
+      ]
+    },
+    {
+      "id": "oala",
+      "categorie": "vesela",
+      "nume": "Oala",
+      "cod": "177",
+      "pret": 18,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala/1.png"
+      ]
+    },
+    {
+      "id": "oala-2",
+      "categorie": "vesela",
+      "nume": "Oala",
+      "cod": "178",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala-2/1.png"
+      ]
+    },
+    {
+      "id": "oala-3",
+      "categorie": "vesela",
+      "nume": "Oala",
+      "cod": "179",
+      "pret": 35,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala-3/1.png"
+      ]
+    },
+    {
+      "id": "oala-4",
+      "categorie": "vesela",
+      "nume": "Oala al turnat int ceramic 3.5L",
+      "cod": "180",
+      "pret": null,
+      "material": "Ceramic",
+      "dimensiuni": "24 cm",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala-4/1.png"
+      ]
+    },
+    {
+      "id": "n-13",
+      "categorie": "vesela",
+      "nume": "Platou",
+      "cod": "181",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-13/1.png"
+      ]
+    },
+    {
+      "id": "platou",
+      "categorie": "vesela",
+      "nume": "Platou",
+      "cod": "182",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/platou/1.png"
+      ]
+    },
+    {
+      "id": "platou-2",
+      "categorie": "vesela",
+      "nume": "Platou",
+      "cod": "183",
+      "pret": 25,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/platou-2/1.png"
+      ]
+    },
+    {
+      "id": "n-14",
+      "categorie": "vesela",
+      "nume": "Vas yena",
+      "cod": "184",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/n-14/1.png"
+      ]
+    },
+    {
+      "id": "vas-yena",
+      "categorie": "vesela",
+      "nume": "Vas yena",
+      "cod": "185",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/vas-yena/1.png"
       ]
     }
   ]
