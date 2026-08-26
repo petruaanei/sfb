@@ -35,7 +35,8 @@ CAI_CONTINUT = [
 BRANCH_PUBLICARE = "main"
 # --------------------------------------------------------------------------
 
-CATEGORII = ["accesorii", "coroane", "felinare", "imbracaminte", "lenjerii", "prosoape", "sicrie", "vesela"]
+CATEGORII = ["accesorii", "aranjamente-florale", "cavouri", "coroane", "felinare", "imbracaminte",
+              "lenjerii", "meniu-mancare", "prosoape", "sicrie", "vesela"]
 STOC_VALORI = ["in_stoc", "limitat", "epuizat"]
 
 MIME_TO_EXT = {
@@ -65,7 +66,10 @@ def _citeste(cale, cheie):
         date = json.load(f)
     # acceptă și forma veche (listă simplă), ca să nu se piardă date
     lista = date if isinstance(date, list) else date.get(cheie, [])
-    return _completeaza_identificatori(lista)
+    lista = _completeaza_identificatori(lista)
+    if cheie == "produse":
+        lista = _completeaza_coduri(lista)
+    return lista
 
 
 def _pret_numeric(valoare):
@@ -83,6 +87,25 @@ def _pret_numeric(valoare):
     except ValueError:
         return None
     return int(numar) if numar == int(numar) else numar
+
+
+def urmatorul_cod(produse):
+    """Următorul cod liber din catalog: cel mai mare număr folosit, plus unu."""
+    numere = []
+    for p in produse:
+        cod = str(p.get("cod", "")).strip()
+        if cod.isdigit():
+            numere.append(int(cod))
+    return str(max(numere) + 1) if numere else "1"
+
+
+def _completeaza_coduri(produse):
+    """Produsele adăugate din panoul online pot veni fără cod de catalog.
+    Le dăm aici următorul număr liber, ca fiecare produs să aibă unul."""
+    for p in produse:
+        if not str(p.get("cod", "")).strip():
+            p["cod"] = urmatorul_cod(produse)
+    return produse
 
 
 def _completeaza_identificatori(lista):
@@ -434,6 +457,7 @@ class AdminHandler(SimpleHTTPRequestHandler):
             "id": id_,
             "categorie": categorie,
             "nume": nume,
+            "cod": urmatorul_cod(products),
             "pret": "",
             "material": "",
             "dimensiuni": "",
@@ -449,7 +473,7 @@ class AdminHandler(SimpleHTTPRequestHandler):
 
     def _update(self, products, payload):
         produs = self._find(products, payload.get("id"))
-        for camp in ("nume", "material", "dimensiuni", "descriere", "subcategorie"):
+        for camp in ("nume", "cod", "material", "dimensiuni", "descriere", "subcategorie"):
             if camp in payload:
                 produs[camp] = (payload[camp] or "").strip()
         if "pret" in payload:

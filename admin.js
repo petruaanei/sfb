@@ -1,10 +1,14 @@
-const CATEGORII = ["accesorii", "coroane", "felinare", "imbracaminte", "lenjerii", "prosoape", "sicrie", "vesela"];
+const CATEGORII = ["accesorii", "aranjamente-florale", "cavouri", "coroane", "felinare", "imbracaminte",
+  "lenjerii", "meniu-mancare", "prosoape", "sicrie", "vesela"];
 const ETICHETE_CATEGORII = {
   accesorii: "Accesorii",
+  "aranjamente-florale": "Aranjamente florale",
+  cavouri: "Cavouri",
   coroane: "Coroane",
   felinare: "Felinare",
   imbracaminte: "Îmbrăcăminte",
   lenjerii: "Lenjerii",
+  "meniu-mancare": "Meniu mâncare",
   prosoape: "Prosoape",
   sicrie: "Sicrie",
   vesela: "Veselă",
@@ -240,7 +244,7 @@ function randeazaCategorie(categorie) {
             ? `<img class="tile-img" src="${p.imagini[0]}" alt="">`
             : `<div class="tile-marcaj">${ICONITE.imagine}</div>`
         }
-        <div class="tile-nume">${p.nume}</div>
+        <div class="tile-nume">${p.nume}${p.cod ? ` <span class="tile-cod">cod ${p.cod}</span>` : ""}</div>
         <div class="tile-count">${p.stoc === "epuizat" ? "Arhivat — nu apare pe site" : `${p.imagini.length} poze`}</div>
       </div>
     `
@@ -288,7 +292,7 @@ function randeazaProdus(categorie, id) {
     .map(
       (cale) => `
       <div class="imagine-card">
-        <img src="${cale}" alt="">
+        <img src="${cale}" alt="" class="imagine-previzualizare" data-cale="${cale}" title="Apasă ca să vezi poza mare">
         <button class="imagine-sterge" data-cale="${cale}" title="Șterge poza">×</button>
       </div>
     `
@@ -313,6 +317,9 @@ function randeazaProdus(categorie, id) {
     <div class="detalii-form">
       <label>Nume produs
         <input type="text" id="campNume" value="${escapeAttr(produs.nume)}">
+      </label>
+      <label>Cod produs
+        <input type="text" id="campCod" value="${escapeAttr(produs.cod)}" placeholder="ex: 1">
       </label>
       <label>Preț
         <div class="input-cu-sufix">
@@ -359,6 +366,11 @@ function randeazaProdus(categorie, id) {
 
   document.getElementById("inapoi").addEventListener("click", () => mergiLa("categorie", { categorie }));
 
+  // apasă pe o poză ca s-o vezi mare
+  app.querySelectorAll(".imagine-previzualizare").forEach((img) => {
+    img.addEventListener("click", () => deschidePoza(img.dataset.cale));
+  });
+
   // ștergere poză
   app.querySelectorAll(".imagine-sterge").forEach((btn) => {
     btn.addEventListener("click", async () => {
@@ -398,6 +410,7 @@ function randeazaProdus(categorie, id) {
         action: "update",
         id: produs.id,
         nume: document.getElementById("campNume").value,
+        cod: document.getElementById("campCod").value,
         pret: numarPret ? parseFloat(numarPret) : null,
         material: document.getElementById("campMaterial").value,
         dimensiuni: document.getElementById("campDimensiuni").value,
@@ -570,6 +583,40 @@ function fisierToDataURL(file) {
     reader.onerror = reject;
     reader.readAsDataURL(file);
   });
+}
+
+/* ===== VIZUALIZARE POZĂ PE TOT ECRANUL =====
+   Apeși pe o poză urcată și o vezi mare, ca să verifici ce ai încărcat. */
+let vizualizatorPoza = null;
+
+function deschidePoza(cale) {
+  if (!vizualizatorPoza) {
+    vizualizatorPoza = document.createElement("div");
+    vizualizatorPoza.className = "poza-mare";
+    vizualizatorPoza.innerHTML = `
+      <button type="button" class="poza-mare-inchide" aria-label="Închide">&times;</button>
+      <img alt="">
+    `;
+    document.body.appendChild(vizualizatorPoza);
+
+    const inchide = () => {
+      vizualizatorPoza.classList.remove("activ");
+      document.body.classList.remove("blocat");
+    };
+
+    vizualizatorPoza.addEventListener("click", (e) => {
+      // se închide și dacă apeși pe fundal, nu doar pe X
+      if (e.target === vizualizatorPoza || e.target.closest(".poza-mare-inchide")) inchide();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") inchide();
+    });
+  }
+
+  vizualizatorPoza.querySelector("img").src = cale;
+  vizualizatorPoza.classList.add("activ");
+  document.body.classList.add("blocat");
 }
 
 function extrageNumarPret(pret) {

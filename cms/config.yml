@@ -37,12 +37,19 @@ collections:
             label_singular: 'Produs'
             widget: 'list'
             collapsed: true
-            summary: '{{fields.nume}}  ·  {{fields.categorie}}  ·  {{fields.pret}} RON'
+            summary: '{{fields.nume}}   —   cod {{fields.cod}}   ·   {{fields.categorie}}   ·   {{fields.pret}} RON'
             fields:
               - name: 'nume'
                 label: 'Numele produsului'
                 widget: 'string'
                 hint: 'Așa va apărea pe site. Exemplu: Prosop Mare'
+
+              - name: 'cod'
+                label: 'Cod produs'
+                widget: 'string'
+                required: false
+                default: ''
+                hint: 'Numărul tău din catalog. Apare pe site, sub numele produsului. Exemplu: 1'
 
               - name: 'imagini'
                 label: 'Poze'
@@ -70,10 +77,13 @@ collections:
                 widget: 'select'
                 options:
                   - { label: 'Accesorii', value: 'accesorii' }
+                  - { label: 'Aranjamente florale', value: 'aranjamente-florale' }
+                  - { label: 'Cavouri', value: 'cavouri' }
                   - { label: 'Coroane', value: 'coroane' }
                   - { label: 'Felinare', value: 'felinare' }
                   - { label: 'Îmbrăcăminte', value: 'imbracaminte' }
                   - { label: 'Lenjerii', value: 'lenjerii' }
+                  - { label: 'Meniu mâncare', value: 'meniu-mancare' }
                   - { label: 'Prosoape', value: 'prosoape' }
                   - { label: 'Sicrie', value: 'sicrie' }
                   - { label: 'Veselă', value: 'vesela' }

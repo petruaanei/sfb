@@ -320,6 +320,23 @@ main {
   font-size: 1.15rem;
 }
 
+/* codul de catalog, lângă numele produsului */
+.tile-cod {
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(192, 139, 32, 0.12);
+  border: 1px solid rgba(192, 139, 32, 0.35);
+  border-radius: 2px;
+  padding: 0.1rem 0.45rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
 .tile-count {
   color: var(--gray);
   font-size: 0.72rem;
@@ -405,6 +422,71 @@ main {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* poza se apropie ușor când treci cu mouse-ul, ca să se vadă mai bine */
+.imagine-previzualizare {
+  cursor: zoom-in;
+  transition: transform 0.35s ease;
+}
+
+.imagine-card:hover .imagine-previzualizare {
+  transform: scale(1.35);
+}
+
+.imagine-card:hover {
+  border-color: var(--gold);
+  z-index: 5;
+}
+
+/* ===== POZA PE TOT ECRANUL (la apăsare) ===== */
+body.blocat {
+  overflow: hidden;
+}
+
+.poza-mare {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(8, 8, 10, 0.96);
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  cursor: zoom-out;
+}
+
+.poza-mare.activ {
+  display: flex;
+}
+
+.poza-mare img {
+  max-width: 92vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border: 1px solid var(--bordura);
+  background: var(--black-soft);
+}
+
+.poza-mare-inchide {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(192, 139, 32, 0.5);
+  background: rgba(8, 8, 10, 0.8);
+  color: var(--gold);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.poza-mare-inchide:hover {
+  background: var(--gold);
+  color: var(--black);
 }
 
 .imagine-sterge {
