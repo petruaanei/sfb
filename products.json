@@ -2849,6 +2849,140 @@
       "imagini": [
         "images/produse/vesela/vas-yena/1.png"
       ]
+    },
+    {
+      "id": "cana",
+      "categorie": "vesela",
+      "nume": "Cană",
+      "cod": "186",
+      "pret": 2.5,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "Cană mică",
+      "stoc": "in_stoc",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/vesela/cana/1.png"
+      ]
+    },
+    {
+      "id": "cana-2",
+      "categorie": "vesela",
+      "nume": "Cană",
+      "cod": "187",
+      "pret": 2.5,
+      "material": "Sticla",
+      "dimensiuni": "",
+      "descriere": "Cană mică",
+      "stoc": "in_stoc",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/vesela/cana-2/1.png"
+      ]
+    },
+    {
+      "id": "cana-3",
+      "categorie": "vesela",
+      "nume": "Cană",
+      "cod": "188",
+      "pret": 4,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "Cană mică",
+      "stoc": "in_stoc",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/vesela/cana-3/1.png"
+      ]
+    },
+    {
+      "id": "cana-4",
+      "categorie": "vesela",
+      "nume": "Cană mică",
+      "cod": "189",
+      "pret": 5,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "Căni mici diferite modele",
+      "stoc": "in_stoc",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/vesela/cana-4/1.png",
+        "images/produse/vesela/cana-4/2.png",
+        "images/produse/vesela/cana-4/3.png",
+        "images/produse/vesela/cana-4/4.png",
+        "images/produse/vesela/cana-4/5.png",
+        "images/produse/vesela/cana-4/6.png",
+        "images/produse/vesela/cana-4/7.png",
+        "images/produse/vesela/cana-4/8.png",
+        "images/produse/vesela/cana-4/9.png"
+      ]
+    },
+    {
+      "id": "cana-5",
+      "categorie": "vesela",
+      "nume": "Cană",
+      "cod": "190",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/vesela/cana-5/1.png"
+      ]
+    },
+    {
+      "id": "cana-6",
+      "categorie": "vesela",
+      "nume": "Cană",
+      "cod": "191",
+      "pret": 6,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/vesela/cana-6/1.png"
+      ]
+    },
+    {
+      "id": "cana-mare",
+      "categorie": "vesela",
+      "nume": "Cană mare",
+      "cod": "192",
+      "pret": 9,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/vesela/cana-mare/1.png",
+        "images/produse/vesela/cana-mare/2.png",
+        "images/produse/vesela/cana-mare/3.png",
+        "images/produse/vesela/cana-mare/4.png",
+        "images/produse/vesela/cana-mare/6.png",
+        "images/produse/vesela/cana-mare/7.png",
+        "images/produse/vesela/cana-mare/8.png"
+      ]
+    },
+    {
+      "id": "cana-7",
+      "categorie": "vesela",
+      "nume": "Cană",
+      "cod": "193",
+      "pret": null,
+      "material": "Portelan",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "cani",
+      "imagini": [
+        "images/produse/vesela/cana-7/1.png"
+      ]
     }
   ]
 }
