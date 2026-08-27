@@ -668,12 +668,12 @@
       "id": "prosop-15",
       "categorie": "prosoape",
       "nume": "Prosop",
-      "pret": null,
-      "material": "",
-      "dimensiuni": "",
+      "pret": 26,
+      "material": "Bumbac 100%",
+      "dimensiuni": "50x90",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "medii",
       "imagini": [
         "images/produse/prosoape/prosop-15/1.png"
       ],
