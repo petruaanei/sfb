@@ -34,9 +34,9 @@
     },
     {
       "material": "Stejar",
-      "dimensiuni": "50x200cm",
+      "dimensiuni": "60x200cm",
       "descriere": "",
-      "pret": 1000,
+      "pret": 7000,
       "stoc": "in_stoc",
       "categorie": "sicrie",
       "subcategorie": "premium",
@@ -70,12 +70,12 @@
       "id": "sicriu",
       "categorie": "sicrie",
       "nume": "Sicriu",
-      "pret": null,
+      "pret": 5000,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "60x200cm",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "clasic",
+      "subcategorie": "premium",
       "imagini": [
         "images/produse/sicrie/sicriu/2.png",
         "images/produse/sicrie/sicriu/3.png",
@@ -2217,7 +2217,8 @@
       "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/l/1.png",
-        "images/produse/lenjerii/l/2.png"
+        "images/produse/lenjerii/l/2.png",
+        "images/produse/lenjerii/l/3.png"
       ]
     },
     {
@@ -2258,12 +2259,12 @@
       "categorie": "lenjerii",
       "nume": "Patura",
       "cod": "146",
-      "pret": null,
+      "pret": 100,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "200x230cm",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "plapumi",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-3/1.png",
         "images/produse/lenjerii/lenjerie-de-pat-3/2.png"
@@ -2274,12 +2275,12 @@
       "categorie": "lenjerii",
       "nume": "Lenjerie de pat 4 piese cu elastic",
       "cod": "147",
-      "pret": null,
+      "pret": 170,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "200x230cm",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-4/1.jpg",
         "images/produse/lenjerii/lenjerie-de-pat-4/2.png"
@@ -2290,12 +2291,12 @@
       "categorie": "lenjerii",
       "nume": "Lenjerie de pat cu pliuri 2 persoane",
       "cod": "148",
-      "pret": null,
+      "pret": 140,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "200x230cm",
       "descriere": "Lenjerie de pat cu 4 piese de 2 persoane. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-5/1.png",
         "images/produse/lenjerii/lenjerie-de-pat-5/2.png",
@@ -2307,12 +2308,12 @@
       "categorie": "lenjerii",
       "nume": "Lenjerie de pat",
       "cod": "149",
-      "pret": null,
+      "pret": 150,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "200x230cm",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-6/1.png",
         "images/produse/lenjerii/lenjerie-de-pat-6/2.png"
@@ -2323,12 +2324,12 @@
       "categorie": "lenjerii",
       "nume": "Lenjerie de pat",
       "cod": "150",
-      "pret": null,
-      "material": "",
-      "dimensiuni": "",
+      "pret": 180,
+      "material": "Bumbac 100%",
+      "dimensiuni": "200x230cm",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-7/1.png",
         "images/produse/lenjerii/lenjerie-de-pat-7/2.png",
@@ -2338,14 +2339,14 @@
     {
       "id": "lenjerie-de-pat-8",
       "categorie": "lenjerii",
-      "nume": "Covertura",
+      "nume": "Cuvertura",
       "cod": "151",
-      "pret": null,
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "pret": 150,
+      "material": "Poliester 100%",
+      "dimensiuni": "210x230cm",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs. Contine și 2 fețe de pernă (50x70cm)",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-8/1.png"
       ]
@@ -2355,12 +2356,12 @@
       "categorie": "lenjerii",
       "nume": "Lenjerie finet 2 persoane",
       "cod": "152",
-      "pret": null,
+      "pret": 100,
       "material": "Finet",
-      "dimensiuni": "",
+      "dimensiuni": "200x230",
       "descriere": "Lenjerie de pat 2 persoane cu 6 piese. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-9/1.png",
         "images/produse/lenjerii/lenjerie-de-pat-9/2.png"
@@ -2371,12 +2372,12 @@
       "categorie": "lenjerii",
       "nume": "Lenjerie de pat",
       "cod": "153",
-      "pret": null,
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "pret": 180,
+      "material": "Bumbac 100%",
+      "dimensiuni": "200x230cm",
+      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs. Conține 4 piese:\nCearsaf pilota 200x230cm\nCearsaf pat 250x250cm\nFata perna 50x70cm (2 bucati)",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-10/1.png",
         "images/produse/lenjerii/lenjerie-de-pat-10/2.png"
@@ -2387,12 +2388,12 @@
       "categorie": "lenjerii",
       "nume": "Patura",
       "cod": "154",
-      "pret": null,
+      "pret": 42,
       "material": "",
       "dimensiuni": "",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "plapumi",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-11/1.png"
       ]
@@ -2402,9 +2403,9 @@
       "categorie": "lenjerii",
       "nume": "Patura",
       "cod": "155",
-      "pret": null,
+      "pret": 70,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "180x230cm",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
       "subcategorie": "",
@@ -2417,12 +2418,12 @@
       "categorie": "lenjerii",
       "nume": "Patura 3D",
       "cod": "156",
-      "pret": null,
+      "pret": 120,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "210x240cm",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "plapumi",
       "imagini": [
         "images/produse/lenjerii/patura-2/1.png"
       ]
@@ -2432,12 +2433,12 @@
       "categorie": "lenjerii",
       "nume": "Patura",
       "cod": "157",
-      "pret": null,
+      "pret": 150,
       "material": "",
       "dimensiuni": "160x220",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "plapumi",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-12/1.png"
       ]
@@ -2445,14 +2446,14 @@
     {
       "id": "lenjerie-de-pat-13",
       "categorie": "lenjerii",
-      "nume": "Pilota",
+      "nume": "Covertura vara",
       "cod": "158",
-      "pret": null,
+      "pret": 80,
       "material": "",
       "dimensiuni": "",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "plapumi",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-13/1.png",
         "images/produse/lenjerii/lenjerie-de-pat-13/2.png"
@@ -2463,12 +2464,12 @@
       "categorie": "lenjerii",
       "nume": "Pilota",
       "cod": "159",
-      "pret": null,
+      "pret": 120,
       "material": "",
       "dimensiuni": "",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "plapumi",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-14/1.png",
         "images/produse/lenjerii/lenjerie-de-pat-14/2.png"
@@ -2479,12 +2480,12 @@
       "categorie": "lenjerii",
       "nume": "Lenjerie de pat 2 persoane",
       "cod": "160",
-      "pret": null,
+      "pret": 240,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "200x230cm",
       "descriere": "Setul contine pilota , cerceaf , fete de perna. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "lenjerii-pat",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-15/1.png"
       ]
@@ -2494,29 +2495,14 @@
       "categorie": "lenjerii",
       "nume": "Pilota",
       "cod": "161",
-      "pret": null,
+      "pret": 220,
       "material": "",
       "dimensiuni": "",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "plapumi",
       "imagini": [
         "images/produse/lenjerii/lenjerie-de-pat-16/1.png"
-      ]
-    },
-    {
-      "id": "lenjerie-de-pat-17",
-      "categorie": "lenjerii",
-      "nume": "Lenjerie de pat",
-      "cod": "162",
-      "pret": null,
-      "material": "",
-      "dimensiuni": "",
-      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
-      "stoc": "in_stoc",
-      "subcategorie": "",
-      "imagini": [
-        "images/produse/lenjerii/lenjerie-de-pat-17/1.png"
       ]
     },
     {
