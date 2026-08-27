@@ -2229,7 +2229,7 @@
       "pret": 95,
       "material": "",
       "dimensiuni": "160x200cm",
-      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nCearsaf pilota 160x200cm\nCearsaf pat 160x210cm\nFata perna 50x70cm",
       "stoc": "in_stoc",
       "subcategorie": "lenjerii-pat",
       "imagini": [
@@ -2245,7 +2245,7 @@
       "pret": 80,
       "material": "",
       "dimensiuni": "200x230cm",
-      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 6 piese\nCearsaf pilota 200x230cm\nCearsaf pat 245x270cm\nFata perna 50x70cm (2bucati)\nFata perna 70x70cm (2 bucati)",
       "stoc": "in_stoc",
       "subcategorie": "lenjerii-pat",
       "imagini": [
@@ -2278,7 +2278,7 @@
       "pret": 170,
       "material": "",
       "dimensiuni": "200x230cm",
-      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 4 piese\nCearsaf pilota 200x230cm\nCearsaf pat 180x200cm\nFata perna 48x74cm (2bucati)",
       "stoc": "in_stoc",
       "subcategorie": "lenjerii-pat",
       "imagini": [
@@ -2294,7 +2294,7 @@
       "pret": 140,
       "material": "",
       "dimensiuni": "200x230cm",
-      "descriere": "Lenjerie de pat cu 4 piese de 2 persoane. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 4 piese\nCearsaf pilota 200x230cm\nCearsaf pat 180x200cm\nFata perna 50x70cm (2bucati)",
       "stoc": "in_stoc",
       "subcategorie": "lenjerii-pat",
       "imagini": [
@@ -2311,7 +2311,7 @@
       "pret": 150,
       "material": "",
       "dimensiuni": "200x230cm",
-      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 4 piese\nCearsaf pilota 200x230cm\nCearsaf pat 230x240cm\nFata perna 50x70cm (2bucati)",
       "stoc": "in_stoc",
       "subcategorie": "lenjerii-pat",
       "imagini": [
@@ -2327,7 +2327,7 @@
       "pret": 180,
       "material": "Bumbac 100%",
       "dimensiuni": "200x230cm",
-      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 4 piese\nCearsaf pilota 200x230cm\nCearsaf pat 230x250cm\nFata perna 50x70cm (2bucati)",
       "stoc": "in_stoc",
       "subcategorie": "lenjerii-pat",
       "imagini": [
@@ -2359,7 +2359,7 @@
       "pret": 100,
       "material": "Finet",
       "dimensiuni": "200x230",
-      "descriere": "Lenjerie de pat 2 persoane cu 6 piese. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 4 piese\nCearsaf pilota 200x230cm\nCearsaf pat 45x250cm\nFata perna 50x70cm (2bucati)",
       "stoc": "in_stoc",
       "subcategorie": "lenjerii-pat",
       "imagini": [
@@ -2390,7 +2390,7 @@
       "cod": "154",
       "pret": 42,
       "material": "",
-      "dimensiuni": "",
+      "dimensiuni": "150x200cm",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
       "subcategorie": "plapumi",
@@ -2408,7 +2408,7 @@
       "dimensiuni": "180x230cm",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "plapumi",
       "imagini": [
         "images/produse/lenjerii/patura/1.png"
       ]
@@ -2462,12 +2462,12 @@
     {
       "id": "lenjerie-de-pat-14",
       "categorie": "lenjerii",
-      "nume": "Pilota",
+      "nume": "Pilota 3 piese",
       "cod": "159",
       "pret": 120,
       "material": "",
-      "dimensiuni": "",
-      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "dimensiuni": "180x220cm",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 3 piese\nPilota 180x220cm\nFata perna 70x70cm (2bucati)",
       "stoc": "in_stoc",
       "subcategorie": "plapumi",
       "imagini": [
@@ -2483,7 +2483,7 @@
       "pret": 240,
       "material": "",
       "dimensiuni": "200x230cm",
-      "descriere": "Setul contine pilota , cerceaf , fete de perna. Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 4 piese\nCearsaf pilota 200x230cm\nCearsaf pat 180x200cm\nFata perna 50x70cm (2bucati)",
       "stoc": "in_stoc",
       "subcategorie": "lenjerii-pat",
       "imagini": [
@@ -2493,12 +2493,12 @@
     {
       "id": "lenjerie-de-pat-16",
       "categorie": "lenjerii",
-      "nume": "Pilota",
+      "nume": "Pilota Matlasata",
       "cod": "161",
       "pret": 220,
       "material": "",
-      "dimensiuni": "",
-      "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
+      "dimensiuni": "200x230cm",
+      "descriere": "Modelul poate varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.\nContine 2 piese\nPilota 200x230cm\nPerna 50x70cm",
       "stoc": "in_stoc",
       "subcategorie": "plapumi",
       "imagini": [
@@ -2510,7 +2510,7 @@
       "categorie": "lenjerii",
       "nume": "Perna de puf",
       "cod": "163",
-      "pret": null,
+      "pret": 50,
       "material": "Bumbac",
       "dimensiuni": "70x70",
       "descriere": "Modelul si culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
