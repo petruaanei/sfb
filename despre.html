@@ -31,11 +31,11 @@
 
   <main>
     <section class="despre-page">
+      <!-- Slideshow-ul se construiește automat din pozele images/despre/1 ... 7.
+           Merge atât cu .jpg, cât și cu .png, iar pozele care lipsesc sunt sărite.
+           Ca să adaugi o poză, pune fișierul în images/despre/ cu numărul următor. -->
       <div class="despre-colaj">
-        <!-- Pozele stau în images/despre/. Prima e cea mare, din stânga. -->
-        <img src="images/despre/desprenoi1.jpg" alt="Echipa Servicii Funerare Băltătești" class="despre-img despre-img-mare">
-        <img src="images/despre/desprenoi2.jpg" alt="Ceremonie funerară" class="despre-img despre-img-mica-1">
-        <img src="images/despre/desprenoi3.jpg" alt="Aranjament funerar" class="despre-img despre-img-mica-2">
+        <div class="slideshow despre-slideshow" id="despreSlideshow"></div>
       </div>
 
       <div class="despre-text">

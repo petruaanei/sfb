@@ -51,6 +51,7 @@ function urlImagine(cale, latime) {
   if (!cale) return cale;
   if (!REDIMENSIONARE_AUTOMATA || RULEAZA_LOCAL) return cale;
   if (/^https?:/i.test(cale)) return cale;
+  if (cale.startsWith("/.netlify/images")) return cale; // deja transformată
 
   const caleAbsoluta = cale.startsWith("/") ? cale : `/${cale}`;
   return `/.netlify/images?url=${encodeURIComponent(caleAbsoluta)}&w=${latime}&fit=contain`;
@@ -62,8 +63,7 @@ function urlImagine(cale, latime) {
 function optimizeazaImaginiStatice() {
   const grupuri = [
     { selector: ".slide img", latime: 1800 },
-    { selector: ".despre-img-mare", latime: 900 },
-    { selector: ".despre-img-mica-1, .despre-img-mica-2", latime: 700 },
+    // pozele de pe „Despre noi” sunt tratate în initSlideshowDespre()
     { selector: ".serviciu-card img", latime: 800 },
   ];
 
@@ -139,6 +139,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initPachete();
   initCautareProduse();
   initHintDerulare();
+  initSlideshowDespre();
 });
 
 /* ===== MENIU MOBIL (buton hamburger + panou) =====
@@ -457,6 +458,110 @@ function initCategoriiNav() {
 }
 
 /* ===== SLIDESHOW PAGINA DE ACASĂ ===== */
+/* ===== SLIDESHOW PE PAGINA „DESPRE NOI” =====
+   Se construiește singur din pozele images/despre/1 ... 7.
+   Acceptă atât .jpg cât și .png și sare peste pozele care lipsesc, deci
+   proprietarul poate adăuga sau scoate poze fără să atingă codul. */
+const DESPRE_NUMAR_POZE = 7;
+
+function verificaPoza(cale) {
+  return new Promise((resolve) => {
+    const test = new Image();
+    test.onload = () => resolve(cale);
+    test.onerror = () => resolve(null);
+    test.src = cale;
+  });
+}
+
+async function initSlideshowDespre() {
+  const container = document.getElementById("despreSlideshow");
+  if (!container) return;
+
+  // pentru fiecare număr încercăm întâi .jpg, apoi .png
+  const gasite = [];
+  for (let i = 1; i <= DESPRE_NUMAR_POZE; i++) {
+    const cale =
+      (await verificaPoza(`images/despre/${i}.jpg`)) ||
+      (await verificaPoza(`images/despre/${i}.png`));
+    if (cale) gasite.push(cale);
+  }
+
+  if (!gasite.length) {
+    container.remove();
+    return;
+  }
+
+  const slides = document.createElement("div");
+  slides.className = "slides";
+
+  gasite.forEach((cale, i) => {
+    const slide = document.createElement("div");
+    slide.className = "slide" + (i === 0 ? " active" : "");
+    const img = document.createElement("img");
+    img.src = urlImagine(cale, 900);
+    img.alt = `Servicii Funerare Băltătești — fotografia ${i + 1}`;
+    img.loading = i === 0 ? "eager" : "lazy";
+    slide.appendChild(img);
+    slides.appendChild(slide);
+  });
+  container.appendChild(slides);
+
+  if (gasite.length === 1) return; // o singură poză: fără săgeți și buline
+
+  const inapoi = document.createElement("button");
+  inapoi.className = "slide-btn prev";
+  inapoi.type = "button";
+  inapoi.innerHTML = "&#10094;";
+  inapoi.setAttribute("aria-label", "Poza anterioară");
+
+  const inainte = document.createElement("button");
+  inainte.className = "slide-btn next";
+  inainte.type = "button";
+  inainte.innerHTML = "&#10095;";
+  inainte.setAttribute("aria-label", "Poza următoare");
+
+  const buline = document.createElement("div");
+  buline.className = "slide-dots";
+
+  container.append(inapoi, inainte, buline);
+
+  const listaSlides = [...slides.children];
+  listaSlides.forEach((_, i) => {
+    const bulina = document.createElement("button");
+    bulina.className = "dot" + (i === 0 ? " active" : "");
+    bulina.type = "button";
+    bulina.setAttribute("aria-label", `Poza ${i + 1}`);
+    bulina.addEventListener("click", () => mergiLaPoza(i));
+    buline.appendChild(bulina);
+  });
+
+  const listaBuline = [...buline.children];
+  let curent = 0;
+  let cronometru;
+
+  function arata(index) {
+    listaSlides[curent].classList.remove("active");
+    listaBuline[curent].classList.remove("active");
+    curent = (index + listaSlides.length) % listaSlides.length;
+    listaSlides[curent].classList.add("active");
+    listaBuline[curent].classList.add("active");
+  }
+
+  function mergiLaPoza(index) {
+    arata(index);
+    reporneste();
+  }
+
+  function reporneste() {
+    clearInterval(cronometru);
+    cronometru = setInterval(() => arata(curent + 1), 5000);
+  }
+
+  inainte.addEventListener("click", () => mergiLaPoza(curent + 1));
+  inapoi.addEventListener("click", () => mergiLaPoza(curent - 1));
+  reporneste();
+}
+
 function initHeroSlideshow() {
   const slides = document.querySelectorAll(".slide");
   const dotsContainer = document.getElementById("slideDots");

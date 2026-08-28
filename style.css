@@ -1361,39 +1361,47 @@ body.lightbox-open {
   height: 460px;
 }
 
-.despre-img {
-  position: absolute;
-  border-radius: 2px;
-  object-fit: cover;
+/* slideshow-ul ocupă exact locul pe care îl avea colajul */
+.despre-slideshow {
+  height: 100%;
+  min-height: 0;
   border: 1px solid var(--bordura);
+  border-radius: 2px;
   box-shadow: var(--umbra);
-  filter: grayscale(0.2);
+}
+
+/* aici pozele nu au text peste ele, deci nu e nevoie să fie întunecate */
+.despre-slideshow .slide img {
+  filter: grayscale(0.15);
   transition: filter 0.5s ease;
 }
 
-.despre-colaj:hover .despre-img {
+.despre-slideshow:hover .slide img {
   filter: grayscale(0);
 }
 
-.despre-img-mare {
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 100%;
+/* vignetă mult mai discretă decât la slideshow-ul de pe pagina de acasă */
+.despre-slideshow::after {
+  background: linear-gradient(to bottom, rgba(8, 8, 10, 0.25) 0%, transparent 30%,
+    transparent 70%, rgba(8, 8, 10, 0.35) 100%);
 }
 
-.despre-img-mica-1 {
-  top: 0;
-  right: 0;
-  width: 44%;
-  height: 47%;
+.despre-slideshow .slide-btn {
+  width: 38px;
+  height: 38px;
+  font-size: 0.9rem;
 }
 
-.despre-img-mica-2 {
-  bottom: 0;
-  right: 0;
-  width: 44%;
-  height: 47%;
+.despre-slideshow .slide-btn.prev {
+  left: 12px;
+}
+
+.despre-slideshow .slide-btn.next {
+  right: 12px;
+}
+
+.despre-slideshow .slide-dots {
+  bottom: 14px;
 }
 
 .despre-eticheta {
