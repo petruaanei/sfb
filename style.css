@@ -1444,7 +1444,7 @@ body.lightbox-open {
   }
 
   .despre-colaj {
-    height: 320px;
+    height: 380px;
   }
 }
 
@@ -1862,7 +1862,9 @@ footer {
     width: min(280px, 90vw);
   }
 
-  .slideshow {
+  /* doar slideshow-ul de pe pagina de acasă; cel de la „Despre noi”
+     își ia înălțimea din cadrul lui, altfel iese peste text */
+  .hero .slideshow {
     height: 55vh;
   }
 
