@@ -2748,16 +2748,17 @@
     {
       "id": "oala-4",
       "categorie": "vesela",
-      "nume": "Oală al turnat int ceramic 3,5L",
+      "nume": "Oală 3,5L",
       "cod": "180",
       "pret": 100,
       "material": "Ceramică",
       "dimensiuni": "24 cm",
-      "descriere": "",
+      "descriere": "Oală aluminiu turnat cu interior ceramic 3,5L",
       "stoc": "in_stoc",
       "subcategorie": "",
       "imagini": [
-        "images/produse/vesela/oala-4/1.png"
+        "images/produse/vesela/oala-4/1.png",
+        "images/produse/vesela/oala-4/2.jpg"
       ]
     },
     {
@@ -2802,7 +2803,7 @@
       "stoc": "in_stoc",
       "subcategorie": "",
       "imagini": [
-        "images/produse/vesela/platou-2/1.png"
+        "images/produse/vesela/platou-2/1.jpg"
       ]
     },
     {
@@ -2967,6 +2968,127 @@
       "subcategorie": "cani",
       "imagini": [
         "images/produse/vesela/cana-7/1.png"
+      ]
+    },
+    {
+      "id": "vas-yena-2",
+      "categorie": "vesela",
+      "nume": "Vas Yena",
+      "cod": "194",
+      "pret": 50,
+      "material": "Sticlă",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "vas-iena",
+      "imagini": [
+        "images/produse/vesela/vas-yena-2/1.jpg"
+      ]
+    },
+    {
+      "id": "oala-2-3l",
+      "categorie": "vesela",
+      "nume": "Oală 2.3L",
+      "cod": "195",
+      "pret": 80,
+      "material": "",
+      "dimensiuni": "2.3L",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "oale",
+      "imagini": [
+        "images/produse/vesela/oala-2-3l/1.jpg"
+      ]
+    },
+    {
+      "id": "oala-3-2l",
+      "categorie": "vesela",
+      "nume": "Oală 3.2L",
+      "cod": "196",
+      "pret": 100,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "oale",
+      "imagini": [
+        "images/produse/vesela/oala-3-2l/1.jpg"
+      ]
+    },
+    {
+      "id": "oala-4-2l",
+      "categorie": "vesela",
+      "nume": "Oală 4.2L",
+      "cod": "197",
+      "pret": 120,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "oale",
+      "imagini": [
+        "images/produse/vesela/oala-4-2l/1.jpg"
+      ]
+    },
+    {
+      "id": "oala-2-5l",
+      "categorie": "vesela",
+      "nume": "Oală 2.5L",
+      "cod": "198",
+      "pret": 80,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/vesela/oala-2-5l/1.jpg",
+        "images/produse/vesela/oala-2-5l/2.jpg"
+      ]
+    },
+    {
+      "id": "tamaie",
+      "categorie": "accesorii",
+      "nume": "Tămâie",
+      "cod": "199",
+      "pret": 2,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/tamaie/1.jpg"
+      ]
+    },
+    {
+      "id": "tamaie-aromata",
+      "categorie": "accesorii",
+      "nume": "Tămâie aromată",
+      "cod": "200",
+      "pret": 10,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/tamaie-aromata/1.jpg"
+      ]
+    },
+    {
+      "id": "lumanare",
+      "categorie": "accesorii",
+      "nume": "Lumânare",
+      "cod": "201",
+      "pret": 5,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "Lumânare fir",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/accesorii/lumanare/1.jpg"
       ]
     }
   ]
