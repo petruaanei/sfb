@@ -2590,7 +2590,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/n-11/1.png"
       ]
@@ -2605,7 +2605,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/farfurie/1.png"
       ]
@@ -2620,7 +2620,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/farfurie-2/1.png"
       ]
@@ -2635,7 +2635,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/farfurie-3/1.png"
       ]
@@ -2650,7 +2650,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/farfurie-4/1.png"
       ]
@@ -2665,7 +2665,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/farfurie-5/1.png"
       ]
@@ -2680,7 +2680,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/farfurie-6/1.png"
       ]
@@ -2695,7 +2695,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "boluri",
       "imagini": [
         "images/produse/vesela/farfurie-7/1.png"
       ]
@@ -2710,7 +2710,7 @@
       "dimensiuni": "",
       "descriere": "Modelul și culorile pot varia în funcție de disponibilitatea din magazin. Fotografia este cu titlu orientativ și prezintă tipul de produs.",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "oale",
       "imagini": [
         "images/produse/vesela/n-12/1.png"
       ]
@@ -2725,7 +2725,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "oale",
       "imagini": [
         "images/produse/vesela/oala/1.png"
       ]
@@ -2740,7 +2740,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "oale",
       "imagini": [
         "images/produse/vesela/oala-3/1.png"
       ]
@@ -2757,8 +2757,8 @@
       "stoc": "in_stoc",
       "subcategorie": "",
       "imagini": [
-        "images/produse/vesela/oala-4/1.png",
-        "images/produse/vesela/oala-4/2.jpg"
+        "images/produse/vesela/oala-4/2.jpg",
+        "images/produse/vesela/oala-4/3.png"
       ]
     },
     {
@@ -2771,7 +2771,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/n-13/1.png"
       ]
@@ -2786,7 +2786,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/platou/1.png"
       ]
@@ -2801,7 +2801,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "farfurii",
       "imagini": [
         "images/produse/vesela/platou-2/1.jpg"
       ]
@@ -2816,7 +2816,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "vas-iena",
       "imagini": [
         "images/produse/vesela/n-14/1.png"
       ]
@@ -2831,7 +2831,7 @@
       "dimensiuni": "",
       "descriere": "",
       "stoc": "in_stoc",
-      "subcategorie": "",
+      "subcategorie": "vas-iena",
       "imagini": [
         "images/produse/vesela/vas-yena/1.png"
       ]
@@ -3042,8 +3042,8 @@
       "stoc": "in_stoc",
       "subcategorie": "",
       "imagini": [
-        "images/produse/vesela/oala-2-5l/1.jpg",
-        "images/produse/vesela/oala-2-5l/2.jpg"
+        "images/produse/vesela/oala-2-5l/2.jpg",
+        "images/produse/vesela/oala-2-5l/3.jpg"
       ]
     },
     {
