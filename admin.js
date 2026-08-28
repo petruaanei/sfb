@@ -17,7 +17,8 @@ const ETICHETE_CATEGORII = {
 const SUBCATEGORII = {
   sicrie: [
     { id: "premium", eticheta: "Premium" },
-    { id: "clasic", eticheta: "Clasic" },
+    { id: "economic", eticheta: "Economic" },
+    { id: "social", eticheta: "Social" },
   ],
   prosoape: [
     { id: "mici", eticheta: "Mici" },

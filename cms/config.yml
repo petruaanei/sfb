@@ -107,7 +107,8 @@ collections:
                 options:
                   - { label: '— fără —', value: '' }
                   - { label: 'Sicrie · Premium', value: 'premium' }
-                  - { label: 'Sicrie · Clasic', value: 'clasic' }
+                  - { label: 'Sicrie · Economic', value: 'economic' }
+                  - { label: 'Sicrie · Social', value: 'social' }
                   - { label: 'Prosoape · Mici', value: 'mici' }
                   - { label: 'Prosoape · Medii', value: 'medii' }
                   - { label: 'Prosoape · Mari', value: 'mari' }
