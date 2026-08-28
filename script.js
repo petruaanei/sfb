@@ -295,8 +295,8 @@ function initCautareProduse() {
       return;
     }
 
-    const potriviri = PRODUCTS.filter(
-      (p) => p.stoc !== "epuizat" && normalizeazaText(p.nume).includes(termen)
+    const potriviri = ordoneazaAlfabetic(
+      PRODUCTS.filter((p) => p.stoc !== "epuizat" && normalizeazaText(p.nume).includes(termen))
     ).slice(0, 8);
 
     if (!potriviri.length) {
@@ -671,12 +671,24 @@ const SUBCATEGORII = {
     { id: "cani", eticheta: "Căni" },
     { id: "farfurii", eticheta: "Farfurii" },
     { id: "boluri", eticheta: "Boluri" },
-    { id: "vas-iena", eticheta: "Vas Iena" },
+    { id: "vas-iena", eticheta: "Vas Yena" },
     { id: "oale", eticheta: "Oale" },
   ],
 };
 
 /* ===== PAGINA DE PRODUSE (catalog pe categorii) ===== */
+/* Ordonare alfabetică, cu reguli românești: „Cană” vine înaintea lui „Covor”,
+   iar diacriticele nu strică ordinea. Produsele cu același nume se ordonează
+   după cod, ca să fie mereu în aceeași ordine. */
+function ordoneazaAlfabetic(lista) {
+  const comparator = new Intl.Collator("ro", { numeric: true, sensitivity: "base" });
+  return [...lista].sort((a, b) => {
+    const dupaNume = comparator.compare(a.nume || "", b.nume || "");
+    if (dupaNume !== 0) return dupaNume;
+    return comparator.compare(String(a.cod || ""), String(b.cod || ""));
+  });
+}
+
 function initCatalog() {
   const grids = document.querySelectorAll(".produse-grid[data-categorie]");
   const subWraps = document.querySelectorAll(".subcategorii-wrap[data-categorie]");
@@ -684,7 +696,9 @@ function initCatalog() {
 
   grids.forEach((grid) => {
     const categorie = grid.dataset.categorie;
-    const produse = PRODUCTS.filter((p) => p.categorie === categorie && p.stoc !== "epuizat");
+    const produse = ordoneazaAlfabetic(
+      PRODUCTS.filter((p) => p.categorie === categorie && p.stoc !== "epuizat")
+    );
 
     if (!produse.length) {
       const gol = document.createElement("p");
@@ -702,7 +716,9 @@ function initCatalog() {
   subWraps.forEach((wrap) => {
     const categorie = wrap.dataset.categorie;
     const subcategorii = SUBCATEGORII[categorie] || [];
-    const produseCategorie = PRODUCTS.filter((p) => p.categorie === categorie && p.stoc !== "epuizat");
+    const produseCategorie = ordoneazaAlfabetic(
+      PRODUCTS.filter((p) => p.categorie === categorie && p.stoc !== "epuizat")
+    );
     let auProduse = false;
 
     function adaugaSectiune(subId, titluText, produseSub) {

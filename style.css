@@ -327,10 +327,6 @@ html.meniu-deschis {
 /* Pentru fotografiile verticale așezate în cadre late, decuparea implicită
    păstrează mijlocul — adică cerul, nu subiectul. Clasa de mai jos coboară
    zona păstrată, ca subiectul (mașina) să rămână în cadru. */
-.slide img.focus-jos {
-  object-position: center 78%;
-}
-
 .serviciu-card img.focus-jos {
   object-position: center 68%;
 }

@@ -118,7 +118,7 @@ collections:
                   - { label: 'Veselă · Căni', value: 'cani' }
                   - { label: 'Veselă · Farfurii', value: 'farfurii' }
                   - { label: 'Veselă · Boluri', value: 'boluri' }
-                  - { label: 'Veselă · Vas Iena', value: 'vas-iena' }
+                  - { label: 'Veselă · Vas Yena', value: 'vas-iena' }
                   - { label: 'Veselă · Oale', value: 'oale' }
 
               - name: 'material'

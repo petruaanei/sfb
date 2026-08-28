@@ -34,7 +34,7 @@ const SUBCATEGORII = {
     { id: "cani", eticheta: "Căni" },
     { id: "farfurii", eticheta: "Farfurii" },
     { id: "boluri", eticheta: "Boluri" },
-    { id: "vas-iena", eticheta: "Vas Iena" },
+    { id: "vas-iena", eticheta: "Vas Yena" },
     { id: "oale", eticheta: "Oale" },
   ],
 };
