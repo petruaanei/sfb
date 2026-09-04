@@ -927,7 +927,7 @@ function initProductDetail() {
     return;
   }
 
-  document.title = `${produs.nume} - Site Proiect`;
+  document.title = `${produs.nume} — Servicii Funerare Băltătești`;
 
   const galerie = buildGallery(produs.imagini, produs.nume, { zoom: true, latime: 1100 });
   galerie.classList.add("galerie-mare");
