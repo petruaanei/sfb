@@ -3090,6 +3090,257 @@
       "imagini": [
         "images/produse/accesorii/lumanare/1.jpg"
       ]
+    },
+    {
+      "id": "cavou",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "202",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou/1.jpg",
+        "images/produse/cavouri/cavou/2.jpg"
+      ]
+    },
+    {
+      "id": "cavou-2",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "203",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-2/1.jpg",
+        "images/produse/cavouri/cavou-2/2.jpg",
+        "images/produse/cavouri/cavou-2/3.jpg"
+      ]
+    },
+    {
+      "id": "cavou-3",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "204",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-3/1.jpg",
+        "images/produse/cavouri/cavou-3/2.jpg",
+        "images/produse/cavouri/cavou-3/3.jpg"
+      ]
+    },
+    {
+      "id": "cavou-4",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "205",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-4/1.jpg"
+      ]
+    },
+    {
+      "id": "cavou-5",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "206",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-5/1.jpg",
+        "images/produse/cavouri/cavou-5/2.jpg"
+      ]
+    },
+    {
+      "id": "cavou-6",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "207",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-6/1.jpg",
+        "images/produse/cavouri/cavou-6/2.jpg"
+      ]
+    },
+    {
+      "id": "cavou-7",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "208",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-7/1.jpg",
+        "images/produse/cavouri/cavou-7/2.jpg"
+      ]
+    },
+    {
+      "id": "cavou-8",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "209",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-8/1.jpg",
+        "images/produse/cavouri/cavou-8/2.jpg"
+      ]
+    },
+    {
+      "id": "cavou-9",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "210",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-9/1.jpg",
+        "images/produse/cavouri/cavou-9/2.jpg"
+      ]
+    },
+    {
+      "id": "cavou-10",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "211",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-10/1.jpg",
+        "images/produse/cavouri/cavou-10/2.jpg"
+      ]
+    },
+    {
+      "id": "cavou-11",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "212",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-11/1.jpg"
+      ]
+    },
+    {
+      "id": "cavou-12",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "213",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-12/1.jpg"
+      ]
+    },
+    {
+      "id": "cavou-13",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "214",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-13/1.jpg"
+      ]
+    },
+    {
+      "id": "cavou-14",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "215",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-14/1.jpg"
+      ]
+    },
+    {
+      "id": "cavou-15",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "216",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-15/1.jpg"
+      ]
+    },
+    {
+      "id": "cavou-16",
+      "categorie": "cavouri",
+      "nume": "Cavou",
+      "cod": "217",
+      "pret": null,
+      "material": "",
+      "dimensiuni": "",
+      "descriere": "",
+      "stoc": "in_stoc",
+      "subcategorie": "",
+      "imagini": [
+        "images/produse/cavouri/cavou-16/1.jpg"
+      ]
     }
   ]
 }
